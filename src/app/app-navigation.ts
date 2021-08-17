@@ -19,7 +19,7 @@ export const navigation = [
     ]
   },
   {
-    text: 'Emergency Plan Home',
+    text: '应急预案首页',
     path: '/pages/emergency-plan-home',
     icon: 'home'
   }

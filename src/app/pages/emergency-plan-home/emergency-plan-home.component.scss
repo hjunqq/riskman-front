@@ -1,0 +1,12 @@
+::ng-deep .popup-property-details {
+  overflow: hidden;
+  position: relative;
+}
+::ng-deep .popup-property-details .images {
+  width: 700px;
+}
+
+::ng-deep .popup-property-details img {
+  height: 205px;
+  margin: 10px 10px 10px 0;
+}

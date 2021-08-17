@@ -1,4 +1,37 @@
-<h2 class="content-block">Emergency Plan Home</h2>
+<h2 class="content-block">应急预案首页</h2>
 <div class="content-block">
-    <div class="dx-card responsive-paddings">Put your content here</div>
+    <div class="dx-card responsive-paddings">
+
+      <dx-map
+        #map
+        center="Nanjing,China"
+        [zoom]="14"
+        [height]="400"
+        width="100%"
+        provider="bing"
+        [controls]="true"
+        [markers]="markers"
+        (onMarkerAdded)="markerAdded($event)"
+      >
+      </dx-map>
+      <dx-popup
+        [width]="660"
+        [height]="540"
+        [showTitle]="true"
+        [title]="currentProject.Name"
+        [dragEnabled]="false"
+        [closeOnOutsideClick]="true"
+        [(visible)]="popupVisible"
+        [shading]="true"
+        shadingColor="rgba(0,0,0,0.2)"
+      >
+        <div *dxTemplate="let data of 'content'">
+          <div class='popup-property-details'>
+            <div class='popup-property-details'>
+              <div>Features</div>
+            </div>
+          </div>
+        </div>
+      </dx-popup>
+    </div>
 </div>
