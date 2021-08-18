@@ -1,0 +1,16 @@
+<h2 class="content-block">工程主要简介</h2>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <div class="form">
+        <dx-tree-view
+          id="treeview"
+          [items]="infos"
+          [width]="300"
+          (onItemClick)="selectItem($event)">
+        </dx-tree-view>
+        <div id="details">
+
+        </div>
+      </div>
+    </div>
+</div>

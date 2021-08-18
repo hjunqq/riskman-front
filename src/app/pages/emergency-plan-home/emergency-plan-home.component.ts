@@ -59,6 +59,12 @@ export class EmergencyPlanHomeComponent implements OnInit {
     },{
       id: "2",
       name: "监测与预警"
+    },{
+      id: "3",
+      name: "应急管理"
+    },{
+      id: "4",
+      name: "突发事件"
     }]
     return items
   }

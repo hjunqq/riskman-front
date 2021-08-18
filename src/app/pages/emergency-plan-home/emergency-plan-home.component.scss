@@ -10,3 +10,13 @@
   height: 205px;
   margin: 10px 10px 10px 0;
 }
+
+::ng-deep .transparent-menu {
+  position: absolute;
+  background-color: rgba(255,255,255,0.2);
+  z-index: 10;
+  transition: top 0.5s ease-in-out;
+}
+::ng-deep .transparent-menu:hover {
+  background-color: rgba(255,255,255,0.5);
+}

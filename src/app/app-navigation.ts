@@ -22,5 +22,25 @@ export const navigation = [
     text: '应急预案首页',
     path: '/pages/emergency-plan-home',
     icon: 'home'
+  },
+  {
+    text: '基本信息',
+    path: '/pages/basic-info-page',
+    icon: 'info'
+  },
+  {
+    text: '应急管理页',
+    path: '/pages/emergency-management-page',
+    icon: 'warning'
+  },
+  {
+    text: '监测和预警',
+    path: '/pages/monitoring-and-warning',
+    icon: 'monitor'
+  },
+  {
+    text: '突发事件分析',
+    path: '/pages/critical-incident-analysis',
+    icon: 'folder'
   }
 ];
