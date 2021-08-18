@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {MapInfoService, Marker} from "../../shared/services/map-info.service";
+import {Marker} from "../../shared/services/map-info.service";
 
 
 export class Project{
   // @ts-ignore
   Name:string;
+}
+export class MenuItem{
+  // @ts-ignore
+  id: string;
+  // @ts-ignore
+  name: string;
 }
 
 @Component({
@@ -15,11 +21,14 @@ export class Project{
 export class EmergencyPlanHomeComponent implements OnInit {
   markers: any;
   withTemplateVisible: any;
-  currentProject: any;
+  currentProject: Project;
   popupVisible: any;
+  menuItems: any;
 
-  constructor(customMapService: MapInfoService) {
+  constructor() {
     this.markers = this.getMarkers();
+
+    this.menuItems = this.getMenuItems();
 
     this.withTemplateVisible = true;
 
@@ -43,6 +52,18 @@ export class EmergencyPlanHomeComponent implements OnInit {
     return markers;
   }
 
+  getMenuItems(){
+    let items: MenuItem[] = [{
+      id: "1",
+      name: "基本信息"
+    },{
+      id: "2",
+      name: "监测与预警"
+    }]
+    return items
+  }
+
+
   markerOnClick(id: number) {
     this.popupVisible = true;
     console.log("Clicked"+ id);
@@ -57,5 +78,10 @@ export class EmergencyPlanHomeComponent implements OnInit {
     const addedMarker = $event.options;
     console.log(addedMarker)
     console.log("mark added!"+ $event.location)
+  }
+
+  itemClick($event: any) {
+    let item = $event.itemData;
+    console.log(item)
   }
 }

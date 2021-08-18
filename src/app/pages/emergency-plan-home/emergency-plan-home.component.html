@@ -1,12 +1,21 @@
 <h2 class="content-block">应急预案首页</h2>
 <div class="content-block">
     <div class="dx-card responsive-paddings">
-
+      <div>
+        <dx-menu
+          #menu
+          orientation="horizontal"
+          [dataSource]="menuItems"
+          displayExpr="name"
+          (onItemClick)="itemClick($event)"
+        >
+        </dx-menu>
+      </div>
       <dx-map
         #map
         center="Nanjing,China"
         [zoom]="14"
-        [height]="400"
+        [height]="800"
         width="100%"
         provider="bing"
         [controls]="true"
@@ -28,7 +37,8 @@
         <div *dxTemplate="let data of 'content'">
           <div class='popup-property-details'>
             <div class='popup-property-details'>
-              <div>Features</div>
+              <div>基本工程特性表</div>
+              <div>库容曲线和泄流能力</div>
             </div>
           </div>
         </div>

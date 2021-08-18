@@ -7,9 +7,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import {
   DxButtonModule,
-  DxDataGridModule,
+  DxDataGridModule, DxDrawerModule,
   DxFormModule,
-  DxMapModule,
+  DxMapModule, DxMenuModule,
   DxPieChartModule,
   DxPopupModule,
   DxTooltipModule
@@ -64,7 +64,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule],
+  imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
   declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent]
