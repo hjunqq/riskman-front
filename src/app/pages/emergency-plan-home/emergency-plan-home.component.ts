@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {Marker} from "../../shared/services/map-info.service";
 
 
@@ -11,6 +12,8 @@ export class MenuItem{
   id: string;
   // @ts-ignore
   name: string;
+  // @ts-ignore
+  path: string;
 }
 
 @Component({
@@ -25,7 +28,8 @@ export class EmergencyPlanHomeComponent implements OnInit {
   popupVisible: any;
   menuItems: any;
 
-  constructor() {
+
+  constructor(private router:Router) {
     this.markers = this.getMarkers();
 
     this.menuItems = this.getMenuItems();
@@ -55,16 +59,20 @@ export class EmergencyPlanHomeComponent implements OnInit {
   getMenuItems(){
     let items: MenuItem[] = [{
       id: "1",
-      name: "基本信息"
+      name: "基本信息",
+      path: "/pages/basic-info-page"
     },{
       id: "2",
-      name: "监测与预警"
+      name: "监测与预警",
+      path: "/pages/monitoring-and-warning"
     },{
       id: "3",
-      name: "应急管理"
+      name: "应急管理",
+      path: "/pages/emergency-management-page"
     },{
       id: "4",
-      name: "突发事件"
+      name: "突发事件",
+      path: "/pages/critical-incident-analysis"
     }]
     return items
   }
@@ -87,7 +95,8 @@ export class EmergencyPlanHomeComponent implements OnInit {
   }
 
   itemClick($event: any) {
-    let item = $event.itemData;
+    let item :MenuItem = $event.itemData;
+    this.router.navigate([item.path])
     console.log(item)
   }
 }

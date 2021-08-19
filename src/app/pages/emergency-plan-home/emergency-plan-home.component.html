@@ -11,6 +11,10 @@
         >
         </dx-menu>
       </div>
+      <div class="transparent-popup">
+        <div>基本工程特性表</div>
+        <div>库容曲线和泄流能力</div>
+      </div>
       <dx-map
         #map
         center="Nanjing,China"
@@ -23,6 +27,7 @@
         (onMarkerAdded)="markerAdded($event)"
       >
       </dx-map>
+
       <dx-popup
         [width]="660"
         [height]="540"
@@ -31,8 +36,6 @@
         [dragEnabled]="false"
         [closeOnOutsideClick]="true"
         [(visible)]="popupVisible"
-        [shading]="true"
-        shadingColor="rgba(0,0,0,0.2)"
       >
         <div *dxTemplate="let data of 'content'">
           <div class='popup-property-details'>

@@ -12,5 +12,15 @@
 
         </div>
       </div>
+      <dx-data-grid >
+        <dxi-column
+          dataField="OrderDate"
+          [format]="{ skeleton: 'yMMMd' }">
+        </dxi-column>
+        <dxi-column
+          dataField="SaleAmount"
+          [format]="{ currency: 'EUR', maximumFractionDigits: 2 }">
+        </dxi-column>
+      </dx-data-grid>
     </div>
 </div>

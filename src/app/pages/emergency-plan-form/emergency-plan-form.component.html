@@ -1,0 +1,285 @@
+<h2 class="content-block">应急预案工程基本信息输入</h2>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <dx-form id="form">
+<!--        1.自然概况-->
+        <dxi-item itemType="group" caption="1、自然概况" colCount="4">
+          <dxi-item dataField="Nature" helpText="包括所在流域、水库大坝地理位置、上下游城区距离、气候特征、流域水文情况、上下游水文站、上下游重要水工建筑物"
+                    [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false" ></dxo-label>
+          </dxi-item>
+        </dxi-item>
+<!--        2. 经济概况-->
+        <dxi-item itemType="group" colCount="4" caption="2、经济概况">
+          <dxi-item dataField="Notes" helpText="下游防洪标准、城区村庄人口情况、下游重要公路、铁路、企事业单位、农田耕地等。"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false" ></dxo-label>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="上传图片"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+        </dxi-item>
+<!--        3.工程概况-->
+        <dxi-item itemType="group" colCount="4" caption="3、工程概况">
+          <dxi-item dataField="Notes" [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false" ></dxo-label>
+          </dxi-item>
+        </dxi-item>
+        <!--        3.1、工程布置-->
+        <dxi-item itemType="group" colCount="4" caption="3.1、工程布置">
+          <dxi-item dataField="Notes" [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false" ></dxo-label>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="上传图片"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+        </dxi-item>
+        <!--        3.2、主要建筑物-->
+        <dxi-item itemType="group" colCount="4" caption="3.2、主要建筑物">
+          <dxi-item dataField="Notes" helpText="大坝、输水建筑物、泄水建筑物等"
+                    [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false" ></dxo-label>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="上传图片（CAD平面布置图）"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="上传图片（CAD大坝纵剖面图）"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="上传图片（典型建筑物CAD图）"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="上传工程特性表"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+        </dxi-item>
+        <!--        3.3、运行管理-->
+        <dxi-item itemType="group" colCount="4" caption="3.3、运行管理">
+          <dxi-item dataField="Notes" helpText="主管部门、管理机构和管护人员"
+                    [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false" ></dxo-label>
+          </dxi-item>
+        </dxi-item>
+        <!--        3.4、水雨情和工情监测情况-->
+        <dxi-item itemType="group" colCount="4" caption="3.4、水雨情和工情监测情况">
+          <dxi-item dataField="Notes" [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false" ></dxo-label>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="上传监测仪器信息表"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+        </dxi-item>
+        <!--        3.5、工程地质与地震-->
+        <dxi-item itemType="group" colCount="4" caption="3.5、工程地质与地震">
+          <dxi-item dataField="Notes" helpText="简述工程主要地层特征及其地震基本烈度等"
+                    [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false" ></dxo-label>
+          </dxi-item>
+        </dxi-item>
+        <!--        3.6、水库调度方案-->
+        <dxi-item itemType="group" colCount="4" caption="3.6、水库调度方案">
+          <dxi-item dataField="Notes" helpText="简述工程防洪调度任务、防洪调度原则、泄水设施、调度方案"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false" ></dxo-label>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="上传库容曲线数据表、泄流能力表"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+        </dxi-item>
+        <!--        3.7、工程建设及加固情况-->
+        <dxi-item itemType="group" colCount="4" caption="3.7、工程建设及加固情况">
+          <dxi-item dataField="Notes" helpText="大坝除险加固的情况、大坝安全鉴定的情况"
+                    [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false" ></dxo-label>
+          </dxi-item>
+        </dxi-item>
+        <!--        3.8、发生过的大洪水、地震、地质灾害情况-->
+        <dxi-item itemType="group" colCount="4" caption="3.8、发生过的大洪水、地震、地质灾害情况">
+          <dxi-item dataField="Notes" helpText="水库运行历史上遭遇的突发事件、应急处置和后果情况等"
+                    [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false" ></dxo-label>
+          </dxi-item>
+        </dxi-item>
+        <!--       4、三个防汛责任人情况-->
+        <dxi-item itemType="group" colCount="4" caption="4、三个防汛责任人情况">
+          <dx-data-grid
+            #grid
+            >
+            <dxo-paging [enabled]="false"></dxo-paging>
+            <dxo-editing
+              mode="row"
+              [allowAdding]="true"
+              [allowUpdating]="true"
+              [allowDeleting]="true"
+              ></dxo-editing>
+            <dxi-column caption="防汛责任人"></dxi-column>
+            <dxi-column caption="单位"></dxi-column>
+            <dxi-column caption="职务"></dxi-column>
+            <dxi-column caption="姓名"></dxi-column>
+            <dxi-column caption="联系方式"></dxi-column>
+          </dx-data-grid>
+        </dxi-item>
+        <!--       5、水情监测信息表-->
+        <dxi-item itemType="group" colCount="4" caption="5、水情监测信息表">
+          <dx-data-grid
+            #grid
+          >
+            <dxo-paging [enabled]="false"></dxo-paging>
+            <dxo-editing
+              mode="row"
+              [allowAdding]="true"
+              [allowUpdating]="true"
+              [allowDeleting]="true"
+            ></dxo-editing>
+            <dxi-column caption="监测与巡查对象"></dxi-column>
+            <dxi-column caption="内容"></dxi-column>
+            <dxi-column caption="频次"></dxi-column>
+            <dxi-column caption="责任人"></dxi-column>
+            <dxi-column caption="联系方式"></dxi-column>
+          </dx-data-grid>
+        </dxi-item>
+        <!--       6、工情监测信息表-->
+        <dxi-item itemType="group" colCount="4" caption="6、工情监测信息表">
+          <dx-data-grid
+            #grid
+          >
+            <dxo-paging [enabled]="false"></dxo-paging>
+            <dxo-editing
+              mode="row"
+              [allowAdding]="true"
+              [allowUpdating]="true"
+              [allowDeleting]="true"
+            ></dxo-editing>
+            <dxi-column caption="监测与巡查对象"></dxi-column>
+            <dxi-column caption="内容"></dxi-column>
+            <dxi-column caption="方式"></dxi-column>
+            <dxi-column caption="频次"></dxi-column>
+            <dxi-column caption="责任人"></dxi-column>
+            <dxi-column caption="联系方式"></dxi-column>
+          </dx-data-grid>
+        </dxi-item>
+        <!--        7、水库工作制度-->
+        <dxi-item itemType="group" colCount="4" caption="7、水库工作制度">
+          <dxi-item dataField="Notes" helpText=""
+                    [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false" ></dxo-label>
+          </dxi-item>
+        </dxi-item>
+        <!--        8、附件上传-->
+        <dxi-item itemType="group" colCount="5" caption="7、水库工作制度">
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="大坝安全鉴定报告"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="大坝竣工验收报告"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="洪水复核报告"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="水库防汛度汛报告"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="运行管理报告"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="下游乡镇相关文件"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="当地政府防汛应急预案"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="其他相关附件"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+          <dxi-item>
+            <dx-file-uploader
+              selectButtonText="CAD图纸（多个）"
+              labelText=""
+              accept="image/*"
+              uploadMode="useForm">
+            </dx-file-uploader>
+          </dxi-item>
+        </dxi-item>
+      </dx-form>
+    </div>
+</div>

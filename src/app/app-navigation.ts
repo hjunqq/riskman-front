@@ -36,11 +36,16 @@ export const navigation = [
   {
     text: '监测和预警',
     path: '/pages/monitoring-and-warning',
-    icon: 'monitor'
+    icon: 'airplane'
   },
   {
     text: '突发事件分析',
     path: '/pages/critical-incident-analysis',
-    icon: 'folder'
+    icon: 'runner'
+  },
+  {
+    text: '应急预案信息填报表',
+    path: '/pages/emergency-plan-form',
+    icon: 'tableproperties'
   }
 ];

@@ -6,21 +6,28 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import {
-    DxButtonModule,
-    DxDataGridModule, DxDrawerModule,
-    DxFormModule,
-    DxMapModule, DxMenuModule,
-    DxPieChartModule,
-    DxPopupModule,
-    DxTooltipModule, DxTreeViewModule
+  DxAccordionModule,
+  DxButtonModule,
+  DxDataGridModule, DxDrawerModule, DxFileUploaderModule,
+  DxFormModule,
+  DxMapModule, DxMenuModule,
+  DxPieChartModule,
+  DxPopupModule, DxTextAreaModule,
+  DxTooltipModule, DxTreeViewModule
 } from 'devextreme-angular';
 import { EmergencyPlanHomeComponent } from './pages/emergency-plan-home/emergency-plan-home.component';
 import { BasicInfoPageComponent } from './pages/basic-info-page/basic-info-page.component';
 import { EmergencyManagementPageComponent } from './pages/emergency-management-page/emergency-management-page.component';
 import { MonitoringAndWarningComponent } from './pages/monitoring-and-warning/monitoring-and-warning.component';
 import { CriticalIncidentAnalysisComponent } from './pages/critical-incident-analysis/critical-incident-analysis.component';
+import { EmergencyPlanFormComponent } from './pages/emergency-plan-form/emergency-plan-form.component';
 
 const routes: Routes = [
+  {
+    path: 'pages/emergency-plan-form',
+    component: EmergencyPlanFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
   {
     path: 'pages/critical-incident-analysis',
     component: CriticalIncidentAnalysisComponent,
@@ -88,9 +95,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule, DxTreeViewModule],
+  imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule, DxTreeViewModule, DxTextAreaModule, DxFileUploaderModule, DxAccordionModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent, BasicInfoPageComponent, EmergencyManagementPageComponent, MonitoringAndWarningComponent, CriticalIncidentAnalysisComponent]
+  declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent, BasicInfoPageComponent, EmergencyManagementPageComponent, MonitoringAndWarningComponent, CriticalIncidentAnalysisComponent, EmergencyPlanFormComponent]
 })
 export class AppRoutingModule { }
