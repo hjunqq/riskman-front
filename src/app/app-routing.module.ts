@@ -12,7 +12,7 @@ import {
   DxFormModule,
   DxMapModule, DxMenuModule,
   DxPieChartModule,
-  DxPopupModule, DxTextAreaModule,
+  DxPopupModule, DxProgressBarModule, DxTextAreaModule,
   DxTooltipModule, DxTreeViewModule
 } from 'devextreme-angular';
 import { EmergencyPlanHomeComponent } from './pages/emergency-plan-home/emergency-plan-home.component';
@@ -21,6 +21,7 @@ import { EmergencyManagementPageComponent } from './pages/emergency-management-p
 import { MonitoringAndWarningComponent } from './pages/monitoring-and-warning/monitoring-and-warning.component';
 import { CriticalIncidentAnalysisComponent } from './pages/critical-incident-analysis/critical-incident-analysis.component';
 import { EmergencyPlanFormComponent } from './pages/emergency-plan-form/emergency-plan-form.component';
+import {CommonModule} from "@angular/common";
 
 const routes: Routes = [
   {
@@ -95,7 +96,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule, DxTreeViewModule, DxTextAreaModule, DxFileUploaderModule, DxAccordionModule],
+  imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule, DxTreeViewModule, DxTextAreaModule, DxFileUploaderModule, DxAccordionModule, CommonModule, DxProgressBarModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
   declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent, BasicInfoPageComponent, EmergencyManagementPageComponent, MonitoringAndWarningComponent, CriticalIncidentAnalysisComponent, EmergencyPlanFormComponent]

@@ -1,7 +1,7 @@
 <h2 class="content-block">应急预案工程基本信息输入</h2>
 <div class="content-block">
     <div class="dx-card responsive-paddings">
-      <dx-form id="form">
+      <dx-form >
 <!--        1.自然概况-->
         <dxi-item itemType="group" caption="1、自然概况" colCount="4">
           <dxi-item dataField="Nature" helpText="包括所在流域、水库大坝地理位置、上下游城区距离、气候特征、流域水文情况、上下游水文站、上下游重要水工建筑物"
@@ -15,13 +15,41 @@
                     [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false" ></dxo-label>
           </dxi-item>
-          <dxi-item>
+          <dxi-item class="widget-container flex-box ">
+            <div
+              class="flex-box"
+              [ngClass]="isDropZoneActive ? ['dx-theme-accent-as-border-color', 'dropzone-active'] : ['dx-theme-border-color']"
+            >
+              <img
+                id="dropzone-image"
+                [src]="imageSource"
+                *ngIf="imageSource"
+                alt=""
+              />
+              <div class="flex-box">
+                <span>{{filename}}</span>
+              </div>
+              <dx-progress-bar
+                #uploadProgress
+                [min]="0"
+                [max]="100"
+                width="30%"
+                [showStatus]="false"
+                [visible]="progressVisible"
+                [value]="progressValue"
+              ></dx-progress-bar>
+            </div>
             <dx-file-uploader
-              selectButtonText="上传图片"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+              #fileUploader
+              [multiple]="false"
+              [allowedFileExtensions]="['.jpg', '.jpeg', '.gif', '.png']"
+              uploadMode="instantly"
+              [uploadFile]="customUploadFile"
+              [visible]="true"
+              (onUploaded)="onUploaded($event)"
+              (onProgress)="onProgress($event)"
+              (onUploadStarted)="onUploadStarted()"
+            ></dx-file-uploader>
           </dxi-item>
         </dxi-item>
 <!--        3.工程概况-->
@@ -35,13 +63,46 @@
           <dxi-item dataField="Notes" [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false" ></dxo-label>
           </dxi-item>
-          <dxi-item>
+          <dxi-item class="widget-container flex-box ">
+            <div
+              class="flex-box"
+              [ngClass]="isDropZoneActive ? ['dx-theme-accent-as-border-color', 'dropzone-active'] : ['dx-theme-border-color']"
+            >
+              <img
+                [src]="imageSource"
+                *ngIf="imageSource"
+                alt=""
+              />
+              <div
+                class="flex-box"
+                *ngIf="textVisible"
+              >
+                <span>Drag & Drop the desired file</span>
+              </div>
+              <div class="flex-box">
+                <span>{{filename}}</span>
+              </div>
+              <dx-progress-bar
+                #uploadProgress
+                [min]="0"
+                [max]="100"
+                width="30%"
+                [showStatus]="false"
+                [visible]="progressVisible"
+                [value]="progressValue"
+              ></dx-progress-bar>
+            </div>
             <dx-file-uploader
-              selectButtonText="上传图片"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+              #fileUploader
+              [multiple]="false"
+              [allowedFileExtensions]="['.jpg', '.jpeg', '.gif', '.png']"
+              uploadMode="instantly"
+              [uploadFile]="customUploadFile"
+              [visible]="true"
+              (onUploaded)="onUploaded($event)"
+              (onProgress)="onProgress($event)"
+              (onUploadStarted)="onUploadStarted()"
+            ></dx-file-uploader>
           </dxi-item>
         </dxi-item>
         <!--        3.2、主要建筑物-->
