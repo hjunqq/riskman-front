@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
+import {CustomResponse} from "../../shared/models/custom-response";
+import {EmergencyPlan} from "../../shared/models/emergency-plan";
 
 @Component({
   selector: 'app-emergency-plan-form',
@@ -20,20 +22,27 @@ export class EmergencyPlanFormComponent implements OnInit {
   customUploadFile = async (file: any) => {
     const formData = new FormData();
     formData.append("file", file);
-    let data:any = await this.http.post("http://localhost:4200/api/files/upload", formData).toPromise();
-    this.filename = data["message"];
+    let data: CustomResponse = <CustomResponse>await this.http.post("http://localhost:4200/api/files/upload", formData).toPromise();
+    this.imageSource = "http://localhost:8080" + data.message;
     console.log(data);
   };
-  filename: any;
+  value: any[] = [];
+  emergencyPlan = new EmergencyPlan();
+  buttonOptions: any = {
+    text: "提交",
+    type: "success",
+    useSubmitBehavior: true
+  }
 
 
   constructor(private http: HttpClient) {
-    this.onUploaded = this.onUploaded.bind(this);
-    this.onProgress = this.onProgress.bind(this);
-    this.onUploadStarted = this.onUploadStarted.bind(this);
+    this.emergencyPlan = EmergencyPlanFormComponent.getEmergencyPlan();
+    this.imageSource = "http://localhost:8080/api/files/bf569443-85ec-4683-b17c-9c93991988a9.jpg";
+
   }
 
-  onUploaded(e:any) {
+  onUploaded(e: any, data:any) {
+    data.component.option('formData')[data.dataField] = this.imageSource;
     const file = e.file;
     const fileReader = new FileReader();
     fileReader.onload = () => {
@@ -46,14 +55,47 @@ export class EmergencyPlanFormComponent implements OnInit {
     this.progressValue = 0;
   }
 
-  onProgress(e:any) {
+  onProgress(e: any) {
     this.progressValue = e.bytesLoaded / e.bytesTotal * 100;
   }
 
-  onUploadStarted() {
-    this.imageSource = "";
-    this.progressVisible = true;
-  }
+
   ngOnInit() {
+  }
+
+
+  private static getEmergencyPlan() {
+    let record:EmergencyPlan = {
+      Attachment: [],
+      ConstructionReinforcement: "",
+      DischargeCapcityTable: "",
+      FloodResponsiblePersons: [],
+      GeologyEarthquake: "",
+      MainBuildings: "",
+      MainBuildingsCharacteristicTable: "",
+      MainBuildingsLongitudinalSection: "",
+      MainBuildingsPlanLayout: "",
+      MainBuildingsTypicalBuildingSection: "",
+      MonitoringInstrumentInfoTable: "",
+      OccurrenceDisasters: "",
+      OperationManagement: "",
+      ReservoirCapacityTable: "",
+      SchedulingPlan: "",
+      WaterInformationInfo: [],
+      WaterRainWorkMonitoring: "",
+      WorkInformationInfo: [],
+      WorkScheme: "",
+      NatureOverview: "简单介绍自然概况",
+      EconomicOverview: "简单介绍经济概况",
+      EconomicOverviewPicture:"http://localhost:8080/api/files/bf569443-85ec-4683-b17c-9c93991988a9.jpg",
+      ProjectLayout:"简述工程布置",
+      ProjectLayoutPicture:"http://localhost:8080/api/files/bf569443-85ec-4683-b17c-9c93991988a9.jpg"
+    }
+    return record;
+  }
+
+  async onFormSubmit($event: Event) {
+    $event.preventDefault();
+    console.log(this.emergencyPlan);
   }
 }

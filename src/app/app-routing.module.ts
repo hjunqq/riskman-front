@@ -6,14 +6,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import {
-  DxAccordionModule,
-  DxButtonModule,
-  DxDataGridModule, DxDrawerModule, DxFileUploaderModule,
-  DxFormModule,
-  DxMapModule, DxMenuModule,
-  DxPieChartModule,
-  DxPopupModule, DxProgressBarModule, DxTextAreaModule,
-  DxTooltipModule, DxTreeViewModule
+    DxAccordionModule,
+    DxButtonModule,
+    DxDataGridModule, DxDrawerModule, DxFileUploaderModule,
+    DxFormModule,
+    DxMapModule, DxMenuModule,
+    DxPieChartModule,
+    DxPopupModule, DxProgressBarModule, DxTextAreaModule, DxTextBoxModule,
+    DxTooltipModule, DxTreeViewModule
 } from 'devextreme-angular';
 import { EmergencyPlanHomeComponent } from './pages/emergency-plan-home/emergency-plan-home.component';
 import { BasicInfoPageComponent } from './pages/basic-info-page/basic-info-page.component';
@@ -96,7 +96,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule, DxTreeViewModule, DxTextAreaModule, DxFileUploaderModule, DxAccordionModule, CommonModule, DxProgressBarModule],
+    imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule, DxTreeViewModule, DxTextAreaModule, DxFileUploaderModule, DxAccordionModule, CommonModule, DxProgressBarModule, DxTextBoxModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
   declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent, BasicInfoPageComponent, EmergencyManagementPageComponent, MonitoringAndWarningComponent, CriticalIncidentAnalysisComponent, EmergencyPlanFormComponent]

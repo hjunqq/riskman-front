@@ -1,218 +1,121 @@
 <h2 class="content-block">应急预案工程基本信息输入</h2>
 <div class="content-block">
-    <div class="dx-card responsive-paddings">
-      <dx-form >
-<!--        1.自然概况-->
+  <div class="dx-card responsive-paddings">
+    <form action="/" (submit)="onFormSubmit($event)">
+      <dx-form [formData]="emergencyPlan">
+        <!--        1.自然概况-->
         <dxi-item itemType="group" caption="1、自然概况" colCount="4">
-          <dxi-item dataField="Nature" helpText="包括所在流域、水库大坝地理位置、上下游城区距离、气候特征、流域水文情况、上下游水文站、上下游重要水工建筑物"
+          <dxi-item dataField="NatureOverview" helpText="包括所在流域、水库大坝地理位置、上下游城区距离、气候特征、流域水文情况、上下游水文站、上下游重要水工建筑物"
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false" ></dxo-label>
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
-<!--        2. 经济概况-->
+        <!--        2. 经济概况-->
         <dxi-item itemType="group" colCount="4" caption="2、经济概况">
-          <dxi-item dataField="Notes" helpText="下游防洪标准、城区村庄人口情况、下游重要公路、铁路、企事业单位、农田耕地等。"
+          <dxi-item dataField="EconomicOverview" helpText="下游防洪标准、城区村庄人口情况、下游重要公路、铁路、企事业单位、农田耕地等。"
                     [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false" ></dxo-label>
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
-          <dxi-item class="widget-container flex-box ">
-            <div
-              class="flex-box"
-              [ngClass]="isDropZoneActive ? ['dx-theme-accent-as-border-color', 'dropzone-active'] : ['dx-theme-border-color']"
-            >
-              <img
-                id="dropzone-image"
-                [src]="imageSource"
-                *ngIf="imageSource"
-                alt=""
-              />
-              <div class="flex-box">
-                <span>{{filename}}</span>
-              </div>
-              <dx-progress-bar
-                #uploadProgress
-                [min]="0"
-                [max]="100"
-                width="30%"
-                [showStatus]="false"
-                [visible]="progressVisible"
-                [value]="progressValue"
-              ></dx-progress-bar>
-            </div>
-            <dx-file-uploader
-              #fileUploader
-              [multiple]="false"
-              [allowedFileExtensions]="['.jpg', '.jpeg', '.gif', '.png']"
-              uploadMode="instantly"
-              [uploadFile]="customUploadFile"
-              [visible]="true"
-              (onUploaded)="onUploaded($event)"
-              (onProgress)="onProgress($event)"
-              (onUploadStarted)="onUploadStarted()"
-            ></dx-file-uploader>
+          <dxi-item template="pictureTemplate" dataField="EconomicOverviewPicture">
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
-<!--        3.工程概况-->
+        <!--        3.工程概况-->
         <dxi-item itemType="group" colCount="4" caption="3、工程概况">
           <dxi-item dataField="Notes" [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false" ></dxo-label>
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.1、工程布置-->
         <dxi-item itemType="group" colCount="4" caption="3.1、工程布置">
-          <dxi-item dataField="Notes" [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false" ></dxo-label>
+          <dxi-item dataField="ProjectLayout" [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
-          <dxi-item class="widget-container flex-box ">
-            <div
-              class="flex-box"
-              [ngClass]="isDropZoneActive ? ['dx-theme-accent-as-border-color', 'dropzone-active'] : ['dx-theme-border-color']"
-            >
-              <img
-                [src]="imageSource"
-                *ngIf="imageSource"
-                alt=""
-              />
-              <div
-                class="flex-box"
-                *ngIf="textVisible"
-              >
-                <span>Drag & Drop the desired file</span>
-              </div>
-              <div class="flex-box">
-                <span>{{filename}}</span>
-              </div>
-              <dx-progress-bar
-                #uploadProgress
-                [min]="0"
-                [max]="100"
-                width="30%"
-                [showStatus]="false"
-                [visible]="progressVisible"
-                [value]="progressValue"
-              ></dx-progress-bar>
-            </div>
-            <dx-file-uploader
-              #fileUploader
-              [multiple]="false"
-              [allowedFileExtensions]="['.jpg', '.jpeg', '.gif', '.png']"
-              uploadMode="instantly"
-              [uploadFile]="customUploadFile"
-              [visible]="true"
-              (onUploaded)="onUploaded($event)"
-              (onProgress)="onProgress($event)"
-              (onUploadStarted)="onUploadStarted()"
-            ></dx-file-uploader>
+          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.2、主要建筑物-->
         <dxi-item itemType="group" colCount="4" caption="3.2、主要建筑物">
           <dxi-item dataField="Notes" helpText="大坝、输水建筑物、泄水建筑物等"
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false" ></dxo-label>
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="上传图片（CAD平面布置图）"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="CAD平面布置图"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="上传图片（CAD大坝纵剖面图）"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="CAD大坝纵剖面图"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="上传图片（典型建筑物CAD图）"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="典型建筑物CAD图"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="上传工程特性表"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="上传工程特性表"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.3、运行管理-->
         <dxi-item itemType="group" colCount="4" caption="3.3、运行管理">
           <dxi-item dataField="Notes" helpText="主管部门、管理机构和管护人员"
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false" ></dxo-label>
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.4、水雨情和工情监测情况-->
         <dxi-item itemType="group" colCount="4" caption="3.4、水雨情和工情监测情况">
           <dxi-item dataField="Notes" [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false" ></dxo-label>
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="上传监测仪器信息表"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="上传监测仪器信息表"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.5、工程地质与地震-->
         <dxi-item itemType="group" colCount="4" caption="3.5、工程地质与地震">
           <dxi-item dataField="Notes" helpText="简述工程主要地层特征及其地震基本烈度等"
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false" ></dxo-label>
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.6、水库调度方案-->
         <dxi-item itemType="group" colCount="4" caption="3.6、水库调度方案">
           <dxi-item dataField="Notes" helpText="简述工程防洪调度任务、防洪调度原则、泄水设施、调度方案"
-                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false" ></dxo-label>
+                    [colSpan]="2" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="上传库容曲线数据表、泄流能力表"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="库容曲线数据表"></dxo-label>
+          </dxi-item>
+          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="泄流能力表"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.7、工程建设及加固情况-->
         <dxi-item itemType="group" colCount="4" caption="3.7、工程建设及加固情况">
           <dxi-item dataField="Notes" helpText="大坝除险加固的情况、大坝安全鉴定的情况"
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false" ></dxo-label>
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.8、发生过的大洪水、地震、地质灾害情况-->
         <dxi-item itemType="group" colCount="4" caption="3.8、发生过的大洪水、地震、地质灾害情况">
           <dxi-item dataField="Notes" helpText="水库运行历史上遭遇的突发事件、应急处置和后果情况等"
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false" ></dxo-label>
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--       4、三个防汛责任人情况-->
         <dxi-item itemType="group" colCount="4" caption="4、三个防汛责任人情况">
           <dx-data-grid
             #grid
-            >
+          >
             <dxo-paging [enabled]="false"></dxo-paging>
             <dxo-editing
               mode="row"
               [allowAdding]="true"
               [allowUpdating]="true"
               [allowDeleting]="true"
-              ></dxo-editing>
+            ></dxo-editing>
             <dxi-column caption="防汛责任人"></dxi-column>
             <dxi-column caption="单位"></dxi-column>
             <dxi-column caption="职务"></dxi-column>
@@ -263,84 +166,93 @@
         <dxi-item itemType="group" colCount="4" caption="7、水库工作制度">
           <dxi-item dataField="Notes" helpText=""
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false" ></dxo-label>
+            <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        8、附件上传-->
         <dxi-item itemType="group" colCount="5" caption="7、水库工作制度">
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="大坝安全鉴定报告"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="大坝安全鉴定报告"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="大坝竣工验收报告"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="大坝竣工验收报告"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="洪水复核报告"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="洪水复核报告"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="水库防汛度汛报告"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="水库防汛度汛报告"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="运行管理报告"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="运行管理报告"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="下游乡镇相关文件"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="下游乡镇相关文件"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="当地政府防汛应急预案"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="当地政府防汛应急预案"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="其他相关附件"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="其他相关附件"></dxo-label>
           </dxi-item>
-          <dxi-item>
-            <dx-file-uploader
-              selectButtonText="CAD图纸（多个）"
-              labelText=""
-              accept="image/*"
-              uploadMode="useForm">
-            </dx-file-uploader>
+          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+            <dxo-label text="CAD图纸"></dxo-label>
           </dxi-item>
         </dxi-item>
+
+        <dxi-item
+          itemType="button"
+          horizontalAlignment="left"
+          [buttonOptions]="buttonOptions">
+        </dxi-item>
+
+        <div *dxTemplate="let data of 'pictureTemplate'">
+          <dx-text-box [(value)]="data.component.option('formData')[data.dataField]" [visible]="false"></dx-text-box>
+          <div class="widget-container">
+            <img
+              [src]="data.component.option('formData')[data.dataField]"
+              alt=""/>
+          </div>
+          <dx-file-uploader
+            #fileUploader
+            [multiple]="false"
+            selectButtonText="选择图片"
+            [allowedFileExtensions]="['.jpg', '.jpeg', '.gif', '.png']"
+            uploadMode="instantly"
+            [uploadFile]="customUploadFile"
+            [visible]="true"
+            (onUploaded)="onUploaded($event,data)"
+            (onProgress)="onProgress($event)"
+          ></dx-file-uploader>
+        </div>
+        <div *dxTemplate="let data of 'xlsxTemplate'">
+          <dx-text-box [(value)]="data.component.option('formData')[data.dataField]" [visible]="false"></dx-text-box>
+          <dx-file-uploader
+            #fileUploader
+            [multiple]="false"
+            selectButtonText="选择表格"
+            [allowedFileExtensions]="['.xls', '.xlsx']"
+            uploadMode="instantly"
+            [uploadFile]="customUploadFile"
+            [visible]="true"
+            (onUploaded)="onUploaded($event,data)"
+            (onProgress)="onProgress($event)"
+          ></dx-file-uploader>
+        </div>
+        <div *dxTemplate="let data of 'fileTemplate'">
+          <dx-text-box [(value)]="data.component.option('formData')[data.dataField]" [visible]="true"></dx-text-box>
+          <dx-file-uploader
+            #fileUploader
+            [multiple]="false"
+            selectButtonText="选择文件"
+            uploadMode="instantly"
+            [uploadFile]="customUploadFile"
+            [visible]="true"
+            (onUploaded)="onUploaded($event,data)"
+            (onProgress)="onProgress($event)"
+          ></dx-file-uploader>
+        </div>
       </dx-form>
-    </div>
+    </form>
+  </div>
 </div>
