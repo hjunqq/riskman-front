@@ -22,7 +22,7 @@
         </dxi-item>
         <!--        3.工程概况-->
         <dxi-item itemType="group" colCount="4" caption="3、工程概况">
-          <dxi-item dataField="Notes" [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+          <dxi-item dataField="ProjectOverview" [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
@@ -37,69 +37,69 @@
         </dxi-item>
         <!--        3.2、主要建筑物-->
         <dxi-item itemType="group" colCount="4" caption="3.2、主要建筑物">
-          <dxi-item dataField="Notes" helpText="大坝、输水建筑物、泄水建筑物等"
+          <dxi-item dataField="MainBuildings" helpText="大坝、输水建筑物、泄水建筑物等"
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
-          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="pictureTemplate" dataField="MainBuildingsPlanLayout">
             <dxo-label text="CAD平面布置图"></dxo-label>
           </dxi-item>
-          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="pictureTemplate" dataField="MainBuildingsLongitudinalSection">
             <dxo-label text="CAD大坝纵剖面图"></dxo-label>
           </dxi-item>
-          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="pictureTemplate" dataField="MainBuildingsTypicalBuildingSection">
             <dxo-label text="典型建筑物CAD图"></dxo-label>
           </dxi-item>
-          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="pictureTemplate" dataField="MainBuildingsCharacteristicTable">
             <dxo-label text="上传工程特性表"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.3、运行管理-->
         <dxi-item itemType="group" colCount="4" caption="3.3、运行管理">
-          <dxi-item dataField="Notes" helpText="主管部门、管理机构和管护人员"
+          <dxi-item dataField="OperationManagement" helpText="主管部门、管理机构和管护人员"
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.4、水雨情和工情监测情况-->
         <dxi-item itemType="group" colCount="4" caption="3.4、水雨情和工情监测情况">
-          <dxi-item dataField="Notes" [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+          <dxi-item dataField="WaterRainWorkMonitoring" [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
-          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="pictureTemplate" dataField="MonitoringInstrumentInfoTable">
             <dxo-label text="上传监测仪器信息表"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.5、工程地质与地震-->
         <dxi-item itemType="group" colCount="4" caption="3.5、工程地质与地震">
-          <dxi-item dataField="Notes" helpText="简述工程主要地层特征及其地震基本烈度等"
+          <dxi-item dataField="GeologyEarthquake" helpText="简述工程主要地层特征及其地震基本烈度等"
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.6、水库调度方案-->
         <dxi-item itemType="group" colCount="4" caption="3.6、水库调度方案">
-          <dxi-item dataField="Notes" helpText="简述工程防洪调度任务、防洪调度原则、泄水设施、调度方案"
+          <dxi-item dataField="SchedulingPlan" helpText="简述工程防洪调度任务、防洪调度原则、泄水设施、调度方案"
                     [colSpan]="2" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
-          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="pictureTemplate" dataField="ReservoirCapacityTable">
             <dxo-label text="库容曲线数据表"></dxo-label>
           </dxi-item>
-          <dxi-item template="pictureTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="pictureTemplate" dataField="DischargeCapcityTable">
             <dxo-label text="泄流能力表"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.7、工程建设及加固情况-->
         <dxi-item itemType="group" colCount="4" caption="3.7、工程建设及加固情况">
-          <dxi-item dataField="Notes" helpText="大坝除险加固的情况、大坝安全鉴定的情况"
+          <dxi-item dataField="ConstructionReinforcement" helpText="大坝除险加固的情况、大坝安全鉴定的情况"
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
         <!--        3.8、发生过的大洪水、地震、地质灾害情况-->
         <dxi-item itemType="group" colCount="4" caption="3.8、发生过的大洪水、地震、地质灾害情况">
-          <dxi-item dataField="Notes" helpText="水库运行历史上遭遇的突发事件、应急处置和后果情况等"
+          <dxi-item dataField="OccurrenceDisasters" helpText="水库运行历史上遭遇的突发事件、应急处置和后果情况等"
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
@@ -108,6 +108,7 @@
         <dxi-item itemType="group" colCount="4" caption="4、三个防汛责任人情况">
           <dx-data-grid
             #grid
+            dataSource="FloodResponsiblePersons"
           >
             <dxo-paging [enabled]="false"></dxo-paging>
             <dxo-editing
@@ -127,6 +128,7 @@
         <dxi-item itemType="group" colCount="4" caption="5、水情监测信息表">
           <dx-data-grid
             #grid
+            dataSource="WaterInformationInfo"
           >
             <dxo-paging [enabled]="false"></dxo-paging>
             <dxo-editing
@@ -146,6 +148,7 @@
         <dxi-item itemType="group" colCount="4" caption="6、工情监测信息表">
           <dx-data-grid
             #grid
+            dataSource="WorkInformationInfo"
           >
             <dxo-paging [enabled]="false"></dxo-paging>
             <dxo-editing
@@ -164,7 +167,7 @@
         </dxi-item>
         <!--        7、水库工作制度-->
         <dxi-item itemType="group" colCount="4" caption="7、水库工作制度">
-          <dxi-item dataField="Notes" helpText=""
+          <dxi-item dataField="WorkScheme" helpText=""
                     [colSpan]="4" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
           </dxi-item>

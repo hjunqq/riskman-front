@@ -66,6 +66,7 @@ export class EmergencyPlanFormComponent implements OnInit {
 
   private static getEmergencyPlan() {
     let record:EmergencyPlan = {
+      ProjectOverview: "",
       Attachment: [],
       ConstructionReinforcement: "",
       DischargeCapcityTable: "",

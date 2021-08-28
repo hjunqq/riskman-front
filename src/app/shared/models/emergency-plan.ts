@@ -6,6 +6,8 @@ export class EmergencyPlan {
   // @ts-ignore
   EconomicOverviewPicture: string;
   // @ts-ignore
+  ProjectOverview: string;
+  // @ts-ignore
   ProjectLayout: string;
   // @ts-ignore
   ProjectLayoutPicture: string;
