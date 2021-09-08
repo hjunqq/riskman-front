@@ -5,7 +5,7 @@ export class AppInfoService {
   constructor() {}
 
   public get title() {
-    return 'Webfront Ng';
+    return '兴安盟超标准洪水水库应急调度';
   }
 
   public get currentYear() {

@@ -1,23 +1,23 @@
 export const navigation = [
-  {
-    text: 'Home',
-    path: '/home',
-    icon: 'home'
-  },
-  {
-    text: 'Examples',
-    icon: 'folder',
-    items: [
-      {
-        text: 'Profile',
-        path: '/profile'
-      },
-      {
-        text: 'Tasks',
-        path: '/tasks'
-      }
-    ]
-  },
+  // {
+  //   text: 'Home',
+  //   path: '/home',
+  //   icon: 'home'
+  // },
+  // {
+  //   text: 'Examples',
+  //   icon: 'folder',
+  //   items: [
+  //     {
+  //       text: 'Profile',
+  //       path: '/profile'
+  //     },
+  //     {
+  //       text: 'Tasks',
+  //       path: '/tasks'
+  //     }
+  //   ]
+  // },
   {
     text: '应急预案首页',
     path: '/pages/emergency-plan-home',

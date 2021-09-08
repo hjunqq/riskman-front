@@ -86,7 +86,7 @@
           <dxi-item template="pictureTemplate" dataField="ReservoirCapacityTable">
             <dxo-label text="库容曲线数据表"></dxo-label>
           </dxi-item>
-          <dxi-item template="pictureTemplate" dataField="DischargeCapcityTable">
+          <dxi-item template="pictureTemplate" dataField="DischargeCapacityTable">
             <dxo-label text="泄流能力表"></dxo-label>
           </dxi-item>
         </dxi-item>
@@ -108,7 +108,7 @@
         <dxi-item itemType="group" colCount="4" caption="4、三个防汛责任人情况">
           <dx-data-grid
             #grid
-            dataSource="FloodResponsiblePersons"
+            [dataSource]="emergencyPlan.FloodResponsiblePersons"
           >
             <dxo-paging [enabled]="false"></dxo-paging>
             <dxo-editing
@@ -117,18 +117,18 @@
               [allowUpdating]="true"
               [allowDeleting]="true"
             ></dxo-editing>
-            <dxi-column caption="防汛责任人"></dxi-column>
-            <dxi-column caption="单位"></dxi-column>
-            <dxi-column caption="职务"></dxi-column>
-            <dxi-column caption="姓名"></dxi-column>
-            <dxi-column caption="联系方式"></dxi-column>
+            <dxi-column caption="防汛责任人" dataField="Person"></dxi-column>
+            <dxi-column caption="单位" dataField="WorkUnit"></dxi-column>
+            <dxi-column caption="职务" dataField="Position"></dxi-column>
+            <dxi-column caption="姓名" dataField="Name"></dxi-column>
+            <dxi-column caption="联系方式" dataField="Contact"></dxi-column>
           </dx-data-grid>
         </dxi-item>
         <!--       5、水情监测信息表-->
         <dxi-item itemType="group" colCount="4" caption="5、水情监测信息表">
           <dx-data-grid
             #grid
-            dataSource="WaterInformationInfo"
+            [dataSource]="emergencyPlan.WaterInformationInfo"
           >
             <dxo-paging [enabled]="false"></dxo-paging>
             <dxo-editing
@@ -137,18 +137,18 @@
               [allowUpdating]="true"
               [allowDeleting]="true"
             ></dxo-editing>
-            <dxi-column caption="监测与巡查对象"></dxi-column>
-            <dxi-column caption="内容"></dxi-column>
-            <dxi-column caption="频次"></dxi-column>
-            <dxi-column caption="责任人"></dxi-column>
-            <dxi-column caption="联系方式"></dxi-column>
+            <dxi-column caption="监测与巡查对象"  dataField="Objects"></dxi-column>
+            <dxi-column caption="内容"  dataField="Content"></dxi-column>
+            <dxi-column caption="频次"  dataField="Frequency"></dxi-column>
+            <dxi-column caption="责任人"  dataField="ResponsiblePerson"></dxi-column>
+            <dxi-column caption="联系方式"  dataField="Contact"></dxi-column>
           </dx-data-grid>
         </dxi-item>
         <!--       6、工情监测信息表-->
         <dxi-item itemType="group" colCount="4" caption="6、工情监测信息表">
           <dx-data-grid
             #grid
-            dataSource="WorkInformationInfo"
+            [dataSource]="emergencyPlan.WorkInformationInfo"
           >
             <dxo-paging [enabled]="false"></dxo-paging>
             <dxo-editing
@@ -157,12 +157,12 @@
               [allowUpdating]="true"
               [allowDeleting]="true"
             ></dxo-editing>
-            <dxi-column caption="监测与巡查对象"></dxi-column>
-            <dxi-column caption="内容"></dxi-column>
-            <dxi-column caption="方式"></dxi-column>
-            <dxi-column caption="频次"></dxi-column>
-            <dxi-column caption="责任人"></dxi-column>
-            <dxi-column caption="联系方式"></dxi-column>
+            <dxi-column caption="监测与巡查对象"  dataField="Objects"></dxi-column>
+            <dxi-column caption="内容"  dataField="Content"></dxi-column>
+            <dxi-column caption="方式"  dataField="Method"></dxi-column>
+            <dxi-column caption="频次"  dataField="Frequency"></dxi-column>
+            <dxi-column caption="责任人"  dataField="ResponsiblePerson"></dxi-column>
+            <dxi-column caption="联系方式"  dataField="Contact"></dxi-column>
           </dx-data-grid>
         </dxi-item>
         <!--        7、水库工作制度-->
@@ -173,32 +173,32 @@
           </dxi-item>
         </dxi-item>
         <!--        8、附件上传-->
-        <dxi-item itemType="group" colCount="5" caption="7、水库工作制度">
-          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+        <dxi-item itemType="group" colCount="5" caption="8、附件上传">
+          <dxi-item template="fileTemplate" dataField="Attachment[0]">
             <dxo-label text="大坝安全鉴定报告"></dxo-label>
           </dxi-item>
-          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="fileTemplate" dataField="Attachment[1]">
             <dxo-label text="大坝竣工验收报告"></dxo-label>
           </dxi-item>
-          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="fileTemplate" dataField="Attachment[2]">
             <dxo-label text="洪水复核报告"></dxo-label>
           </dxi-item>
-          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="fileTemplate" dataField="Attachment[3]">
             <dxo-label text="水库防汛度汛报告"></dxo-label>
           </dxi-item>
-          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="fileTemplate" dataField="Attachment[4]">
             <dxo-label text="运行管理报告"></dxo-label>
           </dxi-item>
-          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="fileTemplate" dataField="Attachment[5]">
             <dxo-label text="下游乡镇相关文件"></dxo-label>
           </dxi-item>
-          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="fileTemplate" dataField="Attachment[6]">
             <dxo-label text="当地政府防汛应急预案"></dxo-label>
           </dxi-item>
-          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="fileTemplate" dataField="Attachment[7]">
             <dxo-label text="其他相关附件"></dxo-label>
           </dxi-item>
-          <dxi-item template="fileTemplate" dataField="ProjectLayoutPicture">
+          <dxi-item template="fileTemplate" dataField="Attachment[8]">
             <dxo-label text="CAD图纸"></dxo-label>
           </dxi-item>
         </dxi-item>
@@ -210,10 +210,10 @@
         </dxi-item>
 
         <div *dxTemplate="let data of 'pictureTemplate'">
-          <dx-text-box [(value)]="data.component.option('formData')[data.dataField]" [visible]="false"></dx-text-box>
+          <dx-text-box [(value)]="data.component.option('formData')[data.dataField].filename" [visible]="true"></dx-text-box>
           <div class="widget-container">
             <img
-              [src]="data.component.option('formData')[data.dataField]"
+              [src]="data.component.option('formData')[data.dataField].fileurl"
               alt=""/>
           </div>
           <dx-file-uploader
@@ -243,7 +243,7 @@
           ></dx-file-uploader>
         </div>
         <div *dxTemplate="let data of 'fileTemplate'">
-          <dx-text-box [(value)]="data.component.option('formData')[data.dataField]" [visible]="true"></dx-text-box>
+          <dx-text-box [(value)]="data.component.option('formData')[data.dataField].filename" [visible]="true"></dx-text-box>
           <dx-file-uploader
             #fileUploader
             [multiple]="false"
