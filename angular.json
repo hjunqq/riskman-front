@@ -101,10 +101,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "webfront-ng:build:production"
+              "browserTarget": "webfront-ng:build:production",
+              "proxyConfig": "proxy-prod.conf.json"
             },
             "development": {
-              "browserTarget": "webfront-ng:build:development"
+              "browserTarget": "webfront-ng:build:development",
+              "proxyConfig": "proxy-local.conf.json"
             }
           },
           "defaultConfiguration": "development"

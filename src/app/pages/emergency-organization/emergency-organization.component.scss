@@ -1,0 +1,14 @@
+::ng-deep .buttons-column {
+  flex-wrap: nowrap;
+  display: flex;
+}
+
+::ng-deep .buttons-column > div{
+  margin: 5px;
+  text-align: center;
+}
+
+::ng-deep .left-content{
+  margin: 5px;
+  text-align: center;
+}

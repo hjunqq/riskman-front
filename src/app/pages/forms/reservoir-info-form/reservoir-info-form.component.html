@@ -1,0 +1,31 @@
+<h2 class="content-block">Reservoir Info Form</h2>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <dx-data-grid
+        #dataGrid
+        [dataSource]="dataSource"
+        [repaintChangesOnly]="true"
+        [showBorders]="true">
+        <dxo-editing
+          mode="cell"
+          [allowAdding]="true"
+          [allowUpdating]="true"
+          [allowDeleting]="true"></dxo-editing>
+
+
+        <dxi-column dataField="administrator"></dxi-column>
+        <dxi-column dataField="checkfloodlevel"></dxi-column>
+        <dxi-column dataField="deadwaterlevel"></dxi-column>
+        <dxi-column dataField="designfloodlevel"></dxi-column>
+        <dxi-column dataField="floodlimitlevel"></dxi-column>
+        <dxi-column dataField="inspectionperson"></dxi-column>
+        <dxi-column dataField="latitude"></dxi-column>
+        <dxi-column dataField="longitude"></dxi-column>
+        <dxi-column dataField="managementunit"></dxi-column>
+        <dxi-column dataField="name"></dxi-column>
+        <dxi-column dataField="normalstoragelevel"></dxi-column>
+        <dxi-column dataField="technicalperson"></dxi-column>
+
+      </dx-data-grid>
+    </div>
+</div>

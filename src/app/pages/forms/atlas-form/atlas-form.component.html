@@ -1,0 +1,23 @@
+<h2 class="content-block">图集</h2>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <dx-data-grid
+        #dataGrid
+        [dataSource]="dataSource"
+        [repaintChangesOnly]="true"
+        [showBorders]="true">
+        <dxo-editing
+          mode="cell"
+          [allowAdding]="true"
+          [allowUpdating]="true"
+          [allowDeleting]="true"></dxo-editing>
+
+        <dxi-column dataField="reservoirid" caption="水库ID"></dxi-column>
+
+        <dxi-column dataField="imagepath" caption="图路径"></dxi-column>
+
+        <dxi-column dataField="imagetype" caption="图类型"></dxi-column>
+
+      </dx-data-grid>
+    </div>
+</div>

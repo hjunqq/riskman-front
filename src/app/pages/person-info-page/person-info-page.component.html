@@ -1,0 +1,70 @@
+<h2 class="content-block">人员信息</h2>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <dx-responsive-box
+        singleColumnScreen="xs sm">
+        <dxi-row [ratio]="1"></dxi-row>
+
+        <dxi-col [ratio]="1"></dxi-col>
+        <dxi-col [ratio]="4"></dxi-col>
+        <dxi-item>
+          <dxi-location [row]="0" [col]="0"></dxi-location>
+          <!--        <dxi-location [row]="0" [col]="0" screen="sm"></dxi-location>-->
+          <dx-tree-view
+            id="treeview"
+            [items]="treeInfo"
+            (onItemClick)="selectItem($event)">
+          </dx-tree-view>
+        </dxi-item>
+        <dxi-item>
+          <dxi-location [row]="0" [col]="1"></dxi-location>
+          <!--        水库管理人员-->
+          <div class="dx-card responsive-paddings" id="reservoirManager" *ngIf="IsReservoirManager">
+            <div>{{managerOverview}}</div>
+            <dx-data-grid
+              [dataSource]="managerData"
+              [showBorders]="true">
+
+              <dxo-paging
+                [pageSize]="10">
+              </dxo-paging>
+
+              <dxi-column dataField="name" caption="姓名"></dxi-column>
+              <dxi-column dataField="position" caption="水库单位职务"></dxi-column>
+              <dxi-column dataField="contact " caption="联系方式"></dxi-column>
+            </dx-data-grid>
+            <div>三级防汛责任人</div>
+            <dx-data-grid
+              #grid
+              [dataSource]="floodPersonData"
+            >
+              <dxo-paging [enabled]="false"></dxo-paging>
+              <dxi-column caption="防汛责任人" dataField="Person"></dxi-column>
+              <dxi-column caption="单位" dataField="WorkUnit"></dxi-column>
+              <dxi-column caption="职务" dataField="Position"></dxi-column>
+              <dxi-column caption="姓名" dataField="Name"></dxi-column>
+              <dxi-column caption="联系方式" dataField="Contact"></dxi-column>
+            </dx-data-grid>
+          </div>
+
+          <!--        应急管理人员-->
+          <div class="dx-card responsive-paddings" id="emergencyPerson" *ngIf="IsEmergencyManager">
+            <dx-data-grid
+              #grid
+              [dataSource]="floodPersonData"
+            >
+              <dxo-paging [enabled]="false"></dxo-paging>
+              <dxi-column caption="部门或单位" dataField="Person"></dxi-column>
+              <dxi-column caption="职务" dataField="WorkUnit"></dxi-column>
+              <dxi-column caption="负责人" dataField="Position"></dxi-column>
+              <dxi-column caption="电话" dataField="Name"></dxi-column>
+              <dxi-column caption="职责" dataField="Contact"></dxi-column>
+              <dxi-column caption="备注" dataField="Remark"></dxi-column>
+            </dx-data-grid>
+          </div>
+
+
+        </dxi-item>
+      </dx-responsive-box>
+    </div>
+</div>

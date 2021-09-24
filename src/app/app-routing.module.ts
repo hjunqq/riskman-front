@@ -12,7 +12,7 @@ import {
     DxFormModule,
     DxMapModule, DxMenuModule,
     DxPieChartModule,
-    DxPopupModule, DxProgressBarModule, DxTextAreaModule, DxTextBoxModule,
+    DxPopupModule, DxProgressBarModule, DxResponsiveBoxModule, DxTextAreaModule, DxTextBoxModule,
     DxTooltipModule, DxTreeViewModule
 } from 'devextreme-angular';
 import { EmergencyPlanHomeComponent } from './pages/emergency-plan-home/emergency-plan-home.component';
@@ -20,12 +20,78 @@ import { BasicInfoPageComponent } from './pages/basic-info-page/basic-info-page.
 import { EmergencyManagementPageComponent } from './pages/emergency-management-page/emergency-management-page.component';
 import { MonitoringAndWarningComponent } from './pages/monitoring-and-warning/monitoring-and-warning.component';
 import { CriticalIncidentAnalysisComponent } from './pages/critical-incident-analysis/critical-incident-analysis.component';
-import { EmergencyPlanFormComponent } from './pages/emergency-plan-form/emergency-plan-form.component';
+import { EmergencyPlanFormComponent } from './pages/forms/emergency-plan-form/emergency-plan-form.component';
 import {CommonModule} from "@angular/common";
+import { AtlasFormComponent } from './pages/forms/atlas-form/atlas-form.component';
+import { AuthorityFormComponent } from './pages/forms/authority-form/authority-form.component';
+import { DownstreamVillageFormComponent } from './pages/forms/downstream-village-form/downstream-village-form.component';
+import { DutyFormComponent } from './pages/forms/duty-form/duty-form.component';
+import { EvacuationInfoFormComponent } from './pages/forms/evacuation-info-form/evacuation-info-form.component';
+import { PersonInfoFormComponent } from './pages/forms/person-info-form/person-info-form.component';
+import { ReservoirInfoFormComponent } from './pages/forms/reservoir-info-form/reservoir-info-form.component';
+import { SettlementFormComponent } from './pages/forms/settlement-form/settlement-form.component';
+import { SuppliesStorageFormComponent } from './pages/forms/supplies-storage-form/supplies-storage-form.component';
+import { PersonInfoPageComponent } from './pages/person-info-page/person-info-page.component';
+import { EmergencyOrganizationComponent } from './pages/emergency-organization/emergency-organization.component';
 
 const routes: Routes = [
   {
-    path: 'pages/emergency-plan-form',
+    path: 'pages/emergency-organization',
+    component: EmergencyOrganizationComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/person-info-page',
+    component: PersonInfoPageComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/supplies-storage-form',
+    component: SuppliesStorageFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/settlement-form',
+    component: SettlementFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/reservoir-info-form',
+    component: ReservoirInfoFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/person-info-form',
+    component: PersonInfoFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/evacuation-info-form',
+    component: EvacuationInfoFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/duty-form',
+    component: DutyFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/downstream-village-form',
+    component: DownstreamVillageFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/authority-form',
+    component: AuthorityFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/atlas-form',
+    component: AtlasFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/emergency-plan-form',
     component: EmergencyPlanFormComponent,
     canActivate: [ AuthGuardService ]
   },
@@ -96,9 +162,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule, DxTreeViewModule, DxTextAreaModule, DxFileUploaderModule, DxAccordionModule, CommonModule, DxProgressBarModule, DxTextBoxModule],
+    imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule, DxTreeViewModule, DxTextAreaModule, DxFileUploaderModule, DxAccordionModule, CommonModule, DxProgressBarModule, DxTextBoxModule, DxResponsiveBoxModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent, BasicInfoPageComponent, EmergencyManagementPageComponent, MonitoringAndWarningComponent, CriticalIncidentAnalysisComponent, EmergencyPlanFormComponent]
+  declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent, BasicInfoPageComponent, EmergencyManagementPageComponent, MonitoringAndWarningComponent, CriticalIncidentAnalysisComponent, EmergencyPlanFormComponent, AtlasFormComponent, AuthorityFormComponent, DownstreamVillageFormComponent, DutyFormComponent, EvacuationInfoFormComponent, PersonInfoFormComponent, ReservoirInfoFormComponent, SettlementFormComponent, SuppliesStorageFormComponent, PersonInfoPageComponent, EmergencyOrganizationComponent]
 })
 export class AppRoutingModule { }

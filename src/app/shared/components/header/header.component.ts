@@ -23,17 +23,17 @@ export class HeaderComponent implements OnInit {
   @Input()
   title!: string;
 
-  user: IUser | null = { email: '' };
+  user: IUser | null = { username: '' };
 
   userMenuItems = [{
-    text: 'Profile',
+    text: '详细信息',
     icon: 'user',
     onClick: () => {
       this.router.navigate(['/profile']);
     }
   },
   {
-    text: 'Logout',
+    text: '注销',
     icon: 'runner',
     onClick: () => {
       this.authService.logOut();

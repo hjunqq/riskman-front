@@ -1,26 +1,61 @@
-<h2 class="content-block">工程主要简介</h2>
+<h2 class="content-block">工程信息</h2>
 <div class="content-block">
-    <div class="dx-card responsive-paddings">
-      <div class="form">
+  <div class="dx-card responsive-paddings">
+    <dx-responsive-box
+      singleColumnScreen="xs sm">
+      <dxi-row [ratio]="1"></dxi-row>
+
+      <dxi-col [ratio]="1"></dxi-col>
+      <dxi-col [ratio]="4"></dxi-col>
+      <dxi-item>
+        <dxi-location [row]="0" [col]="0"></dxi-location>
+<!--        <dxi-location [row]="0" [col]="0" screen="sm"></dxi-location>-->
         <dx-tree-view
           id="treeview"
           [items]="infos"
-          [width]="300"
           (onItemClick)="selectItem($event)">
         </dx-tree-view>
-        <div id="details">
-
+      </dxi-item>
+      <dxi-item>
+        <dxi-location [row]="0" [col]="1"></dxi-location>
+<!--        <dxi-location [row]="0" [col]="0" screen="sm"></dxi-location>-->
+<!--        流域概况-->
+        <div class="dx-card responsive-paddings" id="basinOverview" *ngIf="IsBasinOverView">
+          <div class="title">流域概况</div>
+          <div>{{basinOverview}}</div>
+          <img [src]="basinOverviewImage" alt="basinOverviewImage"/>
         </div>
-      </div>
-      <dx-data-grid >
-        <dxi-column
-          dataField="OrderDate"
-          [format]="{ skeleton: 'yMMMd' }">
-        </dxi-column>
-        <dxi-column
-          dataField="SaleAmount"
-          [format]="{ currency: 'EUR', maximumFractionDigits: 2 }">
-        </dxi-column>
-      </dx-data-grid>
-    </div>
+<!--        工程概况-->
+        <div class="dx-card responsive-paddings" id="projectOverview" *ngIf="IsProjectOverview">
+          <div class="title">工程概况</div>
+          <div>{{projectOverview}}</div>
+          <img [src]="projectOverviewImage" alt="projectOverviewImage"/>
+        </div>
+<!--        工程特性表-->
+        <div class="dx-card responsive-paddings" id="projectProperties" *ngIf="IsProjectProperties">
+          <div class="title">工程特性表</div>
+          <dx-data-grid
+            [dataSource]="projectProperties"
+            [showBorders]="true">
+
+            <dxo-paging
+              [pageSize]="10">
+            </dxo-paging>
+
+            <dxi-column dataField="name" caption="特性名"></dxi-column>
+            <dxi-column dataField="value" caption="特性值"></dxi-column>
+          </dx-data-grid>
+        </div>
+
+<!--        工程图表-->
+        <div class="dx-card responsive-paddings" id="engineeringChart" *ngIf="IsEngineeringChart">
+          <img [src]="damSectionImage" alt="damSection"/>
+          <img [src]="geologicalImage" alt="geological"/>
+        </div>
+
+
+      </dxi-item>
+    </dx-responsive-box>
+
+  </div>
 </div>

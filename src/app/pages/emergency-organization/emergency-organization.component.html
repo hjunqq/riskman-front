@@ -1,0 +1,147 @@
+<h2 class="content-block">应急组织</h2>
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <dx-responsive-box
+      singleColumnScreen="xs sm">
+      <dxi-row [ratio]="1"></dxi-row>
+
+      <dxi-col [ratio]="1"></dxi-col>
+      <dxi-col [ratio]="4"></dxi-col>
+      <dxi-item>
+        <dxi-location [row]="0" [col]="0"></dxi-location>
+        <!--        <dxi-location [row]="0" [col]="0" screen="sm"></dxi-location>-->
+        <dx-tree-view
+          id="treeview"
+          [items]="treeInfo"
+          (onItemClick)="selectItem($event)">
+        </dx-tree-view>
+      </dxi-item>
+      <dxi-item>
+        <dxi-location [row]="0" [col]="1"></dxi-location>
+        <!--        应急组织框图-->
+        <div class="dx-card responsive-paddings" id="reservoirManager" *ngIf="IsEmergencyDiagram">
+          <img [src]="emergencyDiagram" alt="EmergencyDiagram"/>
+        </div>
+        <!--        指挥部-->
+        <div class="dx-card responsive-paddings" id="emergencyPerson" *ngIf="IsHeadquarters">
+          <dx-data-grid
+            #grid
+            [dataSource]="headquartersData"
+          >
+            <dxo-paging [enabled]="false"></dxo-paging>
+            <dxi-column caption="职务" dataField="Person"></dxi-column>
+            <dxi-column caption="工作单位或部门" dataField="WorkUnit"></dxi-column>
+            <dxi-column caption="工作职务" dataField="Position"></dxi-column>
+            <dxi-column caption="姓名" dataField="Name"></dxi-column>
+            <dxi-column caption="手机" dataField="Contact"></dxi-column>
+            <dxi-column caption="办公电话" dataField="Remark"></dxi-column>
+          </dx-data-grid>
+        </div>
+
+        <!--        专家组-->
+        <div class="dx-card responsive-paddings" id="expertsGroup" *ngIf="IsExpertsGroup">
+          <dx-data-grid
+            #grid
+            [dataSource]="expertsGroupData"
+          >
+            <dxo-paging [enabled]="false"></dxo-paging>
+            <dxi-column caption="职务" dataField="Person"></dxi-column>
+            <dxi-column caption="工作单位或部门" dataField="WorkUnit"></dxi-column>
+            <dxi-column caption="工作职务" dataField="Position"></dxi-column>
+            <dxi-column caption="姓名" dataField="Name"></dxi-column>
+            <dxi-column caption="专业" dataField="Subject"></dxi-column>
+            <dxi-column caption="职责" dataField="Remark"></dxi-column>
+            <dxi-column caption="联系方式" dataField="Contact"></dxi-column>
+          </dx-data-grid>
+        </div>
+
+        <!--        抢险和救援-->
+        <div class="dx-card responsive-paddings" id="emergencyRescue" *ngIf="IsEmergencyRescue">
+          <dx-responsive-box>
+            <dxi-row [ratio]="1"></dxi-row>
+
+            <dxi-col [ratio]="1"></dxi-col>
+            <dxi-col [ratio]="1"></dxi-col>
+
+            <dxi-item>
+              <dxi-location [row]="0" [col]="0"></dxi-location>
+              <div class="buttons-column">
+                <dx-responsive-box singleColumnScreen="xs sm">
+                  <dxi-row [ratio]="1"></dxi-row>
+
+                  <dxi-col [ratio]="1"></dxi-col>
+                  <dxi-col [ratio]="1"></dxi-col>
+                  <dxi-col [ratio]="1"></dxi-col>
+                  <dxi-item>
+                    <dxi-location [row]="0" [col]="0"></dxi-location>
+                    <dx-button text="淹没水深图"
+                               [type]="floodWaterDepthBtnType"
+                               [width]="120"
+                               (onClick)="btnClick(0)"
+                    ></dx-button>
+                  </dxi-item>
+                  <dxi-item>
+                    <dxi-location [row]="0" [col]="1"></dxi-location>
+                    <dx-button text="到达时间图"
+                               [type]="arrivedTimeBtnType"
+                               [width]="120"
+                               (onClick)="btnClick(1)"></dx-button>
+                  </dxi-item>
+                  <dxi-item>
+                    <dxi-location [row]="0" [col]="2"></dxi-location>
+                    <dx-button text="撤离路线图"
+                               [type]="exitRoadBtnType"
+                               [width]="120"
+                               (onClick)="btnClick(2)"></dx-button>
+                  </dxi-item>
+                </dx-responsive-box>
+              </div>
+              <div class="left-content">
+                <div *ngIf="IsFloodWaterDepth">
+                  <dx-data-grid
+                    [dataSource]="floodWaterDepthData">
+                    <dxi-column caption="村庄名称" dataField="Name"></dxi-column>
+                    <dxi-column caption="淹没水深（m）" dataField="Depth"></dxi-column>
+                  </dx-data-grid>
+                </div>
+                <div *ngIf="IsArrivedTime">
+                  <dx-data-grid
+                    [dataSource]="arrivedTimeData">
+                    <dxi-column caption="村庄名称" dataField="Name"></dxi-column>
+                    <dxi-column caption="到达时间（h）" dataField="Time"></dxi-column>
+                  </dx-data-grid>
+                </div>
+                <div *ngIf="IsExitRoadMap">
+                  <dx-data-grid
+                    [dataSource]="exitRoadData">
+                    <dxi-column caption="淹没村庄名" dataField="Name"></dxi-column>
+                    <dxi-column caption="安置点" dataField="Settlement"></dxi-column>
+                    <dxi-column caption="距离与时间" dataField="DistanceTime"></dxi-column>
+                  </dx-data-grid>
+                </div>
+              </div>
+            </dxi-item>
+            <dxi-item>
+              <dxi-location [row]="0" [col]="1"></dxi-location>
+              <div>
+                {{subtitle}}
+              </div>
+              <img [src]="figurePath" alt="figurePath"/>
+            </dxi-item>
+          </dx-responsive-box>
+        </div>
+
+        <!--        应急响应分级表-->
+        <div class="dx-card responsive-paddings" id="emergencyGrade" *ngIf="IsEmergencyGrade">
+          <img [src]="emergencyGrade" alt="EmergencyGrade"/>
+        </div>
+
+        <!--        应急流程-->
+        <div class="dx-card responsive-paddings" id="emergencyProcess" *ngIf="IsEmergencyProcess">
+          <img [src]="emergencyProcess" alt="EmergencyProcess"/>
+        </div>
+
+      </dxi-item>
+    </dx-responsive-box>
+  </div>
+</div>

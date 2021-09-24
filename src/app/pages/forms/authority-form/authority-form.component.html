@@ -1,0 +1,21 @@
+<h2 class="content-block">使用权限</h2>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <dx-data-grid
+        #dataGrid
+        [dataSource]="dataSource"
+        [repaintChangesOnly]="true"
+        [showBorders]="true">
+        <dxo-editing
+          mode="cell"
+          [allowAdding]="true"
+          [allowUpdating]="true"
+          [allowDeleting]="true"></dxo-editing>
+
+
+        <dxi-column dataField="name" caption="权限"></dxi-column>
+
+
+      </dx-data-grid>
+    </div>
+</div>

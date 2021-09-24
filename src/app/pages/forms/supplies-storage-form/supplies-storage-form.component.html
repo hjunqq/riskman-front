@@ -1,0 +1,24 @@
+<h2 class="content-block">物资存储表</h2>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <dx-data-grid
+        #dataGrid
+        [dataSource]="dataSource"
+        [repaintChangesOnly]="true"
+        [showBorders]="true">
+        <dxo-editing
+          mode="cell"
+          [allowAdding]="true"
+          [allowUpdating]="true"
+          [allowDeleting]="true"></dxo-editing>
+
+
+        <dxi-column dataField="name" ></dxi-column>
+        <dxi-column dataField="personid" ></dxi-column>
+        <dxi-column dataField="quantity" ></dxi-column>
+        <dxi-column dataField="reservoirid" ></dxi-column>
+        <dxi-column dataField="storagepoint" ></dxi-column>
+
+      </dx-data-grid>
+    </div>
+</div>

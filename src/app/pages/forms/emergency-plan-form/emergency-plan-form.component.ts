@@ -1,10 +1,10 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
-import {CustomResponse} from "../../shared/models/custom-response";
-import {EmergencyPlan} from "../../shared/models/emergency-plan";
+import {CustomResponse} from "../../../shared/models/custom-response";
+import {EmergencyPlan} from "../../../shared/models/emergency-plan";
 import {throwError} from "rxjs";
-import {FilePath} from "../../shared/models/file-path";
+import {FilePath} from "../../../shared/models/file-path";
 
 @Component({
   selector: 'app-emergency-plan-form',

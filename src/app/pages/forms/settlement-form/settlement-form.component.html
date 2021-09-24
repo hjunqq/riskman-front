@@ -1,0 +1,29 @@
+<h2 class="content-block">安置点信息库</h2>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <dx-data-grid
+        #dataGrid
+        [dataSource]="dataSource"
+        [repaintChangesOnly]="true"
+        [showBorders]="true">
+        <dxo-editing
+          mode="cell"
+          [allowAdding]="true"
+          [allowUpdating]="true"
+          [allowDeleting]="true"></dxo-editing>
+
+
+        <dxi-column dataField="capacity"></dxi-column>
+        <dxi-column dataField="indexnumber"></dxi-column>
+
+        <dxi-column dataField="lantitude"></dxi-column>
+
+        <dxi-column dataField="longitude"></dxi-column>
+
+        <dxi-column dataField="reservoirid"></dxi-column>
+
+
+
+      </dx-data-grid>
+    </div>
+</div>

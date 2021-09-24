@@ -1,21 +1,37 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
+import {HttpClient, HttpParams} from "@angular/common/http";
+import {CustomResponse} from "../models/custom-response";
+import {fakeAsync} from "@angular/core/testing";
 
 export interface IUser {
-  email: string;
-  avatarUrl?: string
+  username: string;
+  avatarUrl?: string;
+  token?: string;
+  reservoir?:number;
 }
 
 const defaultPath = '/';
 const defaultUser = {
-  email: 'sandra@example.com',
-  avatarUrl: 'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png'
+  username: 'Test',
+  avatarUrl: 'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png',
+  token: ""
 };
 
 @Injectable()
 export class AuthService {
   private _user: IUser | null = defaultUser;
+
+  private _api: string = "http://localhost:4200/api/";
+
+  // private _api: string = "http://8.136.105.11:6060/api/"
+
+  private _authUrl:string = this._api + "auth/login";
+
+
   get loggedIn(): boolean {
+    // return this._user?.token !== undefined && this._user?.token !== "";
+
     return !!this._user;
   }
 
@@ -24,14 +40,25 @@ export class AuthService {
     this._lastAuthenticatedPath = value;
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private httpClient: HttpClient) { }
 
-  async logIn(email: string, password: string) {
+  async logIn(username: string, password: string, rememberMe: boolean) {
 
     try {
       // Send request
-      console.log(email, password);
-      this._user = { ...defaultUser, email };
+
+      let body = {
+        username: username,
+        password: password,
+        rememberMe: rememberMe
+      }
+
+      const response = await this.httpClient.post<CustomResponse>(this._authUrl, body).toPromise();
+      const token = response.data;
+
+      console.log(username, password,rememberMe);
+      this._user = { ...defaultUser, username };
+      this._user.token = token;
       this.router.navigate([this._lastAuthenticatedPath]);
 
       return {
@@ -42,7 +69,7 @@ export class AuthService {
     catch {
       return {
         isOk: false,
-        message: "Authentication failed"
+        message: "认证失败"
       };
     }
   }
@@ -50,7 +77,12 @@ export class AuthService {
   async getUser() {
     try {
       // Send request
-
+      if(this._user===undefined){
+        return {
+          isOK: false,
+          data: null
+        }
+      }
       return {
         isOk: true,
         data: this._user
@@ -77,7 +109,7 @@ export class AuthService {
     catch {
       return {
         isOk: false,
-        message: "Failed to create account"
+        message: "创建账户失败"
       };
     }
   }
@@ -94,9 +126,9 @@ export class AuthService {
     catch {
       return {
         isOk: false,
-        message: "Failed to change password"
+        message: "修改密码失败"
       }
-    };
+    }
   }
 
   async resetPassword(email: string) {
@@ -111,7 +143,7 @@ export class AuthService {
     catch {
       return {
         isOk: false,
-        message: "Failed to reset password"
+        message: "充值密码失败"
       };
     }
   }
@@ -119,6 +151,10 @@ export class AuthService {
   async logOut() {
     this._user = null;
     this.router.navigate(['/login-form']);
+  }
+
+  getApiUrl() {
+    return this._api;
   }
 }
 

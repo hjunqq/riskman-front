@@ -1,0 +1,27 @@
+<h2 class="content-block">下游保护村庄</h2>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <dx-data-grid
+        #dataGrid
+        [dataSource]="dataSource"
+        [repaintChangesOnly]="true"
+        [showBorders]="true">
+        <dxo-editing
+          mode="cell"
+          [allowAdding]="true"
+          [allowUpdating]="true"
+          [allowDeleting]="true"></dxo-editing>
+
+
+        <dxi-column dataField="name" ></dxi-column>
+        <dxi-column dataField="personid" ></dxi-column>
+        <dxi-column dataField="contactinfo"></dxi-column>
+        <dxi-column dataField="population" ></dxi-column>
+        <dxi-column dataField="settlementid" ></dxi-column>
+        <dxi-column dataField="reservoirid" ></dxi-column>
+
+
+
+      </dx-data-grid>
+    </div>
+</div>

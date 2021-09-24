@@ -1,0 +1,23 @@
+<h2 class="content-block">人员信息表</h2>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <dx-data-grid
+        #dataGrid
+        [dataSource]="dataSource"
+        [repaintChangesOnly]="true"
+        [showBorders]="true">
+        <dxo-editing
+          mode="cell"
+          [allowAdding]="true"
+          [allowUpdating]="true"
+          [allowDeleting]="true"></dxo-editing>
+
+
+        <dxi-column dataField="name" ></dxi-column>
+        <dxi-column dataField="position" ></dxi-column>
+        <dxi-column dataField="role" ></dxi-column>
+        <dxi-column dataField="reservoirid" ></dxi-column>
+        <dxi-column dataField="unit" ></dxi-column>
+      </dx-data-grid>
+    </div>
+</div>
