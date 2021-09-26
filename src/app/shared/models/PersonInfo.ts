@@ -1,4 +1,4 @@
-export interface IPersonInfo {
+export class PersonInfo {
   dutyid?: number;
   id?: number;
   name?: string;

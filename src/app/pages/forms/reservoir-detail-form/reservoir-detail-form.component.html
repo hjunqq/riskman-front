@@ -1,0 +1,147 @@
+<h2 class="content-block">水库详细信息</h2>
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <span>当前水库为：{{currentReservoir?.name}}</span>
+  </div>
+  <div class="dx-card responsive-paddings">
+    <form action="/" (submit)="onFormSubmit($event)">
+      <dx-form [formData]="reservoirDetails">
+        <!--        1.自然概况-->
+        <dxi-item itemType="group" caption="1、自然概况" colCount="4">
+          <dxi-item dataField="infonature" helpText="包括所在流域、水库大坝地理位置、上下游城区距离、气候特征、流域水文情况、上下游水文站、上下游重要水工建筑物"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+          <dxi-item  template="pictureTemplate" dataField="infonatureimagepath">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+        <!--        2. 经济概况-->
+        <dxi-item itemType="group" colCount="4" caption="2、经济概况">
+          <dxi-item dataField="infoeconomy" helpText="下游防洪标准、城区村庄人口情况、下游重要公路、铁路、企事业单位、农田耕地等。"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+        <!--        3.工程概况-->
+        <dxi-item itemType="group" colCount="4" caption="3、工程概况">
+          <dxi-item dataField="infoproject" helpText="工程概况"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+          <dxi-item template="pictureTemplate" dataField="infoprojectimagepath">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+
+        <!--        4、工程布置-->
+        <dxi-item itemType="group" colCount="4" caption="4、工程布置">
+          <dxi-item dataField="infoprojectlayout" [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+          <dxi-item template="pictureTemplate" dataField="infoprojectlayoutimagepath">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+
+        <!--        5、水雨情和工情监测情况-->
+        <dxi-item itemType="group" colCount="4" caption="5、水雨情和工情监测情况">
+          <dxi-item dataField="infomonitor"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+
+        <!--        6、工程地质与地震-->
+        <dxi-item itemType="group" colCount="4" caption="6、工程地质与地震">
+          <dxi-item dataField="infogeo" helpText="简述工程主要地层特征及其地震基本烈度等"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+          <dxi-item template="pictureTemplate" dataField="infogeoimagepath">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+
+        <!--        7、管理机构-->
+        <dxi-item itemType="group" colCount="4" caption="7、管理机构">
+          <dxi-item dataField="infoorganize" helpText="简述管理机构"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+
+        <!--        8、管理制度-->
+        <dxi-item itemType="group" colCount="4" caption="8、管理制度">
+          <dxi-item dataField="infocontrol" helpText="简述管理机构"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+
+        <!--        9、管理制度-->
+        <dxi-item itemType="group" colCount="4" caption="9、管理制度">
+          <dxi-item dataField="infocontrol" helpText="简述管理机构"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+
+        <!--        10、工程建设及加固情况-->
+        <dxi-item itemType="group" colCount="4" caption="10、工程建设及加固情况">
+          <dxi-item dataField="infoconstructhistory" helpText="简述工程建设及加固情况"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+
+        <!--        11、发生过的大洪水、地质灾害等情况-->
+        <dxi-item itemType="group" colCount="4" caption="11、发生过的大洪水、地质灾害等情况">
+          <dxi-item dataField="infohistory" helpText="简述发生过的大洪水、地质灾害等情况"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+
+        <!--        12、发生过的大洪水、地质灾害等情况-->
+        <dxi-item itemType="group" colCount="4" caption="12、工程安全鉴定">
+          <dxi-item dataField="infodetect" helpText="简述工程安全鉴定"
+                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+
+        <div *dxTemplate="let data of 'pictureTemplate'">
+          <dx-text-box [(value)]="data.component.option('formData')[data.dataField].filename" [visible]="false"></dx-text-box>
+          <div class="widget-container">
+            <img
+              [src]="data.component.option('formData')[data.dataField].fileurl"
+              alt="img"/>
+          </div>
+          <dx-file-uploader
+            #fileUploader
+            [multiple]="false"
+            selectButtonText="选择图片"
+            labelText=""
+            [allowedFileExtensions]="['.jpg', '.jpeg', '.gif', '.png']"
+            uploadMode="instantly"
+            [visible]="true"
+            [uploadHeaders]="headers"
+            [uploadUrl]="'/api/files/upload'"
+            (onUploaded)="onUploaded($event,data)"
+            (onProgress)="onProgress($event)"
+          ></dx-file-uploader>
+        </div>
+
+
+        <dxi-item
+          itemType="button"
+          horizontalAlignment="left"
+          [buttonOptions]="buttonOptions">
+        </dxi-item>
+
+
+      </dx-form>
+    </form>
+  </div>
+</div>

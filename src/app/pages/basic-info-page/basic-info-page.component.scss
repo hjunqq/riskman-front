@@ -1,31 +1,56 @@
 ::ng-deep #treeview {
   display: inline-block;
 }
-::ng-deep #basinOverview {
+//::ng-deep #basinOverview {
+//  text-align: center;
+//}
+::ng-deep .widget-container > .title{
+  text-align: center;
+  font-size: 2em;
+  margin: 5px;
+}
+
+::ng-deep .widget-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(236, 236, 236, 0.1);
+  border-width: 5px;
+  //border-style: dashed;
+  padding: 10px;
   text-align: center;
 }
-::ng-deep  .title{
-  text-align: center;
-  font-size: 3em;
-  margin: 5px;
-}
-::ng-deep #basinOverview > img {
-  width: 450px;
-  margin: 5px;
-}
-::ng-deep #basinOverview > div {
-  text-align: left;
-  margin: 5px;
-  font-size: 1.5em;
+
+::ng-deep .widget-container > div{
   text-indent: 2em;
-}
-::ng-deep #projectOverview > img {
-  width: 450px;
-  margin: 5px;
-}
-::ng-deep #projectOverview > div {
   text-align: left;
-  margin: 5px;
   font-size: 1.5em;
-  text-indent: 2em;
+  margin: 5px;
 }
+
+::ng-deep .widget-container > img {
+  width: 50%;
+  max-height: 100%;
+  margin-top: 5px;
+}
+
+
+//::ng-deep #basinOverview > img {
+//  width: 450px;
+//  margin: 5px;
+//}
+//::ng-deep #basinOverview > div {
+//  text-align: left;
+//  margin: 5px;
+//  font-size: 1.5em;
+//  text-indent: 2em;
+//}
+//::ng-deep #projectOverview > img {
+//  width: 450px;
+//  margin: 5px;
+//}
+//::ng-deep #projectOverview > div {
+//  text-align: left;
+//  margin: 5px;
+//  font-size: 1.5em;
+//  text-indent: 2em;
+//}

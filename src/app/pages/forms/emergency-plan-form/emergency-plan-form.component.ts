@@ -45,7 +45,7 @@ export class EmergencyPlanFormComponent implements OnInit {
 
   onUploaded(e: any, data:any) {
     if(this.uploadResponse.code===200) {
-      this.imageSource = "http://localhost:8080" + this.uploadResponse.data.filepath;
+      this.imageSource = "http://localhost:8080" + this.uploadResponse.data.path;
       data.component.option('formData')[data.dataField] = <FilePath> this.uploadResponse.data;
       data.component.option('formData')[data.dataField].filename = this.uploadResponse.data.filename;
       data.component.option('formData')[data.dataField].fileurl = this.imageSource;
@@ -80,7 +80,7 @@ export class EmergencyPlanFormComponent implements OnInit {
         id: 1,
         filename: "FileName",
         storename: "StoreName",
-        filepath: "FilePath",
+        path: "FilePath",
         fileurl: "FileUrl"
       },
       ProjectOverview: "",
@@ -88,7 +88,7 @@ export class EmergencyPlanFormComponent implements OnInit {
         id: 1,
         filename: "FileName",
         storename: "StoreName",
-        filepath: "FilePath",
+        path: "FilePath",
         fileurl: "FileUrl"
       }],
       ConstructionReinforcement: "",
@@ -115,7 +115,7 @@ export class EmergencyPlanFormComponent implements OnInit {
         id: 1,
         filename: "FileName",
         storename: "StoreName",
-        filepath: "FilePath",
+        path: "FilePath",
         fileurl: "FileUrl"
       },
       ProjectLayout:"简述工程布置",

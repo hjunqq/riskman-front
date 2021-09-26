@@ -20,7 +20,7 @@
           <dxi-location [row]="0" [col]="1"></dxi-location>
           <!--        水库管理人员-->
           <div class="dx-card responsive-paddings" id="reservoirManager" *ngIf="IsReservoirManager">
-            <div>{{managerOverview}}</div>
+            <div>{{reservoirDetails.infocontrol || managerOverview}}</div>
             <dx-data-grid
               [dataSource]="managerData"
               [showBorders]="true">

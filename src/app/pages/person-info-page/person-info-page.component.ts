@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {TreeViewItem} from "../../shared/models/tree-view.item";
+import {HttpClient} from "@angular/common/http";
+import {AuthService, IUser} from "../../shared/services";
+import {ReservoirInfoService} from "../../shared/services/reservoir-info.service";
+import {ReservoirDetail} from "../../shared/models/reservoir.detail";
+import {PersonInfoService} from "../../shared/services/person-info.service";
 
 @Component({
   selector: 'app-person-info-page',
@@ -15,9 +20,37 @@ export class PersonInfoPageComponent implements OnInit {
   managerData:any;
   floodPersonData: any;
   emergencyPersonData: any;
+  private user: null | IUser;
+  private headers: { Authorization: string };
+  private reservoir: number | undefined;
+  reservoirDetails: ReservoirDetail;
 
-  constructor() {
-    this.treeInfo = this.getInfo();
+  constructor(private http: HttpClient, private authService: AuthService,
+              private reservoirInfoService: ReservoirInfoService,
+              private personInfoService:PersonInfoService
+  ) {
+
+    this.authService.getUser().then((e) => {
+      this.user = e.data;
+      this.headers = {
+        Authorization: 'Bearer ' + this.user?.token
+      };
+      this.reservoir = this.user?.reservoir;
+
+      reservoirInfoService.getReservoirDetails(this.reservoir).then((e) => {
+        this.reservoirDetails = e;
+      })
+
+      personInfoService.getPerson(this.reservoir).then((e)=>{
+        this.managerData = e;
+      })
+
+
+    });
+
+    this.reservoirDetails = new ReservoirDetail();
+
+    this.treeInfo = PersonInfoPageComponent.getInfo();
 
     this.IsReservoirManager = true;
 
@@ -43,7 +76,7 @@ export class PersonInfoPageComponent implements OnInit {
     this.IsEmergencyManager = false;
   }
 
-  private getInfo() {
+  private static getInfo() {
     let infos: TreeViewItem[] = [{
       id: "1",
       text: "水库管理人员",

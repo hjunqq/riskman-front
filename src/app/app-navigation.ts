@@ -62,6 +62,14 @@ export const navigation = [
       //   path: '/pages/forms/emergency-plan-form',
       // },
       {
+        text: '水库基本信息',
+        path: '/pages/forms/reservoir-info-form',
+      },
+      {
+        text: '水库详细信息',
+        path: '/pages/forms/reservoir-detail-form',
+      },
+      {
         text: '图集',
         path: '/pages/forms/atlas-form',
       },
@@ -86,10 +94,6 @@ export const navigation = [
         path: '/pages/forms/person-info-form',
       },
       {
-        text: '水库信息表',
-        path: '/pages/forms/reservoir-info-form',
-      },
-      {
         text: '安置点信息',
         path: '/pages/forms/settlement-form',
       },
@@ -99,5 +103,6 @@ export const navigation = [
       },
     ]
   },
+
 
 ];

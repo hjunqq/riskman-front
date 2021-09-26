@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService, IUser} from "../../../shared/services";
 import {HttpClient} from "@angular/common/http";
 import CustomStore from "devextreme/data/custom_store";
-import {IPersonInfo} from "../../../shared/models/IPersonInfo";
+import {PersonInfo} from "../../../shared/models/PersonInfo";
 import {CustomResponse} from "../../../shared/models/custom-response";
 
 @Component({
@@ -45,7 +45,7 @@ export class PersonInfoFormComponent implements OnInit {
   async sendRequest(url: string, method: string="GET", data: any= {}): Promise<any> {
     let postUrl: string;
     postUrl = this.url + "tPersonInfo";
-    const record:IPersonInfo = data.values;
+    const record:PersonInfo = data.values;
 
     const httpParams = record;
     const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
@@ -70,14 +70,14 @@ export class PersonInfoFormComponent implements OnInit {
 
   async getRecords() {
     let postUrl: string;
-    postUrl = this.url + "tPersonInfo";
+    postUrl = this.url + "tPersonInfo/list";
 
-    const data:IPersonInfo = {
+    const data:PersonInfo = {
       reservoirid:this.reservoir
     };
-    const httpOptions = {withCredentials:true, headers: this.headers}
+    const httpOptions = {withCredentials:true, headers: this.headers,body: data}
 
-    const result = await this.http.get<CustomResponse>(postUrl,httpOptions).toPromise();
+    const result = await this.http.post<CustomResponse>(postUrl, data, httpOptions).toPromise();
 
     return result.data;
   }

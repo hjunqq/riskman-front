@@ -15,7 +15,8 @@ const defaultPath = '/';
 const defaultUser = {
   username: 'Test',
   avatarUrl: 'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png',
-  token: ""
+  token: "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMjk5MjI4N30.yxmuwEToQE3uMXhEvPnjBZgbPNNMH0KwMYUIIAwh-HV_hqdVtXch_o1kSaDE-RubvxI2VeubELXKpOs2njcyWQ", /* 2021年9月25日 */
+  reservoir:1,
 };
 
 @Injectable()

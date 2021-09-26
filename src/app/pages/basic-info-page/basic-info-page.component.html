@@ -20,19 +20,19 @@
         <dxi-location [row]="0" [col]="1"></dxi-location>
 <!--        <dxi-location [row]="0" [col]="0" screen="sm"></dxi-location>-->
 <!--        流域概况-->
-        <div class="dx-card responsive-paddings" id="basinOverview" *ngIf="IsBasinOverView">
+        <div class="widget-container" id="basinOverview" *ngIf="IsBasinOverView">
           <div class="title">流域概况</div>
-          <div>{{basinOverview}}</div>
-          <img [src]="basinOverviewImage" alt="basinOverviewImage"/>
+          <div>{{reservoirDetails.infonature||basinOverview}}</div>
+          <img [src]="reservoirDetails.infonatureimagepath.path||basinOverviewImage" alt="basinOverviewImage"/>
         </div>
 <!--        工程概况-->
-        <div class="dx-card responsive-paddings" id="projectOverview" *ngIf="IsProjectOverview">
+        <div class="widget-container" id="projectOverview" *ngIf="IsProjectOverview">
           <div class="title">工程概况</div>
-          <div>{{projectOverview}}</div>
-          <img [src]="projectOverviewImage" alt="projectOverviewImage"/>
+          <div>{{reservoirDetails.infoproject||projectOverview}}</div>
+          <img [src]="reservoirDetails.infoprojectimagepath.path|| projectOverviewImage" alt="projectOverviewImage"/>
         </div>
 <!--        工程特性表-->
-        <div class="dx-card responsive-paddings" id="projectProperties" *ngIf="IsProjectProperties">
+        <div class="widget-container" id="projectProperties" *ngIf="IsProjectProperties">
           <div class="title">工程特性表</div>
           <dx-data-grid
             [dataSource]="projectProperties"
@@ -48,9 +48,11 @@
         </div>
 
 <!--        工程图表-->
-        <div class="dx-card responsive-paddings" id="engineeringChart" *ngIf="IsEngineeringChart">
-          <img [src]="damSectionImage" alt="damSection"/>
-          <img [src]="geologicalImage" alt="geological"/>
+        <div class="widget-container" id="engineeringChart" *ngIf="IsEngineeringChart">
+          <div class="title">大坝断面图</div>
+          <img [src]="reservoirDetails.infosectionimagepath.path || damSectionImage" alt="damSection"/>
+          <div class="title">工程地质图</div>
+          <img [src]="reservoirDetails.infogeoimagepath.path || geologicalImage" alt="geological"/>
         </div>
 
 
