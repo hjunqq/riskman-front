@@ -1,0 +1,24 @@
+<h2 class="content-block">三个防汛责任人</h2>
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <dx-data-grid
+      #dataGrid
+      [dataSource]="dataSource"
+      [repaintChangesOnly]="true"
+      [showBorders]="true">
+      <dxo-editing
+        mode="cell"
+        [allowAdding]="true"
+        [allowUpdating]="true"
+        [allowDeleting]="true"></dxo-editing>
+
+
+      <dxi-column caption="防汛责任人" dataField="positionname"></dxi-column>
+      <dxi-column caption="单位" dataField="unit"></dxi-column>
+      <dxi-column caption="职务" dataField="position"></dxi-column>
+      <dxi-column caption="姓名" dataField="personname"></dxi-column>
+      <dxi-column caption="联系方式" dataField="contact"></dxi-column>
+
+    </dx-data-grid>
+  </div>
+</div>

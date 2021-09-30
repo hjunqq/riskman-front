@@ -1,5 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {TreeViewItem} from "../../shared/models/tree-view.item";
+import {HttpClient} from "@angular/common/http";
+import {AuthService, IUser} from "../../shared/services";
+import {EmergencyOrgService} from "../../shared/services/emergency-org.service";
+import {EmergencyOrganization} from "../../shared/models/emergency-organization";
+import {Headquarters} from "../../shared/models/headquarters";
+import {Experts} from "../../shared/models/experts";
 
 @Component({
   selector: 'app-emergency-organization',
@@ -11,9 +17,9 @@ export class EmergencyOrganizationComponent implements OnInit {
 
   emergencyDiagram: any;
 
-  headquartersData: any;
+  headquartersData: Headquarters[];
 
-  expertsGroupData: any;
+  expertsData: Experts[];
 
   IsHeadquarters: boolean;
   IsEmergencyDiagram: boolean;
@@ -25,7 +31,7 @@ export class EmergencyOrganizationComponent implements OnInit {
   IsFloodWaterDepth: boolean;
   IsArrivedTime: boolean;
   IsExitRoadMap: boolean;
-  floodWaterDepthData: any;
+  floodInfo: any;
   arrivedTimeData: any;
   exitRoadData: any;
   subtitle: any;
@@ -35,15 +41,58 @@ export class EmergencyOrganizationComponent implements OnInit {
   floodWaterDepthBtnType: any;
   arrivedTimeBtnType: any;
   exitRoadBtnType: any;
+  private user: null | IUser;
+  private headers: { Authorization: string };
+  private reservoir: number | undefined;
 
-  constructor() {
+  emergencyOrg: EmergencyOrganization;
+  villages: any;
+
+  constructor(private http: HttpClient, private authService: AuthService,
+              private emergencyOrgService:EmergencyOrgService) {
+
+    this.authService.getUser().then((e) => {
+      this.user = e.data;
+      this.headers = {
+        Authorization: 'Bearer ' + this.user?.token
+      };
+      this.reservoir = this.user?.reservoir;
+
+      emergencyOrgService.getEmergencyOrg(this.reservoir).then((e)=>{
+        this.emergencyOrg = e;
+      })
+
+      emergencyOrgService.getHeadquarters(this.reservoir).then((e)=>{
+        this.headquartersData = e;
+      })
+
+      emergencyOrgService.getExperts(this.reservoir).then((e)=>{
+        this.expertsData = e;
+      })
+
+      emergencyOrgService.getFloodInfo(this.reservoir).then((e)=>{
+        this.floodInfo = e;
+      })
+
+      emergencyOrgService.getVillage(this.reservoir).then((e) => {
+        this.villages = e;
+      })
+
+      emergencyOrgService.getExitRoad(this.reservoir).then((e)=>{
+        this.exitRoadData = e;
+      })
+
+    });
+
     this.setAllFalse();
 
     this.treeInfo = EmergencyOrganizationComponent.getInfo();
 
+    this.emergencyOrg = new EmergencyOrganization();
+
     this.IsEmergencyDiagram = true;
     this.IsFloodWaterDepth = true;
-    this.subtitle = "双城水库遭遇漫顶溃决洪水量最大淹没水深图";
+    this.subtitle = "";
     // this.floodWaterDepthBtnType = "default";
     // this.arrivedTimeBtnType = "success";
     // this.exitRoadBtnType = "danger";
@@ -123,14 +172,26 @@ export class EmergencyOrganizationComponent implements OnInit {
       this.floodWaterDepthBtnType = "default";
       this.arrivedTimeBtnType = "normal";
       this.exitRoadBtnType = "normal";
+      this.IsFloodWaterDepth = true;
+      this.IsArrivedTime = false;
+      this.IsExitRoadMap = false;
+      this.figurePath = this.emergencyOrg.floodwaterdepthimagepath.fileurl;
     } else if (1 == btnIdx) {
       this.floodWaterDepthBtnType = "normal";
       this.arrivedTimeBtnType = "default";
       this.exitRoadBtnType = "normal";
+      this.IsFloodWaterDepth = false;
+      this.IsArrivedTime = true;
+      this.IsExitRoadMap = false;
+      this.figurePath = this.emergencyOrg.arrivedtimeimagepath.fileurl;
     } else if (2 == btnIdx) {
       this.floodWaterDepthBtnType = "normal";
       this.arrivedTimeBtnType = "normal";
       this.exitRoadBtnType = "default";
+      this.IsFloodWaterDepth = false;
+      this.IsArrivedTime = false;
+      this.IsExitRoadMap = true;
+      this.figurePath = this.emergencyOrg.evacuationimagepath.fileurl;
     }
 
   }

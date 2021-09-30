@@ -1,4 +1,4 @@
-<h2 class="content-block">Reservoir Info Form</h2>
+<h2 class="content-block">水库基本信息</h2>
 <div class="content-block">
     <div class="dx-card responsive-paddings">
       <dx-data-grid
@@ -7,24 +7,12 @@
         [repaintChangesOnly]="true"
         [showBorders]="true">
         <dxo-editing
-          mode="cell"
+          mode="form"
           [allowAdding]="true"
           [allowUpdating]="true"
-          [allowDeleting]="true"></dxo-editing>
+          [allowDeleting]="true"
+        ></dxo-editing>
 
-
-        <dxi-column dataField="name" caption="名称" ></dxi-column>
-        <dxi-column dataField="longitude" caption="经度" ></dxi-column>
-        <dxi-column dataField="latitude" caption="纬度" ></dxi-column>
-        <dxi-column dataField="checkfloodlevel" caption="校核洪水位" ></dxi-column>
-        <dxi-column dataField="designfloodlevel" caption="设计洪水位" ></dxi-column>
-        <dxi-column dataField="normalstoragelevel" caption="正常蓄水位" ></dxi-column>
-        <dxi-column dataField="floodlimitlevel" caption="防洪限制水位" ></dxi-column>
-        <dxi-column dataField="deadwaterlevel" caption="死水位" ></dxi-column>
-        <dxi-column dataField="managementunit" caption="管理单位" ></dxi-column>
-        <dxi-column dataField="administrator" caption="行政责任人" ></dxi-column>
-        <dxi-column dataField="inspectionperson" caption="巡检责任人" ></dxi-column>
-        <dxi-column dataField="technicalperson" caption="技术负责人" ></dxi-column>
 
       </dx-data-grid>
     </div>

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService, IUser} from "../../../shared/services";
 import {HttpClient} from "@angular/common/http";
 import CustomStore from "devextreme/data/custom_store";
-import {IEvacuationInfo} from "../../../shared/models/IEvacuationInfo";
+import {EvacuationInfo} from "../../../shared/models/evacuation-info";
 import {CustomResponse} from "../../../shared/models/custom-response";
 
 @Component({
@@ -14,12 +14,12 @@ export class EvacuationInfoFormComponent implements OnInit {
   dataSource: any;
   private url: string;
   private headers: any;
-  user: IUser | null ;
+  user: IUser | null;
   reservoir: number | undefined;
 
-  constructor(private http:HttpClient, private authService: AuthService) {
+  constructor(private http: HttpClient, private authService: AuthService) {
 
-    this.authService.getUser().then((e)=>{
+    this.authService.getUser().then((e) => {
       this.user = e.data;
       this.headers = {
         Authorization: 'Bearer ' + this.user?.token
@@ -33,30 +33,32 @@ export class EvacuationInfoFormComponent implements OnInit {
     this.dataSource = new CustomStore({
       key: 'id',
       load: () => this.getRecords(),
-      insert: values => this.sendRequest("/","POST",{values}),
-      update: (key,values) => this.sendRequest("/","PUT", {key,values}),
-      remove: key => this.sendRequest("/","DELETE",{key}),
+      insert: values => this.sendRequest("/", "POST", {values}),
+      update: (key, values) => this.sendRequest("/", "PUT", {key, values}),
+      remove: key => this.sendRequest("/", "DELETE", {key}),
     });
   }
 
   ngOnInit() {
   }
 
-  async sendRequest(url: string, method: string="GET", data: any= {}): Promise<any> {
+  async sendRequest(url: string, method: string = "GET", data: any = {}): Promise<any> {
     let postUrl: string;
     postUrl = this.url + "tEvacuationInfo";
-    const record:IEvacuationInfo = data.values;
+    const record: EvacuationInfo = data.values;
 
     const httpParams = record;
     const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
 
-    let result:CustomResponse = new CustomResponse();
+    let result: CustomResponse = new CustomResponse();
 
     switch (method) {
       case 'PUT':
+        record.reservoirid = this.reservoir;
         result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
         break;
       case 'POST':
+        record.reservoirid = this.reservoir;
         result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
         break;
       case 'DELETE':
@@ -70,14 +72,16 @@ export class EvacuationInfoFormComponent implements OnInit {
 
   async getRecords() {
     let postUrl: string;
-    postUrl = this.url + "tEvacuationInfo";
+    postUrl = this.url + "tEvacuationInfo/list";
 
-    const data:IEvacuationInfo = {
-      reservoirid:this.reservoir
+    const data: EvacuationInfo = {
+      reservoirid: this.reservoir
     };
-    const httpOptions = {withCredentials:true, headers: this.headers}
+    const httpParams = data;
 
-    const result = await this.http.get<CustomResponse>(postUrl,httpOptions).toPromise();
+    const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
+
+    const result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
 
     return result.data;
   }

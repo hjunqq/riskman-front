@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import {IReservoirInfo} from "../models/IReservoirInfo";
+import {Injectable} from '@angular/core';
+import {ReservoirInfo} from "../models/reservoir-info";
 import {CustomResponse} from "../models/custom-response";
-import {ReservoirDetail} from "../models/reservoir.detail";
+import {ReservoirDetail} from "../models/reservoir-detail";
 import {HttpClient} from "@angular/common/http";
 import {AuthService, IUser} from "./auth.service";
 import {FilePath} from "../models/file-path";
+import {ProjectProps} from "../models/project-props";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class ReservoirInfoService {
   private user: null | IUser;
   private headers: { Authorization: string };
   private reservoir: number | undefined;
+  private allReservoir: ReservoirInfo[];
 
   constructor(private http: HttpClient, private authService: AuthService) {
     this.authService.getUser().then((e) => {
@@ -27,8 +29,17 @@ export class ReservoirInfoService {
     this.url = this.authService.getApiUrl();
   }
 
+  public async getAllReservoir():Promise<ReservoirInfo[]>{
 
-  async getReservoir(reservoir: number | undefined): Promise<IReservoirInfo> {
+    const postUrl = this.url + "tReservoirInfo/list";
+    const httpOptions = {withCredentials: true, headers: this.headers}
+
+    const result = await this.http.get<CustomResponse>(postUrl, httpOptions).toPromise();
+
+    return result.data;
+  }
+
+  async getReservoir(reservoir: number | undefined): Promise<ReservoirInfo> {
 
     let postUrl: string;
     postUrl = this.url + "tReservoirInfo" + "/" + reservoir;
@@ -66,6 +77,22 @@ export class ReservoirInfoService {
 
   }
 
+  async getProjectProps(reservoir:number|undefined){
+
+    let postUrl: string;
+    postUrl = this.url + "tProjectProps/list";
+
+    const data:ProjectProps = {
+      reservoirid: reservoir,
+    };
+    const httpOptions = {withCredentials: true, headers: this.headers, body: data}
+
+    const result = await this.http.post<CustomResponse>(postUrl, data, httpOptions).toPromise();
+
+    return result.data;
+
+  }
+
   private async getImagePath(infonatureimage: number): Promise<FilePath> {
 
     if (infonatureimage === undefined || infonatureimage === null) return new FilePath();
@@ -89,4 +116,5 @@ export class ReservoirInfoService {
       return new FilePath();
     }
   }
+
 }

@@ -34,8 +34,32 @@ import { SuppliesStorageFormComponent } from './pages/forms/supplies-storage-for
 import { PersonInfoPageComponent } from './pages/person-info-page/person-info-page.component';
 import { EmergencyOrganizationComponent } from './pages/emergency-organization/emergency-organization.component';
 import { ReservoirDetailFormComponent } from './pages/forms/reservoir-detail-form/reservoir-detail-form.component';
+import { ProjectPropsFormComponent } from './pages/forms/project-props-form/project-props-form.component';
+import { FloodRespPersonComponent } from './pages/forms/flood-resp-person/flood-resp-person.component';
+import { EmergencyManagerFormComponent } from './pages/forms/emergency-manager-form/emergency-manager-form.component';
+import { EmergencyOrgFormComponent } from './pages/forms/emergency-org-form/emergency-org-form.component';
 
 const routes: Routes = [
+  {
+    path: 'pages/form/emergency-org-form',
+    component: EmergencyOrgFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/emergency-manager-form',
+    component: EmergencyManagerFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/flood-resp-person',
+    component: FloodRespPersonComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/forms/project-props-form',
+    component: ProjectPropsFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
   {
     path: 'pages/forms/reservoir-detail-form',
     component: ReservoirDetailFormComponent,
@@ -171,6 +195,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule, DxTreeViewModule, DxTextAreaModule, DxFileUploaderModule, DxAccordionModule, CommonModule, DxProgressBarModule, DxTextBoxModule, DxResponsiveBoxModule, DxSelectBoxModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent, BasicInfoPageComponent, EmergencyManagementPageComponent, MonitoringAndWarningComponent, CriticalIncidentAnalysisComponent, EmergencyPlanFormComponent, AtlasFormComponent, AuthorityFormComponent, DownstreamVillageFormComponent, DutyFormComponent, EvacuationInfoFormComponent, PersonInfoFormComponent, ReservoirInfoFormComponent, SettlementFormComponent, SuppliesStorageFormComponent, PersonInfoPageComponent, EmergencyOrganizationComponent, ReservoirDetailFormComponent]
+  declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent, BasicInfoPageComponent, EmergencyManagementPageComponent, MonitoringAndWarningComponent, CriticalIncidentAnalysisComponent, EmergencyPlanFormComponent, AtlasFormComponent, AuthorityFormComponent, DownstreamVillageFormComponent, DutyFormComponent, EvacuationInfoFormComponent, PersonInfoFormComponent, ReservoirInfoFormComponent, SettlementFormComponent, SuppliesStorageFormComponent, PersonInfoPageComponent, EmergencyOrganizationComponent, ReservoirDetailFormComponent, ProjectPropsFormComponent, FloodRespPersonComponent, EmergencyManagerFormComponent, EmergencyOrgFormComponent]
 })
 export class AppRoutingModule { }

@@ -1,4 +1,4 @@
-export interface ISuppliesStorage {
+export class SuppliesStorage {
   id?: number;
   name?: string;
   personid?: number;

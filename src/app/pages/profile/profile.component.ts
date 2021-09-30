@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AuthService, IUser} from "../../shared/services";
 
 @Component({
   templateUrl: 'profile.component.html',
@@ -8,8 +9,22 @@ import { Component } from '@angular/core';
 export class ProfileComponent {
   employee: any;
   colCountByScreen: object;
+  user: null | IUser;
+  private headers: { Authorization: string };
+  private reservoir: number | undefined;
 
-  constructor() {
+  constructor(private authService: AuthService) {
+    this.authService.getUser().then((e)=>{
+      this.user = e.data;
+      this.headers = {
+        Authorization: 'Bearer ' + this.user?.token
+      };
+      this.reservoir = this.user?.reservoir;
+
+    });
+
+
+
     this.employee = {
       ID: 7,
       FirstName: 'Sandra',

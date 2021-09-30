@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService, IUser} from "../../../shared/services";
 import {HttpClient} from "@angular/common/http";
 import CustomStore from "devextreme/data/custom_store";
-import {PersonInfo} from "../../../shared/models/PersonInfo";
+import {PersonInfo} from "../../../shared/models/person-info";
 import {CustomResponse} from "../../../shared/models/custom-response";
+import {ReservoirInfoService} from "../../../shared/services/reservoir-info.service";
 
 @Component({
   selector: 'app-person-info-form',
@@ -16,8 +17,9 @@ export class PersonInfoFormComponent implements OnInit {
   private headers: any;
   user: IUser | null ;
   reservoir: number | undefined;
+  reservoirs: any;
 
-  constructor(private http:HttpClient, private authService: AuthService) {
+  constructor(private http:HttpClient, private authService: AuthService, private reservoirInfoService:ReservoirInfoService) {
 
     this.authService.getUser().then((e)=>{
       this.user = e.data;
@@ -25,6 +27,10 @@ export class PersonInfoFormComponent implements OnInit {
         Authorization: 'Bearer ' + this.user?.token
       };
       this.reservoir = this.user?.reservoir;
+
+      reservoirInfoService.getAllReservoir().then((e)=>{
+        this.reservoirs = e;
+      });
     });
 
     this.url = this.authService.getApiUrl();

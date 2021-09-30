@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
-import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {Injectable} from '@angular/core';
+import {ActivatedRouteSnapshot, CanActivate, Router} from '@angular/router';
+import {HttpClient} from "@angular/common/http";
 import {CustomResponse} from "../models/custom-response";
-import {fakeAsync} from "@angular/core/testing";
 
 export interface IUser {
   username: string;
@@ -15,7 +14,7 @@ const defaultPath = '/';
 const defaultUser = {
   username: 'Test',
   avatarUrl: 'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png',
-  token: "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMjk5MjI4N30.yxmuwEToQE3uMXhEvPnjBZgbPNNMH0KwMYUIIAwh-HV_hqdVtXch_o1kSaDE-RubvxI2VeubELXKpOs2njcyWQ", /* 2021年9月25日 */
+  token: "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMzQzNjM3OX0.CbWjgBJsBjjEKlvrKVelxc5joXTpDDiob8QFGLGuWrTBoF1tPuy_sHPOA8MkMhfIyE08g1QkJkuXLofsVwZy9A", /* 2021年9月25日 */
   reservoir:1,
 };
 
@@ -31,9 +30,9 @@ export class AuthService {
 
 
   get loggedIn(): boolean {
-    // return this._user?.token !== undefined && this._user?.token !== "";
+    return this._user?.token !== undefined && this._user?.token !== "";
 
-    return !!this._user;
+    // return !!this._user;
   }
 
   private _lastAuthenticatedPath: string = defaultPath;

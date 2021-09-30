@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService, IUser} from "../../../shared/services";
 import {HttpClient} from "@angular/common/http";
 import CustomStore from "devextreme/data/custom_store";
-import {ISettlement} from "../../../shared/models/ISettlement";
+import {Settlement} from "../../../shared/models/settlement";
 import {CustomResponse} from "../../../shared/models/custom-response";
 
 @Component({
@@ -45,7 +45,7 @@ export class SettlementFormComponent implements OnInit {
   async sendRequest(url: string, method: string="GET", data: any= {}): Promise<any> {
     let postUrl: string;
     postUrl = this.url + "tSettlement";
-    const record:ISettlement = data.values;
+    const record:Settlement = data.values;
 
     const httpParams = record;
     const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
@@ -70,14 +70,14 @@ export class SettlementFormComponent implements OnInit {
 
   async getRecords() {
     let postUrl: string;
-    postUrl = this.url + "tSettlement";
+    postUrl = this.url + "tSettlement/list";
 
-    const data:ISettlement = {
+    const data = {
       reservoirid:this.reservoir
     };
-    const httpOptions = {withCredentials:true, headers: this.headers}
+    const httpOptions = {withCredentials:true, headers: this.headers,body: data}
 
-    const result = await this.http.get<CustomResponse>(postUrl,httpOptions).toPromise();
+    const result = await this.http.post<CustomResponse>(postUrl, data, httpOptions).toPromise();
 
     return result.data;
   }

@@ -3,7 +3,7 @@ import {AuthService, IUser} from "../../../shared/services";
 import {HttpClient} from "@angular/common/http";
 import CustomStore from "devextreme/data/custom_store";
 import {CustomResponse} from "../../../shared/models/custom-response";
-import {IDownstreamVillage} from "../../../shared/models/IDownstreamVillage";
+import {DownstreamVillage} from "../../../shared/models/downstream-village";
 
 @Component({
   selector: 'app-downstream-village-form',
@@ -45,7 +45,7 @@ export class DownstreamVillageFormComponent implements OnInit {
   async sendRequest(url: string, method: string="GET", data: any= {}): Promise<any> {
     let postUrl: string;
     postUrl = this.url + "tDownstreamVillage";
-    const record:IDownstreamVillage = data.values;
+    const record:DownstreamVillage = data.values;
 
     const httpParams = record;
     const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
@@ -54,9 +54,11 @@ export class DownstreamVillageFormComponent implements OnInit {
 
     switch (method) {
       case 'PUT':
+        record.reservoirid = this.reservoir;
         result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
         break;
       case 'POST':
+        record.reservoirid = this.reservoir;
         result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
         break;
       case 'DELETE':
@@ -70,14 +72,17 @@ export class DownstreamVillageFormComponent implements OnInit {
 
   async getRecords() {
     let postUrl: string;
-    postUrl = this.url + "tDownstreamVillage";
+    postUrl = this.url + "tDownstreamVillage/list";
 
-    const data:IDownstreamVillage = {
+    const data:DownstreamVillage = {
       reservoirid: this.reservoir
     };
-    const httpOptions = {withCredentials:true, headers: this.headers}
 
-    const result = await this.http.get<CustomResponse>(postUrl,httpOptions).toPromise();
+    const httpParams = data;
+
+    const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
+
+    const result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
 
     return result.data;
   }

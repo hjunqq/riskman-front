@@ -1,4 +1,4 @@
-export interface ISettlement {
+export class Settlement {
   capacity?: number;
   id?: number;
   indexnumber?: number;

@@ -70,6 +70,22 @@ export const navigation = [
         path: '/pages/forms/reservoir-detail-form',
       },
       {
+        text: '水库特性表',
+        path: '/pages/forms/project-props-form',
+      },
+      {
+        text: '防汛责任人',
+        path: '/pages/forms/flood-resp-person',
+      },
+      {
+        text: '应急管理人员',
+        path: '/pages/forms/emergency-manager-form',
+      },
+      {
+        text: '应急组织',
+        path: '/pages/form/emergency-org-form',
+      },
+      {
         text: '图集',
         path: '/pages/forms/atlas-form',
       },
@@ -103,6 +119,5 @@ export const navigation = [
       },
     ]
   },
-
 
 ];

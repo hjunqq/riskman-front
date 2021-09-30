@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService, IUser} from "../../../shared/services";
 import {HttpClient} from "@angular/common/http";
 import CustomStore from "devextreme/data/custom_store";
-import {ISuppliesStorage} from "../../../shared/models/ISuppliesStorage";
+import {SuppliesStorage} from "../../../shared/models/supplies-storage";
 import {CustomResponse} from "../../../shared/models/custom-response";
 
 @Component({
@@ -45,7 +45,7 @@ export class SuppliesStorageFormComponent implements OnInit {
   async sendRequest(url: string, method: string="GET", data: any= {}): Promise<any> {
     let postUrl: string;
     postUrl = this.url + "tSuppliesStorage";
-    const record:ISuppliesStorage = data.values;
+    const record:SuppliesStorage = data.values;
 
     const httpParams = record;
     const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
@@ -70,14 +70,14 @@ export class SuppliesStorageFormComponent implements OnInit {
 
   async getRecords() {
     let postUrl: string;
-    postUrl = this.url + "tSuppliesStorage";
+    postUrl = this.url + "tSuppliesStorage/list";
 
-    const data:ISuppliesStorage = {
+    const data = {
       reservoirid:this.reservoir
     };
-    const httpOptions = {withCredentials:true, headers: this.headers}
+    const httpOptions = {withCredentials:true, headers: this.headers,body: data}
 
-    const result = await this.http.get<CustomResponse>(postUrl,httpOptions).toPromise();
+    const result = await this.http.post<CustomResponse>(postUrl, data, httpOptions).toPromise();
 
     return result.data;
   }

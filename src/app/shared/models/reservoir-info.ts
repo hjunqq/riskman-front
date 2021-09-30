@@ -1,4 +1,4 @@
-export interface IReservoirInfo {
+export class ReservoirInfo {
   administrator?: number;
   checkfloodlevel?: number;
   deadwaterlevel?: number;

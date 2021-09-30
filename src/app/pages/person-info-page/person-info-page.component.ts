@@ -3,8 +3,11 @@ import {TreeViewItem} from "../../shared/models/tree-view.item";
 import {HttpClient} from "@angular/common/http";
 import {AuthService, IUser} from "../../shared/services";
 import {ReservoirInfoService} from "../../shared/services/reservoir-info.service";
-import {ReservoirDetail} from "../../shared/models/reservoir.detail";
+import {ReservoirDetail} from "../../shared/models/reservoir-detail";
 import {PersonInfoService} from "../../shared/services/person-info.service";
+import {FloodPersonService} from "../../shared/services/flood-person.service";
+import {EmergencyManager} from "../../shared/models/emergency-manager";
+import {EmergencyManagerService} from "../../shared/services/emergency-manager.service";
 
 @Component({
   selector: 'app-person-info-page',
@@ -27,7 +30,9 @@ export class PersonInfoPageComponent implements OnInit {
 
   constructor(private http: HttpClient, private authService: AuthService,
               private reservoirInfoService: ReservoirInfoService,
-              private personInfoService:PersonInfoService
+              private personInfoService:PersonInfoService,
+              private floodPersonService: FloodPersonService,
+              private emergencyManagerService: EmergencyManagerService,
   ) {
 
     this.authService.getUser().then((e) => {
@@ -43,6 +48,14 @@ export class PersonInfoPageComponent implements OnInit {
 
       personInfoService.getPerson(this.reservoir).then((e)=>{
         this.managerData = e;
+      })
+
+      floodPersonService.getFloodPerson(this.reservoir).then((e)=>{
+        this.floodPersonData = e;
+      })
+
+      emergencyManagerService.getEmergencyManager(this.reservoir).then((e)=>{
+        this.emergencyPersonData = e;
       })
 
 

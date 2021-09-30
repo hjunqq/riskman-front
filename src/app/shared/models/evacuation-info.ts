@@ -1,4 +1,4 @@
-export interface IEvacuationInfo {
+export interface EvacuationInfo {
   id?: number;
   reservoirid?: number;
   routepoint?: string;

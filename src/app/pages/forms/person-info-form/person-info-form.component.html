@@ -15,8 +15,14 @@
 
         <dxi-column dataField="name" caption="姓名" ></dxi-column>
         <dxi-column dataField="position" caption="职位"></dxi-column>
-        <dxi-column dataField="role" caption="职务"></dxi-column>
-        <dxi-column dataField="reservoirid" caption="水库"></dxi-column>
+<!--        <dxi-column dataField="role" caption="职务"></dxi-column>-->
+        <dxi-column dataField="reservoirid" caption="水库">
+          <dxo-lookup
+            [dataSource]="reservoirs"
+            displayExpr="name"
+            valueExpr="id">
+          </dxo-lookup>
+        </dxi-column>
         <dxi-column dataField="unit" caption="单位"></dxi-column>
       </dx-data-grid>
     </div>

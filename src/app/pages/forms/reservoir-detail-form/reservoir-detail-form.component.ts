@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {AuthService, IUser} from "../../../shared/services";
-import CustomStore from "devextreme/data/custom_store";
-import {IReservoirInfo} from "../../../shared/models/IReservoirInfo";
+import {ReservoirInfo} from "../../../shared/models/reservoir-info";
 import {CustomResponse} from "../../../shared/models/custom-response";
 import {FilePath} from "../../../shared/models/file-path";
-import {ReservoirDetail} from "../../../shared/models/reservoir.detail";
+import {ReservoirDetail} from "../../../shared/models/reservoir-detail";
 import notify from "devextreme/ui/notify";
 import {ReservoirInfoService} from "../../../shared/services/reservoir-info.service";
 
@@ -20,7 +19,7 @@ export class ReservoirDetailFormComponent implements OnInit {
   headers: any;
   user: IUser | null;
   reservoir: number | undefined;
-  currentReservoir: IReservoirInfo;
+  currentReservoir: ReservoirInfo;
   reservoirDetails: ReservoirDetail;
 
   uploadResponse: CustomResponse;
@@ -126,27 +125,30 @@ export class ReservoirDetailFormComponent implements OnInit {
       record.reservoirid = this.reservoir;
     }
 
+
+
+    if (record.infonatureimagepath !== null) {
+      record.infonatureimage = record.infonatureimagepath.id;
+    }
+    if (record.infoprojectimagepath !== null) {
+      record.infoprojectimage = record.infoprojectimagepath.id;
+    }
+    if (record.infoprojectlayoutimagepath !== null) {
+      record.infoprojectlayoutimage = record.infoprojectlayoutimagepath.id;
+    }
+    if (record.infosectionimagepath !== null) {
+      record.infosectionimage = record.infosectionimagepath.id;
+    }
+    if(record.infogeoimagepath !== null){
+      record.infogeoimage = record.infogeoimagepath.id;
+    }
+
     const httpParams = record;
     const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
 
-    if (this.reservoirDetails.infonatureimagepath !== null) {
-      this.reservoirDetails.infonatureimage = this.reservoirDetails.infonatureimagepath.id;
-    }
-    if (this.reservoirDetails.infoprojectimagepath !== null) {
-      this.reservoirDetails.infoprojectimage = this.reservoirDetails.infoprojectimagepath.id;
-    }
-    if (this.reservoirDetails.infoprojectlayoutimagepath !== null) {
-      this.reservoirDetails.infoprojectlayoutimage = this.reservoirDetails.infoprojectlayoutimagepath.id;
-    }
-    if (this.reservoirDetails.infosectionimagepath !== null) {
-      this.reservoirDetails.infosectionimage = this.reservoirDetails.infosectionimagepath.id;
-    }
-    if(this.reservoirDetails.infogeoimagepath !== null){
-      this.reservoirDetails.infogeoimage = this.reservoirDetails.infogeoimagepath.id;
-    }
 
     let result;
-    if (this.reservoirDetails.id === null) {
+    if (record.id === null || record.id === undefined) {
       result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
     } else {
       result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();

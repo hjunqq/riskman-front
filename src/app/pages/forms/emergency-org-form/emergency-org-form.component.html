@@ -1,0 +1,144 @@
+<h2 class="content-block">应急管理</h2>
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <span>当前水库为：{{currentReservoir?.name}}</span>
+  </div>
+  <div class="dx-card responsive-paddings">
+    <form action="/" (submit)="onFormSubmit($event)">
+      <dx-form [formData]="emergencyOrg">
+        <!--        1.应急预案框图-->
+        <dxi-item itemType="group" caption="1、应急预案框图" colCount="4">
+          <dxi-item  template="pictureTemplate" dataField="emergencyorgimagepath">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+        <!--        2. 淹没水深图-->
+        <dxi-item itemType="group" caption="2. 洪水信息" colCount="4">
+          <dxi-item itemType="group" caption="洪水信息表"
+            colSpan="2">
+            <dx-data-grid
+              [dataSource]="floodInfo"
+            >
+              <dxo-editing
+                mode="cell"
+                [allowAdding]="true"
+                [allowUpdating]="true"
+                [allowDeleting]="true"></dxo-editing>
+
+              <dxi-column caption="村庄名称" dataField="villageid">
+                <dxo-lookup
+                  [dataSource]="villages"
+                  valueExpr="value"
+                  displayExpr="name">
+                </dxo-lookup>
+              </dxi-column>
+              <dxi-column caption="淹没水深（m）" dataField="waterdepth"></dxi-column>
+              <dxi-column caption="到达时间（h）" dataField="arrivedtime" dataType="datetime"></dxi-column>
+            </dx-data-grid>
+          </dxi-item>
+          <dxi-item itemType="group" caption="淹没水深图">
+          <dxi-item template="pictureTemplate" dataField="floodwaterdepthimagepath">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+          </dxi-item>
+          <dxi-item itemType="group" caption="到达时间图">
+          <dxi-item template="pictureTemplate" dataField="arrivedtimeimagepath">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+          </dxi-item>
+        </dxi-item>
+
+
+        <!--        3. 指挥部-->
+        <dxi-item itemType="group" caption="3. 指挥部" colCount="4">
+          <dx-data-grid
+            #grid
+            [dataSource]="headquarters"
+          >
+
+            <dxo-editing
+              mode="cell"
+              [allowAdding]="true"
+              [allowUpdating]="true"
+              [allowDeleting]="true"></dxo-editing>
+            <dxo-paging [enabled]="false"></dxo-paging>
+            <dxi-column caption="职务" dataField="duty"></dxi-column>
+            <dxi-column caption="工作单位或部门" dataField="unit"></dxi-column>
+            <dxi-column caption="工作职务" dataField="position"></dxi-column>
+            <dxi-column caption="姓名" dataField="name"></dxi-column>
+            <dxi-column caption="手机" dataField="phone"></dxi-column>
+            <dxi-column caption="办公电话" dataField="officephone"></dxi-column>
+          </dx-data-grid>
+        </dxi-item>
+
+        <!--        4. 专家组-->
+        <dxi-item itemType="group" caption="4. 指挥部" colCount="4">
+          <dx-data-grid
+            #grid
+            [dataSource]="experts"
+          >
+
+            <dxo-editing
+              mode="cell"
+              [allowAdding]="true"
+              [allowUpdating]="true"
+              [allowDeleting]="true"></dxo-editing>
+            <dxo-paging [enabled]="false"></dxo-paging>
+            <dxi-column caption="职务" dataField="position"></dxi-column>
+            <dxi-column caption="工作单位或部门" dataField="unit"></dxi-column>
+            <dxi-column caption="工作职务" dataField="positioninunit"></dxi-column>
+            <dxi-column caption="姓名" dataField="name"></dxi-column>
+            <dxi-column caption="专业" dataField="subject"></dxi-column>
+            <dxi-column caption="职责" dataField="duty"></dxi-column>
+            <dxi-column caption="联系方式" dataField="contact"></dxi-column>
+          </dx-data-grid>
+        </dxi-item>
+
+        <!--        5. 撤离路线图-->
+        <dxi-item itemType="group" caption="5. 撤离路线图" colCount="4">
+          <dxi-item  template="pictureTemplate" dataField="evacuationimagepath">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+
+        <!--        6. 应急流程图-->
+        <dxi-item itemType="group" caption="6. 应急流程图" colCount="4">
+          <dxi-item  template="pictureTemplate" dataField="emergencyprocessimagepath">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+
+        <div *dxTemplate="let data of 'pictureTemplate'">
+          <dx-text-box [(value)]="data.component.option('formData')[data.dataField].filename" [visible]="false"></dx-text-box>
+          <div class="widget-container">
+            <img
+              [src]="data.component.option('formData')[data.dataField].fileurl"
+              alt="img"/>
+          </div>
+          <dx-file-uploader
+            #fileUploader
+            [multiple]="false"
+            selectButtonText="选择图片"
+            labelText=""
+            [allowedFileExtensions]="['.jpg', '.jpeg', '.gif', '.png']"
+            uploadMode="instantly"
+            [visible]="true"
+            [uploadHeaders]="headers"
+            [uploadUrl]="'/api/files/upload'"
+            (onUploaded)="onUploaded($event,data)"
+            (onProgress)="onProgress($event)"
+          ></dx-file-uploader>
+        </div>
+
+
+        <dxi-item
+          itemType="button"
+          horizontalAlignment="left"
+          [buttonOptions]="buttonOptions">
+        </dxi-item>
+
+
+      </dx-form>
+    </form>
+  </div>
+</div>

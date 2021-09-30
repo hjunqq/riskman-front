@@ -20,7 +20,7 @@
         <dxi-location [row]="0" [col]="1"></dxi-location>
         <!--        应急组织框图-->
         <div class="dx-card responsive-paddings" id="reservoirManager" *ngIf="IsEmergencyDiagram">
-          <img [src]="emergencyDiagram" alt="EmergencyDiagram"/>
+          <img [src]="emergencyOrg.emergencyorgimagepath.fileurl" alt="EmergencyDiagram"/>
         </div>
         <!--        指挥部-->
         <div class="dx-card responsive-paddings" id="emergencyPerson" *ngIf="IsHeadquarters">
@@ -29,12 +29,12 @@
             [dataSource]="headquartersData"
           >
             <dxo-paging [enabled]="false"></dxo-paging>
-            <dxi-column caption="职务" dataField="Person"></dxi-column>
-            <dxi-column caption="工作单位或部门" dataField="WorkUnit"></dxi-column>
-            <dxi-column caption="工作职务" dataField="Position"></dxi-column>
-            <dxi-column caption="姓名" dataField="Name"></dxi-column>
-            <dxi-column caption="手机" dataField="Contact"></dxi-column>
-            <dxi-column caption="办公电话" dataField="Remark"></dxi-column>
+            <dxi-column caption="职务" dataField="duty"></dxi-column>
+            <dxi-column caption="工作单位或部门" dataField="unit"></dxi-column>
+            <dxi-column caption="工作职务" dataField="position"></dxi-column>
+            <dxi-column caption="姓名" dataField="name"></dxi-column>
+            <dxi-column caption="手机" dataField="phone"></dxi-column>
+            <dxi-column caption="办公电话" dataField="officephone"></dxi-column>
           </dx-data-grid>
         </div>
 
@@ -42,16 +42,16 @@
         <div class="dx-card responsive-paddings" id="expertsGroup" *ngIf="IsExpertsGroup">
           <dx-data-grid
             #grid
-            [dataSource]="expertsGroupData"
+            [dataSource]="expertsData"
           >
             <dxo-paging [enabled]="false"></dxo-paging>
-            <dxi-column caption="职务" dataField="Person"></dxi-column>
-            <dxi-column caption="工作单位或部门" dataField="WorkUnit"></dxi-column>
-            <dxi-column caption="工作职务" dataField="Position"></dxi-column>
-            <dxi-column caption="姓名" dataField="Name"></dxi-column>
-            <dxi-column caption="专业" dataField="Subject"></dxi-column>
-            <dxi-column caption="职责" dataField="Remark"></dxi-column>
-            <dxi-column caption="联系方式" dataField="Contact"></dxi-column>
+            <dxi-column caption="职务" dataField="position"></dxi-column>
+            <dxi-column caption="工作单位或部门" dataField="unit"></dxi-column>
+            <dxi-column caption="工作职务" dataField="positioninunit"></dxi-column>
+            <dxi-column caption="姓名" dataField="name"></dxi-column>
+            <dxi-column caption="专业" dataField="subject"></dxi-column>
+            <dxi-column caption="职责" dataField="duty"></dxi-column>
+            <dxi-column caption="联系方式" dataField="contact"></dxi-column>
           </dx-data-grid>
         </div>
 
@@ -99,24 +99,36 @@
               <div class="left-content">
                 <div *ngIf="IsFloodWaterDepth">
                   <dx-data-grid
-                    [dataSource]="floodWaterDepthData">
-                    <dxi-column caption="村庄名称" dataField="Name"></dxi-column>
-                    <dxi-column caption="淹没水深（m）" dataField="Depth"></dxi-column>
+                    [dataSource]="floodInfo">
+                    <dxi-column caption="村庄名称" dataField="villageid">
+                      <dxo-lookup
+                        [dataSource]="villages"
+                        valueExpr="value"
+                        displayExpr="name">
+                      </dxo-lookup>
+                    </dxi-column>
+                    <dxi-column caption="淹没水深（m）" dataField="waterdepth"></dxi-column>
                   </dx-data-grid>
                 </div>
                 <div *ngIf="IsArrivedTime">
                   <dx-data-grid
-                    [dataSource]="arrivedTimeData">
-                    <dxi-column caption="村庄名称" dataField="Name"></dxi-column>
-                    <dxi-column caption="到达时间（h）" dataField="Time"></dxi-column>
+                    [dataSource]="floodInfo">
+                    <dxi-column caption="村庄名称" dataField="villageid">
+                      <dxo-lookup
+                        [dataSource]="villages"
+                        valueExpr="value"
+                        displayExpr="name">
+                      </dxo-lookup>
+                    </dxi-column>
+                    <dxi-column caption="到达时间（h）" dataField="arrivedtime"></dxi-column>
                   </dx-data-grid>
                 </div>
                 <div *ngIf="IsExitRoadMap">
                   <dx-data-grid
                     [dataSource]="exitRoadData">
-                    <dxi-column caption="淹没村庄名" dataField="Name"></dxi-column>
-                    <dxi-column caption="安置点" dataField="Settlement"></dxi-column>
-                    <dxi-column caption="距离与时间" dataField="DistanceTime"></dxi-column>
+                    <dxi-column caption="淹没村庄名" dataField="routepoint"></dxi-column>
+                    <dxi-column caption="安置点" dataField="settlementid"></dxi-column>
+                    <dxi-column caption="距离与时间" dataField="time"></dxi-column>
                   </dx-data-grid>
                 </div>
               </div>
@@ -138,7 +150,7 @@
 
         <!--        应急流程-->
         <div class="dx-card responsive-paddings" id="emergencyProcess" *ngIf="IsEmergencyProcess">
-          <img [src]="emergencyProcess" alt="EmergencyProcess"/>
+          <img [src]="emergencyOrg.emergencyprocessimagepath.fileurl" alt="EmergencyProcess"/>
         </div>
 
       </dxi-item>

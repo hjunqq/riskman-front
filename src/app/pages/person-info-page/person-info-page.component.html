@@ -21,9 +21,11 @@
           <!--        水库管理人员-->
           <div class="dx-card responsive-paddings" id="reservoirManager" *ngIf="IsReservoirManager">
             <div>{{reservoirDetails.infocontrol || managerOverview}}</div>
+            <div>
             <dx-data-grid
               [dataSource]="managerData"
-              [showBorders]="true">
+              [showBorders]="true"
+            >
 
               <dxo-paging
                 [pageSize]="10">
@@ -33,17 +35,18 @@
               <dxi-column dataField="position" caption="水库单位职务"></dxi-column>
               <dxi-column dataField="contact " caption="联系方式"></dxi-column>
             </dx-data-grid>
+            </div>
             <div>三级防汛责任人</div>
             <dx-data-grid
               #grid
               [dataSource]="floodPersonData"
             >
               <dxo-paging [enabled]="false"></dxo-paging>
-              <dxi-column caption="防汛责任人" dataField="Person"></dxi-column>
-              <dxi-column caption="单位" dataField="WorkUnit"></dxi-column>
-              <dxi-column caption="职务" dataField="Position"></dxi-column>
-              <dxi-column caption="姓名" dataField="Name"></dxi-column>
-              <dxi-column caption="联系方式" dataField="Contact"></dxi-column>
+              <dxi-column caption="防汛责任人" dataField="positionname"></dxi-column>
+              <dxi-column caption="单位" dataField="unit"></dxi-column>
+              <dxi-column caption="职务" dataField="position"></dxi-column>
+              <dxi-column caption="姓名" dataField="personname"></dxi-column>
+              <dxi-column caption="联系方式" dataField="contact"></dxi-column>
             </dx-data-grid>
           </div>
 
@@ -51,15 +54,15 @@
           <div class="dx-card responsive-paddings" id="emergencyPerson" *ngIf="IsEmergencyManager">
             <dx-data-grid
               #grid
-              [dataSource]="floodPersonData"
+              [dataSource]="emergencyPersonData"
             >
               <dxo-paging [enabled]="false"></dxo-paging>
-              <dxi-column caption="部门或单位" dataField="Person"></dxi-column>
-              <dxi-column caption="职务" dataField="WorkUnit"></dxi-column>
-              <dxi-column caption="负责人" dataField="Position"></dxi-column>
-              <dxi-column caption="电话" dataField="Name"></dxi-column>
-              <dxi-column caption="职责" dataField="Contact"></dxi-column>
-              <dxi-column caption="备注" dataField="Remark"></dxi-column>
+              <dxi-column caption="部门或单位" dataField="unit"></dxi-column>
+              <dxi-column caption="职务" dataField="position"></dxi-column>
+              <dxi-column caption="负责人" dataField="chargeperson"></dxi-column>
+              <dxi-column caption="电话" dataField="phone"></dxi-column>
+              <dxi-column caption="职责" dataField="duty"></dxi-column>
+              <dxi-column caption="备注" dataField="remark"></dxi-column>
             </dx-data-grid>
           </div>
 

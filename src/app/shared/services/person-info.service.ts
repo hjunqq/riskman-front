@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {AuthService, IUser} from "./auth.service";
-import {PersonInfo} from "../models/PersonInfo";
+import {PersonInfo} from "../models/person-info";
 import {CustomResponse} from "../models/custom-response";
 
 @Injectable({
@@ -43,4 +43,6 @@ export class PersonInfoService {
 
     return person;
   }
+
+
 }

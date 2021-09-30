@@ -1,4 +1,4 @@
-export interface IDownstreamVillage {
+export class DownstreamVillage {
   id?: number;
   name?: string;
   personid?: number;

@@ -1,0 +1,24 @@
+<h2 class="content-block">应急管理人员</h2>
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <dx-data-grid
+      #dataGrid
+      [dataSource]="dataSource"
+      [repaintChangesOnly]="true"
+      [showBorders]="true">
+      <dxo-editing
+        mode="cell"
+        [allowAdding]="true"
+        [allowUpdating]="true"
+        [allowDeleting]="true"></dxo-editing>
+
+      <dxi-column caption="部门或单位" dataField="unit"></dxi-column>
+      <dxi-column caption="职务" dataField="position"></dxi-column>
+      <dxi-column caption="负责人" dataField="chargeperson"></dxi-column>
+      <dxi-column caption="电话" dataField="phone"></dxi-column>
+      <dxi-column caption="职责" dataField="duty"></dxi-column>
+      <dxi-column caption="备注" dataField="remark"></dxi-column>
+
+    </dx-data-grid>
+  </div>
+</div>

@@ -23,13 +23,13 @@
         <div class="widget-container" id="basinOverview" *ngIf="IsBasinOverView">
           <div class="title">流域概况</div>
           <div>{{reservoirDetails.infonature||basinOverview}}</div>
-          <img [src]="reservoirDetails.infonatureimagepath.path||basinOverviewImage" alt="basinOverviewImage"/>
+          <img [src]="reservoirDetails.infonatureimagepath.fileurl||basinOverviewImage" alt="basinOverviewImage"/>
         </div>
 <!--        工程概况-->
         <div class="widget-container" id="projectOverview" *ngIf="IsProjectOverview">
           <div class="title">工程概况</div>
           <div>{{reservoirDetails.infoproject||projectOverview}}</div>
-          <img [src]="reservoirDetails.infoprojectimagepath.path|| projectOverviewImage" alt="projectOverviewImage"/>
+          <img [src]="reservoirDetails.infoprojectimagepath.fileurl|| projectOverviewImage" alt="projectOverviewImage"/>
         </div>
 <!--        工程特性表-->
         <div class="widget-container" id="projectProperties" *ngIf="IsProjectProperties">
@@ -38,21 +38,19 @@
             [dataSource]="projectProperties"
             [showBorders]="true">
 
-            <dxo-paging
-              [pageSize]="10">
-            </dxo-paging>
+            <dxi-column dataField="location" caption="部位" [groupIndex]="0"></dxi-column>
+            <dxi-column dataField="propname" caption="特性名" ></dxi-column>
+            <dxi-column dataField="propvalue" caption="特性值" ></dxi-column>
 
-            <dxi-column dataField="name" caption="特性名"></dxi-column>
-            <dxi-column dataField="value" caption="特性值"></dxi-column>
           </dx-data-grid>
         </div>
 
 <!--        工程图表-->
         <div class="widget-container" id="engineeringChart" *ngIf="IsEngineeringChart">
           <div class="title">大坝断面图</div>
-          <img [src]="reservoirDetails.infosectionimagepath.path || damSectionImage" alt="damSection"/>
+          <img [src]="reservoirDetails.infosectionimagepath.fileurl || damSectionImage" alt="damSection"/>
           <div class="title">工程地质图</div>
-          <img [src]="reservoirDetails.infogeoimagepath.path || geologicalImage" alt="geological"/>
+          <img [src]="reservoirDetails.infogeoimagepath.fileurl || geologicalImage" alt="geological"/>
         </div>
 
 

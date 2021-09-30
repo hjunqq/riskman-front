@@ -1,0 +1,25 @@
+<h2 class="content-block">工程特性表</h2>
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <dx-data-grid
+      #dataGrid
+      [dataSource]="dataSource"
+      [repaintChangesOnly]="true"
+      [showBorders]="true">
+      <dxo-editing
+        mode="form"
+        [allowAdding]="true"
+        [allowUpdating]="true"
+        [allowDeleting]="true"
+      ></dxo-editing>
+
+
+      <dxi-column dataField="location" caption="部位" [groupIndex]="0"></dxi-column>
+      <dxi-column dataField="propname" caption="特性名" ></dxi-column>
+      <dxi-column dataField="propvalue" caption="特性值" ></dxi-column>
+
+      <dxo-grouping #expand [autoExpandAll]="true"></dxo-grouping>
+
+    </dx-data-grid>
+  </div>
+</div>
