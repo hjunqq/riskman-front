@@ -42,19 +42,19 @@ export class PersonInfoPageComponent implements OnInit {
       };
       this.reservoir = this.user?.reservoir;
 
-      reservoirInfoService.getReservoirDetails(this.reservoir).then((e) => {
+      reservoirInfoService.getReservoirDetails().then((e) => {
         this.reservoirDetails = e;
       })
 
-      personInfoService.getPerson(this.reservoir).then((e)=>{
+      personInfoService.getPerson().then((e)=>{
         this.managerData = e;
       })
 
-      floodPersonService.getFloodPerson(this.reservoir).then((e)=>{
+      floodPersonService.getFloodPerson().then((e)=>{
         this.floodPersonData = e;
       })
 
-      emergencyManagerService.getEmergencyManager(this.reservoir).then((e)=>{
+      emergencyManagerService.getEmergencyManager().then((e)=>{
         this.emergencyPersonData = e;
       })
 

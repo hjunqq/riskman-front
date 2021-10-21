@@ -1,0 +1,19 @@
+<!--<h2 class="content-block">指挥部</h2>-->
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <div class="custom-container">
+      <dx-data-grid
+        #grid
+        [dataSource]="headquartersData"
+      >
+        <dxo-paging [enabled]="false"></dxo-paging>
+        <dxi-column caption="职务" dataField="duty"></dxi-column>
+        <dxi-column caption="工作单位或部门" dataField="unit"></dxi-column>
+        <dxi-column caption="工作职务" dataField="position"></dxi-column>
+        <dxi-column caption="姓名" dataField="name"></dxi-column>
+        <dxi-column caption="手机" dataField="phone"></dxi-column>
+        <dxi-column caption="办公电话" dataField="officephone"></dxi-column>
+      </dx-data-grid>
+      </div>
+    </div>
+</div>

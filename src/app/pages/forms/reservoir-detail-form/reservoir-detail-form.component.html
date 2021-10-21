@@ -1,6 +1,6 @@
-<h2 class="content-block">水库详细信息</h2>
+<!--<h2 class="content-block">水库详细信息</h2>-->
 <div class="content-block">
-  <div class="dx-card responsive-paddings">
+  <div class="dx-card">
     <span>当前水库为：{{currentReservoir?.name}}</span>
   </div>
   <div class="dx-card responsive-paddings">
@@ -36,10 +36,13 @@
 
         <!--        4、工程布置-->
         <dxi-item itemType="group" colCount="4" caption="4、工程布置">
-          <dxi-item dataField="infoprojectlayout" [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
+          <dxi-item dataField="infoprojectlayout" [colSpan]="2" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
           <dxi-item template="pictureTemplate" dataField="infoprojectlayoutimagepath">
+            <dxo-label [visible]="false"></dxo-label>
+          </dxi-item>
+          <dxi-item template="pictureTemplate" dataField="infosectionimagepath">
             <dxo-label [visible]="false"></dxo-label>
           </dxi-item>
         </dxi-item>
@@ -79,16 +82,16 @@
           </dxi-item>
         </dxi-item>
 
-        <!--        9、管理制度-->
-        <dxi-item itemType="group" colCount="4" caption="9、管理制度">
-          <dxi-item dataField="infocontrol" helpText="简述管理机构"
-                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            <dxo-label [visible]="false"></dxo-label>
-          </dxi-item>
-        </dxi-item>
+<!--        &lt;!&ndash;        9、管理制度&ndash;&gt;-->
+<!--        <dxi-item itemType="group" colCount="4" caption="9、管理制度">-->
+<!--          <dxi-item dataField="infocontrol" helpText="简述管理机构"-->
+<!--                    [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">-->
+<!--            <dxo-label [visible]="false"></dxo-label>-->
+<!--          </dxi-item>-->
+<!--        </dxi-item>-->
 
         <!--        10、工程建设及加固情况-->
-        <dxi-item itemType="group" colCount="4" caption="10、工程建设及加固情况">
+        <dxi-item itemType="group" colCount="4" caption="9、工程建设及加固情况">
           <dxi-item dataField="infoconstructhistory" helpText="简述工程建设及加固情况"
                     [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
@@ -96,7 +99,7 @@
         </dxi-item>
 
         <!--        11、发生过的大洪水、地质灾害等情况-->
-        <dxi-item itemType="group" colCount="4" caption="11、发生过的大洪水、地质灾害等情况">
+        <dxi-item itemType="group" colCount="4" caption="10、发生过的大洪水、地质灾害等情况">
           <dxi-item dataField="infohistory" helpText="简述发生过的大洪水、地质灾害等情况"
                     [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
@@ -104,7 +107,7 @@
         </dxi-item>
 
         <!--        12、发生过的大洪水、地质灾害等情况-->
-        <dxi-item itemType="group" colCount="4" caption="12、工程安全鉴定">
+        <dxi-item itemType="group" colCount="4" caption="11、工程安全鉴定">
           <dxi-item dataField="infodetect" helpText="简述工程安全鉴定"
                     [colSpan]="3" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             <dxo-label [visible]="false"></dxo-label>
@@ -113,7 +116,7 @@
 
         <div *dxTemplate="let data of 'pictureTemplate'">
           <dx-text-box [(value)]="data.component.option('formData')[data.dataField].filename" [visible]="false"></dx-text-box>
-          <div class="widget-container">
+          <div class="custom-container">
             <img
               [src]="data.component.option('formData')[data.dataField].fileurl"
               alt="img"/>

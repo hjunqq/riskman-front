@@ -30,7 +30,10 @@ export class ReservoirInfoService {
   }
 
   public async getAllReservoir():Promise<ReservoirInfo[]>{
-
+    this.user = (await this.authService.getUser())?.data;
+    this.headers = {
+      Authorization: 'Bearer ' + this.user?.token
+    };
     const postUrl = this.url + "tReservoirInfo/list";
     const httpOptions = {withCredentials: true, headers: this.headers}
 
@@ -53,12 +56,19 @@ export class ReservoirInfoService {
     return result.data;
   }
 
-  async getReservoirDetails(reservoir: number | undefined) {
+  async getReservoirDetails():Promise<ReservoirDetail> {
+
+    this.user = (await this.authService.getUser())?.data;
+    this.headers = {
+      Authorization: 'Bearer ' + this.user?.token
+    };
+
     this.url = this.authService.getApiUrl();
+
     let resultObj = new ReservoirDetail();
 
     let postUrl: string;
-    postUrl = this.url + "tReservoirDetail" + "/" + reservoir;
+    postUrl = this.url + "tReservoirDetail" + "/reservoir=" + this.reservoir;
 
     let data: ReservoirDetail;
     const httpOptions = {withCredentials: true, headers: this.headers}
@@ -77,7 +87,16 @@ export class ReservoirInfoService {
 
   }
 
-  async getProjectProps(reservoir:number|undefined){
+  async getProjectProps(){
+
+    this.user = (await this.authService.getUser())?.data;
+    this.headers = {
+      Authorization: 'Bearer ' + this.user?.token
+    };
+
+    this.url = this.authService.getApiUrl();
+
+    let reservoir = this.user?.reservoir;
 
     let postUrl: string;
     postUrl = this.url + "tProjectProps/list";

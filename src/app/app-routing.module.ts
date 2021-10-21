@@ -32,14 +32,123 @@ import { ReservoirInfoFormComponent } from './pages/forms/reservoir-info-form/re
 import { SettlementFormComponent } from './pages/forms/settlement-form/settlement-form.component';
 import { SuppliesStorageFormComponent } from './pages/forms/supplies-storage-form/supplies-storage-form.component';
 import { PersonInfoPageComponent } from './pages/person-info-page/person-info-page.component';
-import { EmergencyOrganizationComponent } from './pages/emergency-organization/emergency-organization.component';
+import { EmergencyOrganizationComponent } from './pages/emergency-organization-page/emergency-organization.component';
 import { ReservoirDetailFormComponent } from './pages/forms/reservoir-detail-form/reservoir-detail-form.component';
 import { ProjectPropsFormComponent } from './pages/forms/project-props-form/project-props-form.component';
 import { FloodRespPersonComponent } from './pages/forms/flood-resp-person/flood-resp-person.component';
 import { EmergencyManagerFormComponent } from './pages/forms/emergency-manager-form/emergency-manager-form.component';
 import { EmergencyOrgFormComponent } from './pages/forms/emergency-org-form/emergency-org-form.component';
+import { OverviewComponent } from './pages/basic-info/overview/overview.component';
+import { ProjectOverviewComponent } from './pages/basic-info/project-overview/project-overview.component';
+import { ProjectPropertiesComponent } from './pages/basic-info/project-properties/project-properties.component';
+import { EngineeringChartComponent } from './pages/basic-info/engineering-chart/engineering-chart.component';
+import { ReservoirManagerComponent } from './pages/person-info/reservoir-manager/reservoir-manager.component';
+import { EmergencyPersonComponent } from './pages/person-info/emergency-person/emergency-person.component';
+import { EmergencyDiagramComponent } from './pages/emergency-organization/emergency-diagram/emergency-diagram.component';
+import { HeadquartersComponent } from './pages/emergency-organization/headquarters/headquarters.component';
+import { ExpertsComponent } from './pages/emergency-organization/experts/experts.component';
+import { RescueComponent } from './pages/emergency-organization/rescue/rescue.component';
+import { GradeComponent } from './pages/emergency-organization/grade/grade.component';
+import { ProcessComponent } from './pages/emergency-organization/process/process.component';
+import { OfficeComponent } from './pages/emergency-organization/office/office.component';
+import { GuaranteeAgencyComponent } from './pages/emergency-organization/guarantee-agency/guarantee-agency.component';
+import { CommandAgencyComponent } from './pages/emergency-organization/command-agency/command-agency.component';
+import { InfoReportComponent } from './pages/emergency-organization/info-report/info-report.component';
+import { SuppliesComponent } from './pages/emergency-organization/supplies/supplies.component';
+import { ContactsComponent } from './pages/emergency-organization/contacts/contacts.component';
+
 
 const routes: Routes = [
+  {
+    path: 'pages/emergency-organization/contacts',
+    component: ContactsComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-organization/supplies',
+    component: SuppliesComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-organization/info-report',
+    component: InfoReportComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-organization/command-agency',
+    component: CommandAgencyComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-organization/guarantee-agency',
+    component: GuaranteeAgencyComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-organization/office',
+    component: OfficeComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-organization/process',
+    component: ProcessComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-organization/grade',
+    component: GradeComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-organization/rescue',
+    component: RescueComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-diagram/experts',
+    component: ExpertsComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-organization/headquarters',
+    component: HeadquartersComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-organization/emergency-diagram',
+    component: EmergencyDiagramComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/person-info/emergency-person',
+    component: EmergencyPersonComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/person-info/reservoir-manager',
+    component: ReservoirManagerComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/basic-info/engineering-chart',
+    component: EngineeringChartComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/basic-info/project-properties',
+    component: ProjectPropertiesComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'basic-info/project-overview',
+    component: ProjectOverviewComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/basic-info/overview',
+    component: OverviewComponent,
+    canActivate: [ AuthGuardService ]
+  },
   {
     path: 'pages/form/emergency-org-form',
     component: EmergencyOrgFormComponent,
@@ -66,7 +175,7 @@ const routes: Routes = [
     canActivate: [ AuthGuardService ]
   },
   {
-    path: 'pages/emergency-organization',
+    path: 'pages/emergency-organization-page',
     component: EmergencyOrganizationComponent,
     canActivate: [ AuthGuardService ]
   },
@@ -195,6 +304,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule, DxTreeViewModule, DxTextAreaModule, DxFileUploaderModule, DxAccordionModule, CommonModule, DxProgressBarModule, DxTextBoxModule, DxResponsiveBoxModule, DxSelectBoxModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent, BasicInfoPageComponent, EmergencyManagementPageComponent, MonitoringAndWarningComponent, CriticalIncidentAnalysisComponent, EmergencyPlanFormComponent, AtlasFormComponent, AuthorityFormComponent, DownstreamVillageFormComponent, DutyFormComponent, EvacuationInfoFormComponent, PersonInfoFormComponent, ReservoirInfoFormComponent, SettlementFormComponent, SuppliesStorageFormComponent, PersonInfoPageComponent, EmergencyOrganizationComponent, ReservoirDetailFormComponent, ProjectPropsFormComponent, FloodRespPersonComponent, EmergencyManagerFormComponent, EmergencyOrgFormComponent]
+  declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent, BasicInfoPageComponent, EmergencyManagementPageComponent, MonitoringAndWarningComponent, CriticalIncidentAnalysisComponent, EmergencyPlanFormComponent, AtlasFormComponent, AuthorityFormComponent, DownstreamVillageFormComponent, DutyFormComponent, EvacuationInfoFormComponent, PersonInfoFormComponent, ReservoirInfoFormComponent, SettlementFormComponent, SuppliesStorageFormComponent, PersonInfoPageComponent, EmergencyOrganizationComponent, ReservoirDetailFormComponent, ProjectPropsFormComponent, FloodRespPersonComponent, EmergencyManagerFormComponent, EmergencyOrgFormComponent, OverviewComponent, ProjectOverviewComponent, ProjectPropertiesComponent, EngineeringChartComponent, ReservoirManagerComponent, EmergencyPersonComponent, EmergencyDiagramComponent, HeadquartersComponent, ExpertsComponent, RescueComponent, GradeComponent, ProcessComponent, OfficeComponent, GuaranteeAgencyComponent, CommandAgencyComponent, InfoReportComponent, SuppliesComponent, ContactsComponent]
 })
 export class AppRoutingModule { }

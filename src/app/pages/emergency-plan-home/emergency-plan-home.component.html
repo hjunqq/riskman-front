@@ -1,50 +1,104 @@
-<h2 class="content-block">应急预案首页</h2>
+<!--<h2 class="content-block">应急预案首页</h2>-->
 <div class="content-block">
-    <div class="dx-card responsive-paddings">
-      <div class="transparent-menu">
-        <dx-menu
-          #menu
-          orientation="horizontal"
-          [dataSource]="menuItems"
-          displayExpr="name"
-          (onItemClick)="itemClick($event)"
-        >
-        </dx-menu>
-      </div>
-      <div class="transparent-popup">
-        <div>基本工程特性表</div>
-        <div>库容曲线和泄流能力</div>
-      </div>
-      <dx-map
-        #map
-        center="Nanjing,China"
-        [zoom]="14"
-        [height]="800"
-        width="100%"
-        provider="bing"
-        [controls]="true"
-        [markers]="markers"
-        (onMarkerAdded)="markerAdded($event)"
-      >
-      </dx-map>
+  <div class="dx-card responsive-paddings">
+<!--    <div class="transparent-menu">-->
+<!--&lt;!&ndash;      <dx-menu-->
+<!--        #menu-->
+<!--        orientation="horizontal"-->
+<!--        [dataSource]="menuItems"-->
+<!--        displayExpr="name"-->
+<!--        (onItemClick)="itemClick($event)"-->
+<!--      >-->
+<!--      </dx-menu>&ndash;&gt;-->
+<!--    </div>-->
+    <!--      <div class="transparent-popup" >-->
+    <!--        <div>基本工程特性表</div>-->
+    <!--        <div>库容曲线和泄流能力</div>-->
+    <!--      </div>-->
+    <dx-map
+      #map
+      center="Nanjing,China"
+      [zoom]="14"
+      [height]="800"
+      width="100%"
+      provider="bing"
+      [controls]="true"
+      [markers]="markers"
+      (onMarkerAdded)="markerAdded($event)"
+    >
+    </dx-map>
 
-      <dx-popup
-        [width]="660"
-        [height]="540"
-        [showTitle]="true"
-        [title]="currentProject.Name"
-        [dragEnabled]="false"
-        [closeOnOutsideClick]="true"
-        [(visible)]="popupVisible"
-      >
-        <div *dxTemplate="let data of 'content'">
-          <div class='popup-property-details'>
-            <div class='popup-property-details'>
-              <div>基本工程特性表</div>
-              <div>库容曲线和泄流能力</div>
-            </div>
-          </div>
+    <dx-popup
+      [width]="660"
+      [height]="540"
+      [showTitle]="true"
+      [title]="currentProject.Name"
+      [dragEnabled]="false"
+      [closeOnOutsideClick]="true"
+      [(visible)]="popupVisible"
+    >
+      <div *dxTemplate="let data of 'content'">
+        <div class='popup-property-details'>
+
+          <dx-form
+            #dataGrid
+            [formData]="currentReservoir"
+            [colCountByScreen]="colCountByScreen"
+            [readOnly]="true"
+          >
+
+            <dxo-editing
+              mode="batch"
+              [allowAdding]="false"
+            ></dxo-editing>
+            <dxi-item dataField="name" caption="名称" alignment="center">
+              <dxo-label text="名称"></dxo-label>
+            </dxi-item>
+            <dxi-item dataField="longitude" caption="经度" alignment="center">
+              <dxo-label text="经度"></dxo-label>
+            </dxi-item>
+            <dxi-item dataField="latitude" caption="纬度" alignment="center">
+              <dxo-label text="纬度"></dxo-label>
+            </dxi-item>
+            <dxi-item dataField="checkfloodlevel" caption="校核洪水位" alignment="center">
+              <dxo-label text="校核洪水位"></dxo-label>
+            </dxi-item>
+            <dxi-item dataField="designfloodlevel" caption="设计洪水位" alignment="center">
+              <dxo-label text="设计洪水位"></dxo-label>
+            </dxi-item>
+            <dxi-item dataField="normalstoragelevel" caption="正常蓄水位" alignment="center">
+              <dxo-label text="正常蓄水位"></dxo-label>
+            </dxi-item>
+            <dxi-item dataField="floodlimitlevel" caption="防洪限制水位" alignment="center">
+              <dxo-label text="防洪限制水位"></dxo-label>
+            </dxi-item>
+            <dxi-item dataField="deadwaterlevel" caption="死水位" alignment="center">
+              <dxo-label text="死水位"></dxo-label>
+            </dxi-item>
+            <dxi-item dataField="managementunit" caption="管理单位" alignment="center">
+              <dxo-label text="管理单位"></dxo-label>
+            </dxi-item>
+            <dxi-item dataField="administrator" caption="行政责任人" alignment="center">
+              <dxo-label text="行政责任人"></dxo-label>
+            </dxi-item>
+            <dxi-item dataField="inspectionperson" caption="巡检责任人" alignment="center">
+              <dxo-label text="巡检责任人"></dxo-label>
+            </dxi-item>
+            <dxi-item dataField="technicalperson" caption="技术负责人" alignment="center">
+              <dxo-label text="技术负责人"></dxo-label>
+            </dxi-item>
+          </dx-form>
+
+          <dx-button
+            stylingMode="contained"
+            text="设为当前"
+            type="success"
+            [width]="120"
+            (onClick)="enter_btn_click()">
+          </dx-button>
         </div>
-      </dx-popup>
-    </div>
+      </div>
+
+    </dx-popup>
+  </div>
 </div>

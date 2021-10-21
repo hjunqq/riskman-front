@@ -33,7 +33,16 @@ export class EmergencyOrgService {
     this.url = this.authService.getApiUrl();
   }
 
-  async getEmergencyOrg(reservoir: number | undefined) : Promise<EmergencyOrganization>{
+  async getEmergencyOrg() : Promise<EmergencyOrganization>{
+    this.user = (await this.authService.getUser())?.data;
+    this.headers = {
+      Authorization: 'Bearer ' + this.user?.token
+    };
+
+    this.url = this.authService.getApiUrl();
+
+    let reservoir = this.user?.reservoir;
+
     this.url = this.authService.getApiUrl();
 
     let resultObj = new EmergencyOrganization();
@@ -48,7 +57,7 @@ export class EmergencyOrgService {
 
     const result = await this.http.post<CustomResponse>(postUrl,httpParams, httpOptions).toPromise();
 
-    data = result.data
+    data = result.data[0]
 
     data.emergencyorgimagepath = await this.getImagePath(data.emergencyorgimage);
     data.floodwaterdepthimagepath = await this.getImagePath(data.floodwaterdepthimage);
@@ -61,8 +70,15 @@ export class EmergencyOrgService {
   }
 
 
-  async getHeadquarters(reservoir:number|undefined):Promise<Headquarters[]>{
+  async getHeadquarters():Promise<Headquarters[]>{
+    this.user = (await this.authService.getUser())?.data;
+    this.headers = {
+      Authorization: 'Bearer ' + this.user?.token
+    };
 
+    this.url = this.authService.getApiUrl();
+
+    let reservoir = this.user?.reservoir;
     this.url = this.authService.getApiUrl();
 
     let postUrl: string;
@@ -82,7 +98,15 @@ export class EmergencyOrgService {
 
   }
 
-  async getExperts(reservoir:number|undefined):Promise<Experts[]>{
+  async getExperts():Promise<Experts[]>{
+    this.user = (await this.authService.getUser())?.data;
+    this.headers = {
+      Authorization: 'Bearer ' + this.user?.token
+    };
+
+    this.url = this.authService.getApiUrl();
+
+    let reservoir = this.user?.reservoir;
 
     this.url = this.authService.getApiUrl();
 
@@ -103,8 +127,15 @@ export class EmergencyOrgService {
 
   }
 
-  async getFloodInfo(reservoir:number|undefined):Promise<FloodInfo[]>{
+  async getFloodInfo():Promise<FloodInfo[]>{
+    this.user = (await this.authService.getUser())?.data;
+    this.headers = {
+      Authorization: 'Bearer ' + this.user?.token
+    };
 
+    this.url = this.authService.getApiUrl();
+
+    let reservoir = this.user?.reservoir;
     this.url = this.authService.getApiUrl();
 
     let postUrl: string;
@@ -123,8 +154,15 @@ export class EmergencyOrgService {
 
   }
 
-  async getExitRoad(reservoir:number|undefined):Promise<EvacuationInfo[]>{
+  async getExitRoad():Promise<EvacuationInfo[]>{
+    this.user = (await this.authService.getUser())?.data;
+    this.headers = {
+      Authorization: 'Bearer ' + this.user?.token
+    };
 
+    this.url = this.authService.getApiUrl();
+
+    let reservoir = this.user?.reservoir;
     this.url = this.authService.getApiUrl();
 
     let postUrl: string;
@@ -143,8 +181,15 @@ export class EmergencyOrgService {
 
   }
 
-  async getVillage(reservoir:number|undefined):Promise<DownstreamVillage[]>{
+  async getVillage():Promise<DownstreamVillage[]>{
+    this.user = (await this.authService.getUser())?.data;
+    this.headers = {
+      Authorization: 'Bearer ' + this.user?.token
+    };
 
+    this.url = this.authService.getApiUrl();
+
+    let reservoir = this.user?.reservoir;
     this.url = this.authService.getApiUrl();
 
     let postUrl: string;
@@ -159,11 +204,11 @@ export class EmergencyOrgService {
 
     data = result.data
 
-    return data;
-  }
+        return data;
+    }
 
-  async sendFloodInfoRequest(url: string, method: string="GET", data: any= {}): Promise<any> {
-    let postUrl: string;
+    async sendFloodInfoRequest(url: string, method: string="GET", data: any= {}): Promise<any> {
+      let postUrl: string;
     postUrl = this.url + "tFloodInfo";
     const record = data.values;
 

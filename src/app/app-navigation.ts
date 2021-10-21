@@ -19,24 +19,127 @@ export const navigation = [
   //   ]
   // },
   {
-    text: '应急预案首页',
+    text: '应急决策',
     path: '/pages/emergency-plan-home',
     icon: 'home'
   },
   {
     text: '工程信息',
     path: '/pages/basic-info-page',
-    icon: 'info'
+    icon: 'info',
+    items: [
+      {
+        text: '流域概况',
+        path: '/pages/basic-info/overview',
+      },
+      {
+        text: '工程概况',
+        path: '/basic-info/project-overview',
+      },
+      {
+        text: '工程特性表',
+        path: '/pages/basic-info/project-properties',
+      },
+      {
+        text: '工程图表',
+        path: '/pages/basic-info/engineering-chart',
+      },
+    ]
   },
   {
-    text: '人员信息',
+    text: '运行管理',
     path: '/pages/person-info-page',
-    icon: 'group'
+    icon: 'group',
+    items: [
+      {
+        text: '水库管理人员',
+        path: '/pages/person-info/reservoir-manager',
+      },
+      {
+        text: '应急管理人员',
+        path: '/pages/person-info/emergency-person',
+      },
+    ]
   },
   {
-    text: '应急组织',
-    path: '/pages/emergency-organization',
+    text: '监测和预警',
+    path: '/pages/monitoring-and-warning',
+    icon: 'airplane'
+  },
+  {
+    text: '突发事件分析',
+    path: '/pages/critical-incident-analysis',
     icon: 'runner'
+  },
+  {
+    text: '应急管理',
+    path: '/pages/emergency-organization-page',
+    icon: 'key',
+    items: [
+      {
+        text: '应急组织框图',
+        path: '/pages/emergency-organization/emergency-diagram',
+      },
+      {
+        text: '应急指挥部',
+        path: '/pages/emergency-organization/headquarters',
+        icon: 'menu',
+        items:[
+          {
+            text: '办公室',
+            path: '/pages/emergency-organization/office',
+          },
+          {
+            text: '指挥机构',
+            path: '/pages/emergency-organization/command-agency',
+          },
+          {
+            text: '保障机构',
+            path: '/pages/emergency-organization/guarantee-agency',
+          },
+          {
+            text: '专家组',
+            path: '/pages/emergency-diagram/experts',
+          },
+          {
+            text: '抢险和救援',
+            path: '/pages/emergency-organization/rescue',
+          },
+        ]
+      },
+      {
+        text:'应急响应',
+        icon: 'menu',
+        items:[
+          {
+            text: '应急流程',
+            path: '/pages/emergency-organization/process',
+          },
+          {
+            text: '信息上报',
+            path: '/pages/emergency-organization/info-report',
+          },
+          {
+            text: '分级响应',
+            path: '/pages/emergency-organization/grade',
+          },
+        ]
+      },
+      {
+        text:'应急保障',
+        icon: 'menu',
+        items:[
+          {
+            text:'物资',
+            path: '/pages/emergency-organization/supplies',
+          },
+          {
+            text:'相关联系方式',
+            path: '/pages/emergency-organization/contacts',
+          }
+        ]
+      }
+    ]
   },
   // {
   //   text: '应急管理页',
@@ -54,7 +157,7 @@ export const navigation = [
   //   icon: 'runner'
   // },
   {
-    text: '表单',
+    text: '后台管理',
     icon: 'tableproperties',
     items: [
       // {

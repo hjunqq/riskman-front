@@ -26,13 +26,19 @@ export class EmergencyManagerService {
     this.url = this.authService.getApiUrl();
   }
 
-  async getEmergencyManager(reservoir: number | undefined): Promise<EmergencyManager[]>{
+  async getEmergencyManager(): Promise<EmergencyManager[]>{
+    this.user = (await this.authService.getUser())?.data;
+    this.headers = {
+      Authorization: 'Bearer ' + this.user?.token
+    };
+    this.reservoir = this.user?.reservoir;
+
     let person:PersonInfo[];
 
     let postUrl: string;
-    postUrl = this.authService.getApiUrl() + "tEmergnecy" + "/list";
+    postUrl = this.authService.getApiUrl() + "tEmergencyManager" + "/list";
 
-    const httpParams = {"reservoirid": reservoir};
+    const httpParams = {"reservoirid":this.reservoir};
 
     const httpOptions = {withCredentials: true, headers: this.headers, body:httpParams};
 

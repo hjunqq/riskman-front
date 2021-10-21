@@ -1,4 +1,4 @@
-<h2 class="content-block">应急预案工程基本信息输入</h2>
+<!--<h2 class="content-block">应急预案工程基本信息输入</h2>-->
 <div class="content-block">
   <div class="dx-card responsive-paddings">
     <form action="/" (submit)="onFormSubmit($event)">
@@ -211,7 +211,7 @@
 
         <div *dxTemplate="let data of 'pictureTemplate'">
           <dx-text-box [(value)]="data.component.option('formData')[data.dataField].filename" [visible]="true"></dx-text-box>
-          <div class="widget-container">
+          <div class="custom-container">
             <img
               [src]="data.component.option('formData')[data.dataField].fileurl"
               alt=""/>

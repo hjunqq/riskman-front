@@ -57,11 +57,11 @@ export class EmergencyOrgFormComponent implements OnInit {
         this.currentReservoir = e;
       });
 
-      emergencyOrgService.getEmergencyOrg(this.reservoir).then((e) => {
+      emergencyOrgService.getEmergencyOrg().then((e) => {
         this.emergencyOrg = e;
       })
 
-      emergencyOrgService.getVillage(this.reservoir).then((e) => {
+      emergencyOrgService.getVillage().then((e) => {
         this.villages = e;
       })
 
@@ -73,7 +73,7 @@ export class EmergencyOrgFormComponent implements OnInit {
 
     this.floodInfo = new CustomStore({
       key: 'id',
-      load: () => emergencyOrgService.getFloodInfo(this.reservoir),
+      load: () => emergencyOrgService.getFloodInfo(),
       insert: values => emergencyOrgService.sendFloodInfoRequest("/","POST",{values}),
       update: (key,values) => emergencyOrgService.sendFloodInfoRequest("/","PUT", {key,values}),
       remove: key => emergencyOrgService.sendFloodInfoRequest("/","DELETE",{key}),
@@ -81,7 +81,7 @@ export class EmergencyOrgFormComponent implements OnInit {
 
     this.headquarters = new CustomStore({
       key: 'id',
-      load: () => emergencyOrgService.getHeadquarters(this.reservoir),
+      load: () => emergencyOrgService.getHeadquarters(),
       insert: values => emergencyOrgService.sendHeadquartersRequest("/","POST",{values}),
       update: (key,values) => emergencyOrgService.sendHeadquartersRequest("/","PUT", {key,values}),
       remove: key => emergencyOrgService.sendHeadquartersRequest("/","DELETE",{key}),
@@ -89,7 +89,7 @@ export class EmergencyOrgFormComponent implements OnInit {
 
     this.experts = new CustomStore({
       key: 'id',
-      load: () => emergencyOrgService.getExperts(this.reservoir),
+      load: () => emergencyOrgService.getExperts(),
       insert: values => emergencyOrgService.sendExpertsRequest("/","POST",{values}),
       update: (key,values) => emergencyOrgService.sendExpertsRequest("/","PUT", {key,values}),
       remove: key => emergencyOrgService.sendExpertsRequest("/","DELETE",{key}),

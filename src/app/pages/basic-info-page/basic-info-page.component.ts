@@ -51,11 +51,11 @@ export class BasicInfoPageComponent implements OnInit {
         this.currentReservoir = e;
       });
 
-      reservoirInfoService.getReservoirDetails(this.reservoir).then((e) => {
+      reservoirInfoService.getReservoirDetails().then((e) => {
         this.reservoirDetails = e;
       })
 
-      reservoirInfoService.getProjectProps(this.reservoir).then((e)=>{
+      reservoirInfoService.getProjectProps().then((e)=>{
         this.projectProperties = e;
       })
 

@@ -1,0 +1,20 @@
+<!--<h2 class="content-block">专家组</h2>-->
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <div class="custom-container">
+      <dx-data-grid
+        #grid
+        [dataSource]="expertsData"
+      >
+        <dxo-paging [enabled]="false"></dxo-paging>
+        <dxi-column caption="职务" dataField="position"></dxi-column>
+        <dxi-column caption="工作单位或部门" dataField="unit"></dxi-column>
+        <dxi-column caption="工作职务" dataField="positioninunit"></dxi-column>
+        <dxi-column caption="姓名" dataField="name"></dxi-column>
+        <dxi-column caption="专业" dataField="subject"></dxi-column>
+        <dxi-column caption="职责" dataField="duty"></dxi-column>
+        <dxi-column caption="联系方式" dataField="contact"></dxi-column>
+      </dx-data-grid>
+      </div>
+    </div>
+</div>

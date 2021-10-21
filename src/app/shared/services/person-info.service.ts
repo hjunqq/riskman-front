@@ -26,7 +26,15 @@ export class PersonInfoService {
     this.url = this.authService.getApiUrl();
   }
 
-  async getPerson(reservoir:number|undefined):Promise<PersonInfo[]>{
+  async getPerson():Promise<PersonInfo[]>{
+    this.user = (await this.authService.getUser())?.data;
+    this.headers = {
+      Authorization: 'Bearer ' + this.user?.token
+    };
+
+    this.url = this.authService.getApiUrl();
+
+    let reservoir = this.user?.reservoir;
 
     let person:PersonInfo[];
 

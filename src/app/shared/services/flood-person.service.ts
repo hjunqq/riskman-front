@@ -26,7 +26,17 @@ export class FloodPersonService {
     this.url = this.authService.getApiUrl();
   }
 
-  async getFloodPerson(reservoir: number | undefined): Promise<FloodRespPerson[]>{
+  async getFloodPerson(): Promise<FloodRespPerson[]>{
+
+    this.user = (await this.authService.getUser())?.data;
+    this.headers = {
+      Authorization: 'Bearer ' + this.user?.token
+    };
+
+    this.url = this.authService.getApiUrl();
+
+    let reservoir = this.user?.reservoir;
+
     let person:PersonInfo[];
 
     let postUrl: string;

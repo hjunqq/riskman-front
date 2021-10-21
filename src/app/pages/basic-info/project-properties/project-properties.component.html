@@ -1,0 +1,16 @@
+<!--<h2 class="content-block">工程特性表</h2>-->
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <div class="custom-container">
+        <dx-data-grid
+          [dataSource]="projectProperties"
+          [showBorders]="true">
+
+          <dxi-column dataField="location" caption="部位" [groupIndex]="0"></dxi-column>
+          <dxi-column dataField="propname" caption="特性名" ></dxi-column>
+          <dxi-column dataField="propvalue" caption="特性值" ></dxi-column>
+
+        </dx-data-grid>
+      </div>
+    </div>
+</div>

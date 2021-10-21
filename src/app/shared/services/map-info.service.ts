@@ -9,6 +9,10 @@ export class Tooltip {
 export class Marker {
   location: any;
   onClick: any;
+  tooltip: {
+    text: string | undefined;
+    isShown: boolean;
+  };
 }
 
 

@@ -1,6 +1,6 @@
-<h2 class="content-block">应急管理</h2>
+<!--<h2 class="content-block">应急管理</h2>-->
 <div class="content-block">
-  <div class="dx-card responsive-paddings">
+  <div class="dx-card">
     <span>当前水库为：{{currentReservoir?.name}}</span>
   </div>
   <div class="dx-card responsive-paddings">
@@ -20,7 +20,7 @@
               [dataSource]="floodInfo"
             >
               <dxo-editing
-                mode="cell"
+                mode="row"
                 [allowAdding]="true"
                 [allowUpdating]="true"
                 [allowDeleting]="true"></dxo-editing>
@@ -57,7 +57,7 @@
           >
 
             <dxo-editing
-              mode="cell"
+              mode="row"
               [allowAdding]="true"
               [allowUpdating]="true"
               [allowDeleting]="true"></dxo-editing>
@@ -79,7 +79,7 @@
           >
 
             <dxo-editing
-              mode="cell"
+              mode="row"
               [allowAdding]="true"
               [allowUpdating]="true"
               [allowDeleting]="true"></dxo-editing>
@@ -110,7 +110,7 @@
 
         <div *dxTemplate="let data of 'pictureTemplate'">
           <dx-text-box [(value)]="data.component.option('formData')[data.dataField].filename" [visible]="false"></dx-text-box>
-          <div class="widget-container">
+          <div class="custom-container">
             <img
               [src]="data.component.option('formData')[data.dataField].fileurl"
               alt="img"/>

@@ -58,27 +58,27 @@ export class EmergencyOrganizationComponent implements OnInit {
       };
       this.reservoir = this.user?.reservoir;
 
-      emergencyOrgService.getEmergencyOrg(this.reservoir).then((e)=>{
+      emergencyOrgService.getEmergencyOrg().then((e)=>{
         this.emergencyOrg = e;
       })
 
-      emergencyOrgService.getHeadquarters(this.reservoir).then((e)=>{
+      emergencyOrgService.getHeadquarters().then((e)=>{
         this.headquartersData = e;
       })
 
-      emergencyOrgService.getExperts(this.reservoir).then((e)=>{
+      emergencyOrgService.getExperts().then((e)=>{
         this.expertsData = e;
       })
 
-      emergencyOrgService.getFloodInfo(this.reservoir).then((e)=>{
+      emergencyOrgService.getFloodInfo().then((e)=>{
         this.floodInfo = e;
       })
 
-      emergencyOrgService.getVillage(this.reservoir).then((e) => {
+      emergencyOrgService.getVillage().then((e) => {
         this.villages = e;
       })
 
-      emergencyOrgService.getExitRoad(this.reservoir).then((e)=>{
+      emergencyOrgService.getExitRoad().then((e)=>{
         this.exitRoadData = e;
       })
 

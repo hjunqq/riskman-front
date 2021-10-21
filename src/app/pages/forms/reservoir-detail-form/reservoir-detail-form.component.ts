@@ -47,7 +47,7 @@ export class ReservoirDetailFormComponent implements OnInit {
         this.currentReservoir = e;
       });
 
-      reservoirInfoService.getReservoirDetails(this.reservoir).then((e) => {
+      reservoirInfoService.getReservoirDetails().then((e) => {
         this.reservoirDetails = e;
       })
 

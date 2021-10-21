@@ -3,6 +3,8 @@ import {ActivatedRouteSnapshot, CanActivate, Router} from '@angular/router';
 import {HttpClient} from "@angular/common/http";
 import {CustomResponse} from "../models/custom-response";
 
+
+
 export interface IUser {
   username: string;
   avatarUrl?: string;
@@ -14,19 +16,22 @@ const defaultPath = '/';
 const defaultUser = {
   username: 'Test',
   avatarUrl: 'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png',
-  token: "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMzQzNjM3OX0.CbWjgBJsBjjEKlvrKVelxc5joXTpDDiob8QFGLGuWrTBoF1tPuy_sHPOA8MkMhfIyE08g1QkJkuXLofsVwZy9A", /* 2021年9月25日 */
-  reservoir:1,
+  token: "" /*"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDkxMTI2MX0.KunVWamDwRq5V90giF5H5zHm1IhG0sNin6adsq39k3As8etyaHqfMAfOSmdWRlxYhc5yZ5RqD6V8fxWhhhdA2g"*/, /* 2021年9月25日 */
+  reservoir:11,
 };
 
 @Injectable()
 export class AuthService {
+
   private _user: IUser | null = defaultUser;
 
-  private _api: string = "http://localhost:4200/api/";
+  // private _api: string = "http://localhost:4200/api/";
 
-  // private _api: string = "http://8.136.105.11:6060/api/"
+  private _api: string = "http://8.136.105.11:6060/api/";
 
   private _authUrl:string = this._api + "auth/login";
+
+  // private store: LocalStore;
 
 
   get loggedIn(): boolean {
@@ -59,7 +64,13 @@ export class AuthService {
       console.log(username, password,rememberMe);
       this._user = { ...defaultUser, username };
       this._user.token = token;
-      this.router.navigate([this._lastAuthenticatedPath]);
+
+      // this.store = new LocalStore({
+      //   key:'_user',
+      //   data: [this._user]
+      // })
+
+      await this.router.navigate([this._lastAuthenticatedPath]);
 
       return {
         isOk: true,
@@ -76,8 +87,10 @@ export class AuthService {
 
   async getUser() {
     try {
+
       // Send request
       if(this._user===undefined){
+
         return {
           isOK: false,
           data: null
@@ -95,6 +108,13 @@ export class AuthService {
       };
     }
   }
+
+  async setCurrentReservoir(id: number | undefined){
+    if(this._user!=null){
+      this._user.reservoir = id;
+    }
+  }
+
 
   async createAccount(email: string, password: string) {
     try {

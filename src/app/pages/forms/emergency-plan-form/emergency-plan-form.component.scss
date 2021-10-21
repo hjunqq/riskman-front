@@ -12,12 +12,12 @@
 ::ng-deep #dropzone-external.dropzone-active {
   border-style: solid;
 }
-::ng-deep .widget-container > span {
+::ng-deep .custom-container > span {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 16px;
 }
-::ng-deep .widget-container img {
+::ng-deep .custom-container img {
   max-width: 100%;
   max-height: 100%;
 }
