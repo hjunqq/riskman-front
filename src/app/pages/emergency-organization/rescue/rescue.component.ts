@@ -23,9 +23,9 @@ export class RescueComponent implements OnInit {
   emergencyOrg: EmergencyOrganization;
 
   constructor(private emergencyOrgService:EmergencyOrgService) {
-    emergencyOrgService.getEmergencyOrg().then((e)=>{
-      this.emergencyOrg = e;
-    })
+
+    this.getEmergencyOrganization();
+
     emergencyOrgService.getFloodInfo().then((e)=>{
       this.floodInfo = e;
       this.btnClick(0);
@@ -43,10 +43,19 @@ export class RescueComponent implements OnInit {
   ngOnInit() {
   }
 
-  btnClick(btnIdx: number) {
+  async getEmergencyOrganization() {
+    this.emergencyOrg =await this.emergencyOrgService.getEmergencyOrg();
+  }
+
+  async btnClick(btnIdx: number) {
     // 1-淹没水深
     // 2-到达时间
     // 3-撤离路线
+
+    if (this.emergencyOrg === undefined) {
+      await this.getEmergencyOrganization();
+    }
+
     if (0 == btnIdx) {
       this.floodWaterDepthBtnType = "default";
       this.arrivedTimeBtnType = "normal";
@@ -54,6 +63,7 @@ export class RescueComponent implements OnInit {
       this.IsFloodWaterDepth = true;
       this.IsArrivedTime = false;
       this.IsExitRoadMap = false;
+
       this.figurePath = this.emergencyOrg.floodwaterdepthimagepath.fileurl;
     } else if (1 == btnIdx) {
       this.floodWaterDepthBtnType = "normal";

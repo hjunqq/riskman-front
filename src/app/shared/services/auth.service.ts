@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router} from '@angular/router';
 import {HttpClient} from "@angular/common/http";
 import {CustomResponse} from "../models/custom-response";
+import {AppCookieService} from "./app-cookie.service";
+import {JWTTokenService} from "./jwt-token.service";
 
 
 
@@ -25,9 +27,9 @@ export class AuthService {
 
   private _user: IUser | null = defaultUser;
 
-  // private _api: string = "http://localhost:4200/api/";
+  private _api: string = "http://localhost:4200/api/";
 
-  private _api: string = "http://8.136.105.11:6060/api/";
+  // private _api: string = "http://8.136.105.11:6060/api/";
 
   private _authUrl:string = this._api + "auth/login";
 
@@ -35,8 +37,26 @@ export class AuthService {
 
 
   get loggedIn(): boolean {
-    return this._user?.token !== undefined && this._user?.token !== "";
-
+    if(this._user==null){
+      return false;
+    }
+    if(this._user?.token==="") {
+      let token = this.appCookieService.get("token");
+      if (token !== null) {
+        this._user.token = token;
+        this.jwtTokenService.setToken(token);
+        let username = this.jwtTokenService.getUser();
+        if (username != null) {
+          this._user.username = username;
+        }
+        return true;
+      }else{
+        return false;
+      }
+    }else{
+      return !this.jwtTokenService.isTokenExpired();
+    }
+    // return false;
     // return !!this._user;
   }
 
@@ -45,7 +65,10 @@ export class AuthService {
     this._lastAuthenticatedPath = value;
   }
 
-  constructor(private router: Router, private httpClient: HttpClient) { }
+  constructor(private router: Router,
+              private httpClient: HttpClient,
+              private appCookieService: AppCookieService,
+              private jwtTokenService: JWTTokenService) { }
 
   async logIn(username: string, password: string, rememberMe: boolean) {
 
@@ -69,6 +92,10 @@ export class AuthService {
       //   key:'_user',
       //   data: [this._user]
       // })
+
+      if(rememberMe) {
+        this.appCookieService.set("token", token);
+      }
 
       await this.router.navigate([this._lastAuthenticatedPath]);
 
@@ -170,6 +197,7 @@ export class AuthService {
 
   async logOut() {
     this._user = null;
+    this.appCookieService.remove("token");
     this.router.navigate(['/login-form']);
   }
 
