@@ -9,15 +9,33 @@ import {ReservoirInfoService} from "../../../shared/services/reservoir-info.serv
 })
 export class EngineeringChartComponent implements OnInit {
   reservoirDetails: ReservoirDetail;
+  charts: any;
 
   constructor(private reservoirInfoService: ReservoirInfoService) {
-    this.reservoirDetails = new ReservoirDetail();
-    reservoirInfoService.getReservoirDetails().then((e)=>{
-      this.reservoirDetails = e;
-    })
+    // this.reservoirDetails = new ReservoirDetail();
+    // reservoirInfoService.getReservoirDetails().then((e)=>{
+    //   this.reservoirDetails = e;
+    // })
+    this.getCharts().then((e)=>{
+      this.charts = e
+    });
   }
 
   ngOnInit() {
   }
 
+  async getCharts() {
+    this.reservoirDetails =await this.reservoirInfoService.getReservoirDetails();
+
+    return[
+      {
+        title:"大坝断面图",
+        fileurl: this.reservoirDetails.infosectionimagepath.fileurl,
+      },
+      {
+        title:"工程地质图",
+        fileurl: this.reservoirDetails.infogeoimagepath.fileurl,
+      }
+    ]
+  }
 }

@@ -1,0 +1,55 @@
+<!--<h2 class="content-block">Overtop Dam Break</h2>-->
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+
+      <dx-responsive-box>
+        <dxi-row [ratio]="1"></dxi-row>
+
+        <dxi-col [ratio]="2"></dxi-col>
+        <dxi-col [ratio]="1"></dxi-col>
+
+        <dxi-item>
+          <dxi-location [row]="0" [col]="0"></dxi-location>
+          <div class="custom-container">
+            <div>双城水库水库发生1000年或1000年以上一遇洪水，库水位超过463.05m校核洪水位，预报未来仍有降雨时：入库洪水超过溢洪道最大下泄能力，水库发生洪水漫顶而导致溃决；洪水夹带的树木等阻塞溢洪道入口，洪水下泄不畅，造成水库库水位持续上升，漫顶溃决；大坝长时期高水位运行而形成管涌导致局部溃决；水库大坝长时间高水位并有强降雨导致大坝局部滑坡溃决。
+              水库遭遇漫顶溃决溃坝洪峰流量9757.9m3/s。根据洪水流量情况计算得出水库下游宝城村、利民村、下西沼屯、杨发屯、金家屯、太平庄村、小保屯、大保村、后徐家窝铺、河东村、后学田地、金星村、东门外、义和屯、庙家屯等村庄均位于淹没范围内。
+            </div>
+            <dx-data-grid
+              [dataSource]="floodInfo">
+              <dxi-column caption="村庄名称" dataField="villageid">
+                <dxo-lookup
+                  [dataSource]="villages"
+                  valueExpr="value"
+                  displayExpr="name">
+                </dxo-lookup>
+              </dxi-column>
+              <dxi-column caption="到达时间（m）" dataField="arrivedtime"></dxi-column>
+              <dxi-column caption="淹没水深（m）" dataField="waterdepth"></dxi-column>
+            </dx-data-grid>
+          </div>
+        </dxi-item>
+        <dxi-item>
+          <dxi-location [row]="0" [col]="1"></dxi-location>
+
+          <dx-tab-panel
+            [dataSource]="charts"
+            [selectedIndex]="0"
+            [animationEnabled]="true"
+            [swipeEnabled]="true"
+          >
+            <div *dxTemplate="let chart of 'title'">
+              <span>{{chart.title}}</span>
+            </div>
+            <div *dxTemplate="let chart of 'item'">
+              <div class="display-image">
+                <img [src]="chart.fileurl" />
+              </div>
+            </div>
+          </dx-tab-panel>
+
+        </dxi-item>
+      </dx-responsive-box>
+
+
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<!--<h2 class="content-block">Principal And Basis</h2>-->
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <div class="custom-container">
+        <div class="title">应急原则</div>
+        <div>
+          坚持以防为主，防抢结合；全面部署，保证重点；统一指挥，统一调度；服从大局，团结抗洪；工程措施和非工程措施相结合，采取紧急抢护措施，力保水库安全，减轻灾害损失。
+        </div>
+        <div class="title">基本依据</div>
+        <div>
+          <dx-data-grid
+            #dataGrid
+            [dataSource]="dataSource"
+            [repaintChangesOnly]="true"
+            [showBorders]="true">
+            <dxi-column dataField="index" caption="序号" alignment="center" ></dxi-column>
+            <dxi-column dataField="name" caption="名称" alignment="left" ></dxi-column>
+            <dxi-column dataField="remark" caption="备注" alignment="left" > </dxi-column>
+          </dx-data-grid>
+        </div>
+      </div>
+    </div>
+</div>

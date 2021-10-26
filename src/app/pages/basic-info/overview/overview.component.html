@@ -1,9 +1,42 @@
 <!--<h2 class="content-block">流域概况</h2>-->
 <div class="content-block">
     <div class="dx-card responsive-paddings">
-      <div class="custom-container">
-        <div>{{reservoirDetails.infonature}}</div>
-        <img [src]="reservoirDetails.infonatureimagepath.fileurl" alt="basinOverviewImage"/>
-      </div>
+      <dx-responsive-box>
+        <dxi-row [ratio]="1"></dxi-row>
+        <dxi-row [ratio]="1"></dxi-row>
+
+        <dxi-col [ratio]="2"></dxi-col>
+        <dxi-col [ratio]="1"></dxi-col>
+
+        <dxi-item>
+          <dxi-location [row]="0" [col]="0"></dxi-location>
+          <div class="custom-container">
+          <div class="title">流域概况</div>
+          <div>{{reservoirDetails.infonature}}</div>
+          </div>
+        </dxi-item>
+        <dxi-item>
+          <dxi-location [row]="0" [col]="1"></dxi-location>
+          <div class="display-image">
+          <img [src]="reservoirDetails.infonatureimagepath.fileurl" alt="basinOverviewImage"/>
+          </div>
+        </dxi-item>
+
+        <dxi-item>
+          <dxi-location [row]="1" [col]="0"></dxi-location>
+          <div class="custom-container">
+            <div class="title">工程概况</div>
+            <div>{{reservoirDetails.infoproject}}</div>
+          </div>
+        </dxi-item>
+        <dxi-item>
+          <dxi-location [row]="1" [col]="1"></dxi-location>
+          <div class="display-image">
+          <img [src]="reservoirDetails.infoprojectimagepath.fileurl" alt="projectOverviewImage"/>
+          </div>
+        </dxi-item>
+
+      </dx-responsive-box>
+
     </div>
 </div>

@@ -1,0 +1,33 @@
+<!--<h2 class="content-block">Super Standard Grading</h2>-->
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <div class="custom-container">
+        <div class="title">人员死亡、经济损失的分级标准</div>
+        <div>
+          <dx-data-grid
+            [dataSource]="humanGrade"
+            [repaintChangesOnly]="true"
+            [showBorders]="true">
+            <dxi-column dataField="grade" caption="等级" alignment="center" ></dxi-column>
+            <dxi-column dataField="level1" caption="特别重大（Ⅰ级）" alignment="center" ></dxi-column>
+            <dxi-column dataField="level2" caption="重大（Ⅱ级）" alignment="center" > </dxi-column>
+            <dxi-column dataField="level3" caption="较大（Ⅲ级）" alignment="center" > </dxi-column>
+            <dxi-column dataField="level4" caption="一般（Ⅳ级）" alignment="center" > </dxi-column>
+          </dx-data-grid>
+        </div>
+        <div class="title">社会环境影响分级标准</div>
+        <div>
+          <dx-data-grid
+            [dataSource]="societyGrade"
+            [repaintChangesOnly]="true"
+            [showBorders]="true">
+            <dxi-column dataField="grade" caption="等级" alignment="center" ></dxi-column>
+            <dxi-column dataField="level1" caption="特别重大（Ⅰ级）" alignment="center" ></dxi-column>
+            <dxi-column dataField="level2" caption="重大（Ⅱ级）" alignment="center" > </dxi-column>
+            <dxi-column dataField="level3" caption="较大（Ⅲ级）" alignment="center" > </dxi-column>
+            <dxi-column dataField="level4" caption="一般（Ⅳ级）" alignment="center" > </dxi-column>
+          </dx-data-grid>
+        </div>
+      </div>
+    </div>
+</div>

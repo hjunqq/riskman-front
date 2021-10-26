@@ -1,0 +1,23 @@
+<!--<h2 class="content-block">Safety Appraisal Status</h2>-->
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <div class="custom-container">
+        <div class="title">工程安全鉴定现状</div>
+        <div>
+          <dx-data-grid
+            #dataGrid
+            [dataSource]="dataSource"
+            [repaintChangesOnly]="true"
+            [showBorders]="true">
+            <dxi-column dataField="time" caption="时间及单位" alignment="center" ></dxi-column>
+            <dxi-column dataField="item" caption="安全评价项目" alignment="left" ></dxi-column>
+            <dxi-column dataField="grade" caption="等级" alignment="left" > </dxi-column>
+          </dx-data-grid>
+        </div>
+        <div class="title">存在的主要问题</div>
+        <div>
+          大坝坝体、坝基存在渗漏问题，坝脚部分区域沼泽化，主河槽坝脚附近存在两处较严重渗漏；防浪墙存在裂缝且在左岸输水洞对应坝顶防浪墙附近存在约3.5m宽缺口；溢洪道进口右侧边墙裂缝严重，有失稳趋势，泄槽局部混凝土破损老化严重，出口边坡滑塌堵塞泄洪通道；右坝肩与泄洪道尾水渠连接部位局部坍塌；原输水洞临近坝段上游侧景观亭倾斜严重，出现多处结构裂缝，存在安全隐患；大坝安全监测设施不完备等。
+        </div>
+      </div>
+    </div>
+</div>

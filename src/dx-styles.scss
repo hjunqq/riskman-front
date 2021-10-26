@@ -91,6 +91,17 @@ $side-panel-min-width: 60px;
   max-height: 100%;
   margin-top: 5px;
 }
+
+::ng-deep .display-image {
+  margin: auto;
+}
+
+::ng-deep .display-image > img {
+  width: 100%;
+  max-height: 100%;
+  margin-top: 5px;
+}
+
 ::ng-deep .buttons-column {
   flex-wrap: nowrap;
   display: flex;

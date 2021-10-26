@@ -1,11 +1,28 @@
 <!--<h2 class="content-block">工程图表</h2>-->
 <div class="content-block">
     <div class="dx-card responsive-paddings">
-      <div class="custom-container">
-        <div class="title">大坝断面图</div>
-        <img [src]="reservoirDetails.infosectionimagepath.fileurl " alt="damSection"/>
-        <div class="title">工程地质图</div>
-        <img [src]="reservoirDetails.infogeoimagepath.fileurl " alt="geological"/>
-      </div>
+      <dx-tab-panel
+        [dataSource]="charts"
+        [selectedIndex]="0"
+        [animationEnabled]="true"
+        [swipeEnabled]="true"
+        >
+        <div *dxTemplate="let chart of 'title'">
+          <span>{{chart.title}}</span>
+        </div>
+        <div *dxTemplate="let chart of 'item'">
+          <div class="custom-container">
+            <div class="title">{{chart.title}}</div>
+            <img [src]="chart.fileurl" />
+          </div>
+        </div>
+      </dx-tab-panel>
+
+<!--      <div class="custom-container">-->
+<!--        <div class="title">大坝断面图</div>-->
+<!--        <img [src]="reservoirDetails.infosectionimagepath.fileurl " alt="damSection"/>-->
+<!--        <div class="title">工程地质图</div>-->
+<!--        <img [src]="reservoirDetails.infogeoimagepath.fileurl " alt="geological"/>-->
+<!--      </div>-->
     </div>
 </div>

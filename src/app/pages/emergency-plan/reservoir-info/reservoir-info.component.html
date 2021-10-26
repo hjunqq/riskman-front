@@ -1,0 +1,26 @@
+<!--<h2 class="content-block">Reservoir Info</h2>-->
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <div class="custom-container">
+        <dx-data-grid
+          #dataGrid
+          [dataSource]="dataSource"
+          [repaintChangesOnly]="true"
+          [showBorders]="true">
+          <dxi-column dataField="name" caption="名称" alignment="center"></dxi-column>
+          <dxi-column dataField="longitude" caption="经度" alignment="center"></dxi-column>
+          <dxi-column dataField="latitude" caption="纬度" alignment="center"></dxi-column>
+          <dxi-column dataField="checkfloodlevel" caption="校核洪水位" alignment="center"></dxi-column>
+          <dxi-column dataField="designfloodlevel" caption="设计洪水位" alignment="center"></dxi-column>
+          <dxi-column dataField="normalstoragelevel" caption="正常蓄水位" alignment="center"></dxi-column>
+          <dxi-column dataField="floodlimitlevel" caption="防洪限制水位" alignment="center"></dxi-column>
+          <dxi-column dataField="deadwaterlevel" caption="死水位" alignment="center"></dxi-column>
+          <dxi-column dataField="managementunit" caption="管理单位" alignment="center"></dxi-column>
+          <dxi-column dataField="administrator" caption="行政责任人" alignment="center"></dxi-column>
+          <dxi-column dataField="inspectionperson" caption="巡检责任人" alignment="center"></dxi-column>
+          <dxi-column dataField="technicalperson" caption="技术负责人" alignment="center"></dxi-column>
+
+        </dx-data-grid>
+      </div>
+    </div>
+</div>

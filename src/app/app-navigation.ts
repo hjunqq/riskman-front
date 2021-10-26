@@ -21,7 +21,13 @@ export const navigation = [
   {
     text: '应急决策',
     path: '/pages/emergency-plan-home',
-    icon: 'home'
+    icon: 'home',
+    items: [
+      {
+        text: '水库基本信息',
+        path: '/pages/emergency-plan/reservoir-info',
+      },
+    ]
   },
   {
     text: '工程信息',
@@ -222,5 +228,26 @@ export const navigation = [
       },
     ]
   },
+  {
+    text: 'Principal And Basis',
+    path: '/pages/emergency-plan/principal-and-basis',
+    icon: 'folder'
+  },
+  {
+    text: 'Super Standard Grading',
+    path: '/pages/emergency-plan/super-standard-grading',
+    icon: 'folder'
+  },
+  {
+    text: 'Safety Appraisal Status',
+    path: '/pages/exceeding-standard-flood/safety-appraisal-status',
+    icon: 'folder'
+  },
+  {
+    text: 'Overtop Dam Break',
+    path: '/pages/exceeding-standard-flood/overtop-dam-break',
+    icon: 'folder'
+  },
+
 
 ];

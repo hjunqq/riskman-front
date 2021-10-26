@@ -6,14 +6,24 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import {
-  DxAccordionModule,
-  DxButtonModule,
-  DxDataGridModule, DxDrawerModule, DxFileUploaderModule,
-  DxFormModule,
-  DxMapModule, DxMenuModule,
-  DxPieChartModule,
-  DxPopupModule, DxProgressBarModule, DxResponsiveBoxModule, DxSelectBoxModule, DxTextAreaModule, DxTextBoxModule,
-  DxTooltipModule, DxTreeViewModule
+    DxAccordionModule,
+    DxButtonModule,
+    DxDataGridModule,
+    DxDrawerModule,
+    DxFileUploaderModule,
+    DxFormModule,
+    DxMapModule,
+    DxMenuModule,
+    DxPieChartModule,
+    DxPopupModule,
+    DxProgressBarModule,
+    DxResponsiveBoxModule,
+    DxSelectBoxModule,
+    DxTabPanelModule,
+    DxTextAreaModule,
+    DxTextBoxModule,
+    DxTooltipModule,
+    DxTreeViewModule
 } from 'devextreme-angular';
 import { EmergencyPlanHomeComponent } from './pages/emergency-plan-home/emergency-plan-home.component';
 import { BasicInfoPageComponent } from './pages/basic-info-page/basic-info-page.component';
@@ -56,9 +66,39 @@ import { CommandAgencyComponent } from './pages/emergency-organization/command-a
 import { InfoReportComponent } from './pages/emergency-organization/info-report/info-report.component';
 import { SuppliesComponent } from './pages/emergency-organization/supplies/supplies.component';
 import { ContactsComponent } from './pages/emergency-organization/contacts/contacts.component';
+import { ReservoirInfoComponent } from './pages/emergency-plan/reservoir-info/reservoir-info.component';
+import { PrincipalAndBasisComponent } from './pages/emergency-plan/principal-and-basis/principal-and-basis.component';
+import { SuperStandardGradingComponent } from './pages/emergency-plan/super-standard-grading/super-standard-grading.component';
+import { SafetyAppraisalStatusComponent } from './pages/exceeding-standard-flood/safety-appraisal-status/safety-appraisal-status.component';
+import { OvertopDamBreakComponent } from './pages/exceeding-standard-flood/overtop-dam-break/overtop-dam-break.component';
 
 
 const routes: Routes = [
+  {
+    path: 'pages/exceeding-standard-flood/overtop-dam-break',
+    component: OvertopDamBreakComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/exceeding-standard-flood/safety-appraisal-status',
+    component: SafetyAppraisalStatusComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-plan/super-standard-grading',
+    component: SuperStandardGradingComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-plan/principal-and-basis',
+    component: PrincipalAndBasisComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/emergency-plan/reservoir-info',
+    component: ReservoirInfoComponent,
+    canActivate: [ AuthGuardService ]
+  },
   {
     path: 'pages/emergency-organization/contacts',
     component: ContactsComponent,
@@ -301,9 +341,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule, DxTreeViewModule, DxTextAreaModule, DxFileUploaderModule, DxAccordionModule, CommonModule, DxProgressBarModule, DxTextBoxModule, DxResponsiveBoxModule, DxSelectBoxModule],
+    imports: [RouterModule.forRoot(routes, {useHash: true}), DxDataGridModule, DxFormModule, DxMapModule, DxPieChartModule, DxTooltipModule, DxPopupModule, DxButtonModule, DxDrawerModule, DxMenuModule, DxTreeViewModule, DxTextAreaModule, DxFileUploaderModule, DxAccordionModule, CommonModule, DxProgressBarModule, DxTextBoxModule, DxResponsiveBoxModule, DxSelectBoxModule, DxTabPanelModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent, BasicInfoPageComponent, EmergencyManagementPageComponent, MonitoringAndWarningComponent, CriticalIncidentAnalysisComponent, EmergencyPlanFormComponent, AtlasFormComponent, AuthorityFormComponent, DownstreamVillageFormComponent, DutyFormComponent, EvacuationInfoFormComponent, PersonInfoFormComponent, ReservoirInfoFormComponent, SettlementFormComponent, SuppliesStorageFormComponent, PersonInfoPageComponent, EmergencyOrganizationComponent, ReservoirDetailFormComponent, ProjectPropsFormComponent, FloodRespPersonComponent, EmergencyManagerFormComponent, EmergencyOrgFormComponent, OverviewComponent, ProjectOverviewComponent, ProjectPropertiesComponent, EngineeringChartComponent, ReservoirManagerComponent, EmergencyPersonComponent, EmergencyDiagramComponent, HeadquartersComponent, ExpertsComponent, RescueComponent, GradeComponent, ProcessComponent, OfficeComponent, GuaranteeAgencyComponent, CommandAgencyComponent, InfoReportComponent, SuppliesComponent, ContactsComponent]
+  declarations: [HomeComponent, ProfileComponent, TasksComponent, EmergencyPlanHomeComponent, BasicInfoPageComponent, EmergencyManagementPageComponent, MonitoringAndWarningComponent, CriticalIncidentAnalysisComponent, EmergencyPlanFormComponent, AtlasFormComponent, AuthorityFormComponent, DownstreamVillageFormComponent, DutyFormComponent, EvacuationInfoFormComponent, PersonInfoFormComponent, ReservoirInfoFormComponent, SettlementFormComponent, SuppliesStorageFormComponent, PersonInfoPageComponent, EmergencyOrganizationComponent, ReservoirDetailFormComponent, ProjectPropsFormComponent, FloodRespPersonComponent, EmergencyManagerFormComponent, EmergencyOrgFormComponent, OverviewComponent, ProjectOverviewComponent, ProjectPropertiesComponent, EngineeringChartComponent, ReservoirManagerComponent, EmergencyPersonComponent, EmergencyDiagramComponent, HeadquartersComponent, ExpertsComponent, RescueComponent, GradeComponent, ProcessComponent, OfficeComponent, GuaranteeAgencyComponent, CommandAgencyComponent, InfoReportComponent, SuppliesComponent, ContactsComponent, ReservoirInfoComponent, PrincipalAndBasisComponent, SuperStandardGradingComponent, SafetyAppraisalStatusComponent, OvertopDamBreakComponent]
 })
 export class AppRoutingModule { }
