@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-report.component.scss']
 })
 export class InfoReportComponent implements OnInit {
+  buttonOptions: any = {
+    text: "提交",
+    type: "success",
+    useSubmitBehavior: true
+  }
 
   constructor() { }
 

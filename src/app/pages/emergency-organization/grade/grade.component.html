@@ -1,8 +1,17 @@
 <!--<h2 class="content-block">应急响应分级表</h2>-->
 <div class="content-block">
     <div class="dx-card responsive-paddings">
-      <div class="custom-container">
-      <img [src]="emergencyGrade" alt="EmergencyGrade"/>
-      </div>
+<!--      <div class="custom-container">-->
+<!--      <img [src]="emergencyGrade" alt="EmergencyGrade"/>-->
+<!--      </div>-->
+      <dx-data-grid
+        [dataSource]="grades"
+        [wordWrapEnabled]="true"
+      >
+        <dxi-column caption="预警级别" dataField="level"></dxi-column>
+        <dxi-column caption="可能突发事件" dataField="event"></dxi-column>
+        <dxi-column caption="可能突发事件描述" dataField="description" ></dxi-column>
+        <dxi-column caption="应急响应措施" dataField="measures"></dxi-column>
+      </dx-data-grid>
     </div>
 </div>

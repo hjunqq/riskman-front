@@ -1,0 +1,50 @@
+<!--<h2 class="content-block">Emergnecy Organization Home</h2>-->
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+      <dx-responsive-box>
+        <dxi-row [ratio]="1"></dxi-row>
+
+        <dxi-col [ratio]="2"></dxi-col>
+        <dxi-col [ratio]="1"></dxi-col>
+        <dxi-item>
+          <dxi-location [row]="0" [col]="0"></dxi-location>
+          <div class="custom-container">
+            <div class="title">监测预警</div>
+            <dx-data-grid
+              [dataSource]="monitor"
+            >
+              <dxi-column caption="类别" dataField="class"></dxi-column>
+              <dxi-column caption="姓名" dataField="name"></dxi-column>
+            </dx-data-grid>
+            <div class="title">信息上报</div>
+            <dx-data-grid
+              [dataSource]="reporter"
+            >
+              <dxi-column caption="类别" dataField="class"></dxi-column>
+              <dxi-column caption="姓名" dataField="name"></dxi-column>
+            </dx-data-grid>
+            <div class="title">应急调度</div>
+            <dx-data-grid
+              [dataSource]="dispatcher"
+            >
+              <dxi-column caption="类别" dataField="class"></dxi-column>
+              <dxi-column caption="姓名" dataField="name"></dxi-column>
+            </dx-data-grid>
+            <div class="title">应急保障</div>
+            <dx-data-grid
+              [dataSource]="guarantor"
+            >
+              <dxi-column caption="类别" dataField="class"></dxi-column>
+              <dxi-column caption="姓名" dataField="name"></dxi-column>
+            </dx-data-grid>
+          </div>
+        </dxi-item>
+        <dxi-item>
+          <dxi-location [row]="0" [col]="1"></dxi-location>
+          <div class="display-image">
+            <img src="assets/figures/emergency-management.png" alt="emergency-management"/>
+          </div>
+        </dxi-item>
+      </dx-responsive-box>
+    </div>
+</div>

@@ -27,6 +27,14 @@ export const navigation = [
         text: '水库基本信息',
         path: '/pages/emergency-plan/reservoir-info',
       },
+      {
+        text: '应急原则及依据',
+        path: '/pages/emergency-plan/principal-and-basis',
+      },
+      {
+        text: '超标准事件分级标准',
+        path: '/pages/emergency-plan/super-standard-grading',
+      },
     ]
   },
   {
@@ -73,13 +81,32 @@ export const navigation = [
     icon: 'airplane'
   },
   {
-    text: '突发事件分析',
-    path: '/pages/critical-incident-analysis',
-    icon: 'runner'
+    text: '超标准洪水分析',
+    icon: 'runner',
+    items: [
+      {
+        text: '工程现状',
+        path: '/pages/exceeding-standard-flood/safety-appraisal-status',
+      },
+      {
+        text: '漫顶溃坝',
+        path: '/pages/exceeding-standard-flood/overtop-dam-break',
+      },
+    ]
   },
+  // {
+  //   text: '突发事件分析',
+  //   path: '/pages/critical-incident-analysis',
+  //   icon: 'runner'
+  // },
+  // {
+  //   text: 'Emergnecy Organization Home',
+  //   path: '/pages/emergency-organization-home',
+  //   icon: 'folder'
+  // },
   {
     text: '应急管理',
-    path: '/pages/emergency-organization-page',
+    path: '/pages/emergency-organization-home',
     icon: 'key',
     items: [
       {
@@ -89,7 +116,6 @@ export const navigation = [
       {
         text: '应急指挥部',
         path: '/pages/emergency-organization/headquarters',
-        icon: 'menu',
         items:[
           {
             text: '办公室',
@@ -115,7 +141,7 @@ export const navigation = [
       },
       {
         text:'应急响应',
-        icon: 'menu',
+        // icon: 'menu',
         items:[
           {
             text: '应急流程',
@@ -133,7 +159,7 @@ export const navigation = [
       },
       {
         text:'应急保障',
-        icon: 'menu',
+        // icon: 'menu',
         items:[
           {
             text:'物资',
@@ -228,26 +254,11 @@ export const navigation = [
       },
     ]
   },
-  {
-    text: 'Principal And Basis',
-    path: '/pages/emergency-plan/principal-and-basis',
-    icon: 'folder'
-  },
-  {
-    text: 'Super Standard Grading',
-    path: '/pages/emergency-plan/super-standard-grading',
-    icon: 'folder'
-  },
-  {
-    text: 'Safety Appraisal Status',
-    path: '/pages/exceeding-standard-flood/safety-appraisal-status',
-    icon: 'folder'
-  },
-  {
-    text: 'Overtop Dam Break',
-    path: '/pages/exceeding-standard-flood/overtop-dam-break',
-    icon: 'folder'
-  },
+
+
+
+
+
 
 
 ];

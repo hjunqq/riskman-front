@@ -1,4 +1,38 @@
 <!--<h2 class="content-block">Info Report</h2>-->
 <div class="content-block">
-    <div class="dx-card responsive-paddings">信息上报</div>
+    <div class="dx-card responsive-paddings">
+      <dx-responsive-box>
+        <dxi-row [ratio]="1"></dxi-row>
+
+        <dxi-col [ratio]="1"></dxi-col>
+        <dxi-col [ratio]="1"></dxi-col>
+
+        <dxi-item>
+          <dxi-location [row]="0" [col]="0"></dxi-location>
+
+          <dx-form>
+            <dxi-item dataField="" >
+              <dxo-label text="填表人"></dxo-label>
+            </dxi-item>
+            <dxi-item dataField="" >
+              <dxo-label text="填表时间"></dxo-label>
+            </dxi-item>
+            <dxi-item
+              itemType="button"
+              horizontalAlignment="left"
+              [buttonOptions]="buttonOptions">
+            </dxi-item>
+          </dx-form>
+        </dxi-item>
+
+        <dxi-item>
+          <dxi-location [row]="0" [col]="1"></dxi-location>
+
+          <div class="display-image">
+            <img src="assets/figures/report-table.png" alt="">
+          </div>
+        </dxi-item>
+
+      </dx-responsive-box>
+    </div>
 </div>

@@ -27,9 +27,8 @@ export class AuthService {
 
   private _user: IUser | null = defaultUser;
 
-  private _api: string = "http://localhost:4200/api/";
-
-  // private _api: string = "http://8.136.105.11:6060/api/";
+  // private _api: string = "http://localhost:4200/api/";
+  private _api: string = "http://8.136.105.11:6060/api/";
 
   private _authUrl:string = this._api + "auth/login";
 
