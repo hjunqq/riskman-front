@@ -3,7 +3,7 @@ import { SideNavigationMenuModule, HeaderModule } from '../../shared/components'
 import { ScreenService } from '../../shared/services';
 import { ItemClickEvent as TreeViewItemClickEvent } from 'devextreme/ui/tree_view';
 import { ItemClickEvent as ToolbarItemClickEvent } from 'devextreme/ui/toolbar';
-import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
+import {DxDrawerModule, DxDrawerTypes} from 'devextreme-angular/ui/drawer';
 import { DxScrollViewModule, DxScrollViewComponent } from 'devextreme-angular/ui/scroll-view';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { CommonModule } from '@angular/common';
@@ -25,8 +25,8 @@ export class SideNavInnerToolbarComponent implements OnInit {
   @Input()
   title!: string;
 
-  menuMode = 'shrink';
-  menuRevealMode = 'expand';
+  menuMode : DxDrawerTypes.OpenedStateMode = 'shrink';
+  menuRevealMode : DxDrawerTypes.RevealMode = 'expand';
   minMenuSize = 0;
   shaderEnabled = false;
 
@@ -70,7 +70,7 @@ export class SideNavInnerToolbarComponent implements OnInit {
   }
 
   navigationChanged(event: TreeViewItemClickEvent) {
-    const path = event.itemData.path;
+    const path = event.itemData?.path;
     const pointerEvent = event.event;
 
     if (path && this.menuOpened) {

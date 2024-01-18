@@ -48,7 +48,7 @@ export class ProjectPropsFormComponent implements OnInit {
     };
     const httpOptions = {withCredentials: true, headers: this.headers, body: data}
 
-    const result = await this.http.post<CustomResponse>(postUrl, data, httpOptions).toPromise();
+    const result = await this.http.post<CustomResponse>(postUrl, data, httpOptions).toPromise() || new CustomResponse();
 
     return result.data;
   }
@@ -66,18 +66,20 @@ export class ProjectPropsFormComponent implements OnInit {
 
     const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
 
-    let result:CustomResponse = new CustomResponse();
+    let result: CustomResponse = new CustomResponse();
 
     switch (method) {
       case 'PUT':
-        result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
+        result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise().then(response => response || new CustomResponse());
         break;
       case 'POST':
-        result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
+        result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise().then(response => response || new CustomResponse());
         break;
       case 'DELETE':
         postUrl += '/' + data.key;
-        result = await this.http.delete<CustomResponse>(postUrl, httpOptions).toPromise();
+        result = await this.http.delete<CustomResponse>(postUrl, httpOptions).toPromise().then(response => response || new CustomResponse());
+        break;
+      default:
         break;
     }
 

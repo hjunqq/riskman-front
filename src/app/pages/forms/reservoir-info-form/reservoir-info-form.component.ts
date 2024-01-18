@@ -54,14 +54,14 @@ export class ReservoirInfoFormComponent implements OnInit {
 
     switch (method) {
       case 'PUT':
-        result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
+        result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise() || result;
         break;
       case 'POST':
-        result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
+        result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise() || result;
         break;
       case 'DELETE':
         postUrl += '/' + data.key;
-        result = await this.http.delete<CustomResponse>(postUrl, httpOptions).toPromise();
+        result = await this.http.delete<CustomResponse>(postUrl, httpOptions).toPromise() || result;
         break;
     }
 
@@ -75,7 +75,9 @@ export class ReservoirInfoFormComponent implements OnInit {
     const data: ReservoirInfo = {};
     const httpOptions = {withCredentials: true, headers: this.headers}
 
-    const result = await this.http.get<CustomResponse>(postUrl, httpOptions).toPromise();
+    let result: CustomResponse = new CustomResponse(); // Add a default value for "result"
+
+    result = await this.http.get<CustomResponse>(postUrl, httpOptions).toPromise() || result; // Assign the default value if the response is undefined
 
     return result.data;
   }

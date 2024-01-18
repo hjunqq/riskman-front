@@ -54,14 +54,14 @@ export class DutyFormComponent implements OnInit {
 
     switch (method) {
       case 'PUT':
-        result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
+        result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise()|| result;
         break;
       case 'POST':
-        result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
+        result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise()|| result;
         break;
       case 'DELETE':
         postUrl += '/' + data.key;
-        result = await this.http.delete<CustomResponse>(postUrl, httpOptions).toPromise();
+        result = await this.http.delete<CustomResponse>(postUrl, httpOptions).toPromise()|| result;
         break;
     }
 
@@ -76,7 +76,7 @@ export class DutyFormComponent implements OnInit {
     };
     const httpOptions = {withCredentials:true, headers: this.headers}
 
-    const result = await this.http.get<CustomResponse>(postUrl,httpOptions).toPromise();
+    const result = await this.http.get<CustomResponse>(postUrl,httpOptions).toPromise()||new CustomResponse();
 
     return result.data;
   }

@@ -102,6 +102,10 @@ $side-panel-min-width: 60px;
   margin-top: 5px;
 }
 
+//::ng-deep .display-image > img:hover {
+//  -webkit-transform: scale(2,2);
+//}
+
 ::ng-deep .buttons-column {
   flex-wrap: nowrap;
   display: flex;

@@ -15,7 +15,13 @@ export class Marker {
   };
 }
 
+export type APIKey = {
+  bing?: string;
 
+  google?: string;
+
+  googleStatic?: string;
+};
 
 @Injectable({
   providedIn: 'root'

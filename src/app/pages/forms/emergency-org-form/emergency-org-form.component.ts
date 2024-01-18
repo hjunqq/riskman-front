@@ -138,9 +138,9 @@ export class EmergencyOrgFormComponent implements OnInit {
 
     let result;
     if (record.id === null || record.id === undefined) {
-      result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
+      result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise()||new CustomResponse();
     } else {
-      result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
+      result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise()||new CustomResponse();
     }
 
     if (result.code == 200) {

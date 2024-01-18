@@ -42,6 +42,10 @@ export class OvertopDamBreakComponent implements OnInit {
       {
         title: "到达时间图",
         fileurl: this.emergencyOrg.arrivedtimeimagepath.fileurl,
+      },
+      {
+        title:"临时安置点",
+        fileurl: this.emergencyOrg.evacuationimagepath.fileurl,
       }
     ]
   }

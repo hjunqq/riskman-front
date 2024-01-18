@@ -8,10 +8,14 @@ import {EmergencyOrgService} from "../../../shared/services/emergency-org.servic
 })
 export class HeadquartersComponent implements OnInit {
   headquartersData: any;
+  expertsData: any;
 
   constructor(private emergencyOrgService:EmergencyOrgService) {
     emergencyOrgService.getHeadquarters().then((e)=>{
       this.headquartersData = e;
+    })
+    emergencyOrgService.getExperts().then((e)=>{
+      this.expertsData = e;
     })
   }
 

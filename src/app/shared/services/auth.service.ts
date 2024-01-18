@@ -19,7 +19,7 @@ const defaultUser = {
   username: 'Test',
   avatarUrl: 'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png',
   token: "" /*"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDkxMTI2MX0.KunVWamDwRq5V90giF5H5zHm1IhG0sNin6adsq39k3As8etyaHqfMAfOSmdWRlxYhc5yZ5RqD6V8fxWhhhdA2g"*/, /* 2021年9月25日 */
-  reservoir:11,
+  reservoir:1,
 };
 
 @Injectable()
@@ -27,8 +27,9 @@ export class AuthService {
 
   private _user: IUser | null = defaultUser;
 
-  // private _api: string = "http://localhost:4200/api/";
-  private _api: string = "http://8.136.105.11:6060/api/";
+  private _api: string = "./api/";
+  // private _api: string = "http://8.136.105.11:6060/api/";
+  // private _api: string = "http://localhost:6060/api/";
 
   private _authUrl:string = this._api + "auth/login";
 
@@ -81,7 +82,7 @@ export class AuthService {
       }
 
       const response = await this.httpClient.post<CustomResponse>(this._authUrl, body).toPromise();
-      const token = response.data;
+      const token = response?.data;
 
       console.log(username, password,rememberMe);
       this._user = { ...defaultUser, username };
@@ -95,6 +96,8 @@ export class AuthService {
       if(rememberMe) {
         this.appCookieService.set("token", token);
       }
+
+      this.appCookieService.set("token", token);
 
       await this.router.navigate([this._lastAuthenticatedPath]);
 

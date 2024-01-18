@@ -17,13 +17,14 @@
     <!--      </div>-->
     <dx-map
       #map
-      center="Nanjing,China"
+      [center]="mapCenter"
       [zoom]="14"
       [height]="800"
       width="100%"
       provider="bing"
       [controls]="true"
       [markers]="markers"
+      [apiKey]="apiKey"
       (onMarkerAdded)="markerAdded($event)"
     >
     </dx-map>

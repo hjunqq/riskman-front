@@ -39,7 +39,7 @@ export const navigation = [
   },
   {
     text: '工程信息',
-    path: '/pages/basic-info-page',
+    // path: '/pages/basic-info-page',
     icon: 'info',
     items: [
       {
@@ -62,7 +62,7 @@ export const navigation = [
   },
   {
     text: '运行管理',
-    path: '/pages/person-info-page',
+    // path: '/pages/person-info-page',
     icon: 'group',
     items: [
       {
@@ -77,8 +77,16 @@ export const navigation = [
   },
   {
     text: '监测和预警',
-    path: '/pages/monitoring-and-warning',
-    icon: 'airplane'
+    // path: '/pages/monitoring-and-warning',
+    icon: 'airplane',
+    items: [
+      {
+        text: '监测',
+      },
+      {
+        text: '预警',
+      },
+    ]
   },
   {
     text: '超标准洪水分析',
@@ -116,28 +124,28 @@ export const navigation = [
       {
         text: '应急指挥部',
         path: '/pages/emergency-organization/headquarters',
-        items:[
-          {
-            text: '办公室',
-            path: '/pages/emergency-organization/office',
-          },
-          {
-            text: '指挥机构',
-            path: '/pages/emergency-organization/command-agency',
-          },
-          {
-            text: '保障机构',
-            path: '/pages/emergency-organization/guarantee-agency',
-          },
-          {
-            text: '专家组',
-            path: '/pages/emergency-diagram/experts',
-          },
-          {
-            text: '抢险和救援',
-            path: '/pages/emergency-organization/rescue',
-          },
-        ]
+        // items:[
+        //   {
+        //     text: '办公室',
+        //     path: '/pages/emergency-organization/office',
+        //   },
+        //   {
+        //     text: '指挥机构',
+        //     path: '/pages/emergency-organization/command-agency',
+        //   },
+        //   {
+        //     text: '保障机构',
+        //     path: '/pages/emergency-organization/guarantee-agency',
+        //   },
+        //   {
+        //     text: '专家组',
+        //     path: '/pages/emergency-diagram/experts',
+        //   },
+        //   {
+        //     text: '抢险和救援',
+        //     path: '/pages/emergency-organization/rescue',
+        //   },
+        // ]
       },
       {
         text:'应急响应',
@@ -165,10 +173,10 @@ export const navigation = [
             text:'物资',
             path: '/pages/emergency-organization/supplies',
           },
-          {
-            text:'相关联系方式',
-            path: '/pages/emergency-organization/contacts',
-          }
+          // {
+          //   text:'相关联系方式',
+          //   path: '/pages/emergency-organization/contacts',
+          // }
         ]
       }
     ]

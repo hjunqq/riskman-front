@@ -50,7 +50,7 @@ export class SuppliesStorageFormComponent implements OnInit {
     const httpParams = record;
     const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
 
-    let result:CustomResponse = new CustomResponse();
+    let result: CustomResponse | undefined;
 
     switch (method) {
       case 'PUT':
@@ -65,6 +65,10 @@ export class SuppliesStorageFormComponent implements OnInit {
         break;
     }
 
+    if (result === undefined) {
+      result = new CustomResponse();
+    }
+
     return result.data;
   }
 
@@ -77,9 +81,15 @@ export class SuppliesStorageFormComponent implements OnInit {
     };
     const httpOptions = {withCredentials:true, headers: this.headers,body: data}
 
-    const result = await this.http.post<CustomResponse>(postUrl, data, httpOptions).toPromise();
+    let result: CustomResponse | undefined = undefined; // Initialize result as undefined
 
-    return result.data;
+    try {
+      result = await this.http.post<CustomResponse>(postUrl, data, httpOptions).toPromise();
+    } catch (error) {
+      console.error(error);
+    }
+
+    return result?.data;
   }
 
 

@@ -39,7 +39,7 @@ export class ReservoirInfoService {
 
     const result = await this.http.get<CustomResponse>(postUrl, httpOptions).toPromise();
 
-    return result.data;
+    return result?.data;
   }
 
 
@@ -54,7 +54,7 @@ export class ReservoirInfoService {
 
     // console.log(result.data)
 
-    return result.data;
+    return result?.data;
   }
 
   async getReservoirDetails():Promise<ReservoirDetail> {
@@ -76,7 +76,7 @@ export class ReservoirInfoService {
 
     const result = await this.http.get<CustomResponse>(postUrl, httpOptions).toPromise();
 
-    data = result.data
+    data = result?.data
 
     data.infonatureimagepath = await this.getImagePath(data.infonatureimage);
     data.infoprojectimagepath = await this.getImagePath(data.infoprojectimage);
@@ -109,7 +109,7 @@ export class ReservoirInfoService {
 
     const result = await this.http.post<CustomResponse>(postUrl, data, httpOptions).toPromise();
 
-    return result.data;
+    return result?.data;
 
   }
 
@@ -124,11 +124,11 @@ export class ReservoirInfoService {
 
     const result = await this.http.get<CustomResponse>(postUrl, httpOptions).toPromise();
 
-    if (result.code === 200) {
-      const filePath = result.data;
+    if (result?.code === 200) {
+      const filePath = result?.data;
       if (filePath != null) {
         filePath.fileurl = this.url + filePath.path;
-        return result.data;
+        return result?.data;
       } else {
         return new FilePath();
       }

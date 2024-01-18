@@ -5,7 +5,7 @@ export class AppInfoService {
   constructor() {}
 
   public get title() {
-    return '兴安盟超标准洪水水库应急调度';
+    return '江苏国信溧阳抽水蓄能有限公司大坝运行安全应急预案';
   }
 
   public get currentYear() {

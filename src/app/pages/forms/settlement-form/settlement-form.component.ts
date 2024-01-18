@@ -50,18 +50,18 @@ export class SettlementFormComponent implements OnInit {
     const httpParams = record;
     const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
 
-    let result:CustomResponse = new CustomResponse();
+    let result: CustomResponse = new CustomResponse();
 
     switch (method) {
       case 'PUT':
-        result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
+        result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise() || new CustomResponse();
         break;
       case 'POST':
-        result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
+        result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise() || new CustomResponse();
         break;
       case 'DELETE':
         postUrl += '/' + data.key;
-        result = await this.http.delete<CustomResponse>(postUrl, httpOptions).toPromise();
+        result = await this.http.delete<CustomResponse>(postUrl, httpOptions).toPromise() || new CustomResponse();
         break;
     }
 
@@ -77,7 +77,13 @@ export class SettlementFormComponent implements OnInit {
     };
     const httpOptions = {withCredentials:true, headers: this.headers,body: data}
 
-    const result = await this.http.post<CustomResponse>(postUrl, data, httpOptions).toPromise();
+    let result: CustomResponse = new CustomResponse(); // Initialize result with a default value
+
+    try {
+      result = await this.http.post<CustomResponse>(postUrl, data, httpOptions).toPromise() || new CustomResponse();
+    } catch (error) {
+      console.error(error);
+    }
 
     return result.data;
   }

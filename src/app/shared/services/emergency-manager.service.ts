@@ -33,18 +33,18 @@ export class EmergencyManagerService {
     };
     this.reservoir = this.user?.reservoir;
 
-    let person:PersonInfo[];
+    let person: PersonInfo[];
 
     let postUrl: string;
     postUrl = this.authService.getApiUrl() + "tEmergencyManager" + "/list";
 
-    const httpParams = {"reservoirid":this.reservoir};
+    const httpParams = { "reservoirid": this.reservoir };
 
-    const httpOptions = {withCredentials: true, headers: this.headers, body:httpParams};
+    const httpOptions = { withCredentials: true, headers: this.headers, body: httpParams };
 
     const result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
 
-    person = result.data
+    person = result?.data || [];
 
     return person;
   }

@@ -57,7 +57,7 @@ export class EmergencyOrgService {
 
     const result = await this.http.post<CustomResponse>(postUrl,httpParams, httpOptions).toPromise();
 
-    data = result.data[0]
+    data = result?.data[0]
 
     data.emergencyorgimagepath = await this.getImagePath(data.emergencyorgimage);
     data.floodwaterdepthimagepath = await this.getImagePath(data.floodwaterdepthimage);
@@ -92,7 +92,7 @@ export class EmergencyOrgService {
 
     const result = await this.http.post<CustomResponse>(postUrl,httpParams, httpOptions).toPromise();
 
-    data = result.data
+    data = result?.data
 
     return data;
 
@@ -121,7 +121,7 @@ export class EmergencyOrgService {
 
     const result = await this.http.post<CustomResponse>(postUrl,httpParams, httpOptions).toPromise();
 
-    data = result.data
+    data = result?.data
 
     return data;
 
@@ -148,7 +148,7 @@ export class EmergencyOrgService {
 
     const result = await this.http.post<CustomResponse>(postUrl,httpParams, httpOptions).toPromise();
 
-    data = result.data
+    data = result?.data
 
     return data;
 
@@ -175,7 +175,7 @@ export class EmergencyOrgService {
 
     const result = await this.http.post<CustomResponse>(postUrl,httpParams, httpOptions).toPromise();
 
-    data = result.data
+    data = result?.data
 
     return data;
 
@@ -202,7 +202,7 @@ export class EmergencyOrgService {
 
     const result = await this.http.post<CustomResponse>(postUrl,httpParams, httpOptions).toPromise();
 
-    data = result.data
+    data = result?.data
 
         return data;
     }
@@ -215,7 +215,7 @@ export class EmergencyOrgService {
     const httpParams = record;
     const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
 
-    let result:CustomResponse = new CustomResponse();
+    let result:CustomResponse | undefined = new CustomResponse();
 
     switch (method) {
       case 'PUT':
@@ -232,7 +232,7 @@ export class EmergencyOrgService {
         break;
     }
 
-    return result.data;
+    return result?.data;
   }
 
   async sendHeadquartersRequest(url: string, method: string="GET", data: any= {}): Promise<any> {
@@ -243,7 +243,7 @@ export class EmergencyOrgService {
     const httpParams = record;
     const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
 
-    let result:CustomResponse = new CustomResponse();
+    let result:CustomResponse | undefined = new CustomResponse();
 
     switch (method) {
       case 'PUT':
@@ -260,7 +260,7 @@ export class EmergencyOrgService {
         break;
     }
 
-    return result.data;
+    return result?.data;
   }
 
   async sendExpertsRequest(url: string, method: string="GET", data: any= {}): Promise<any> {
@@ -271,7 +271,7 @@ export class EmergencyOrgService {
     const httpParams = record;
     const httpOptions = {withCredentials: true, headers: this.headers, body: httpParams};
 
-    let result:CustomResponse = new CustomResponse();
+    let result:CustomResponse | undefined = new CustomResponse();
 
     switch (method) {
       case 'PUT':
@@ -288,7 +288,7 @@ export class EmergencyOrgService {
         break;
     }
 
-    return result.data;
+    return result?.data;
   }
 
   private async getImagePath(infonatureimage: number): Promise<FilePath> {
@@ -302,11 +302,11 @@ export class EmergencyOrgService {
 
     const result = await this.http.get<CustomResponse>(postUrl, httpOptions).toPromise();
 
-    if (result.code === 200) {
-      const filePath = result.data;
+    if (result?.code === 200) {
+      const filePath = result?.data;
       if (filePath != null) {
         filePath.fileurl = this.url + filePath.path;
-        return result.data;
+        return result?.data;
       } else {
         return new FilePath();
       }

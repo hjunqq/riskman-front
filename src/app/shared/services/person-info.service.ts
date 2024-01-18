@@ -47,7 +47,7 @@ export class PersonInfoService {
 
     const result = await this.http.post<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
 
-    person = result.data
+    person = result?.data
 
     return person;
   }

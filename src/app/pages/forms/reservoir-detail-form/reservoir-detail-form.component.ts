@@ -104,11 +104,13 @@ export class ReservoirDetailFormComponent implements OnInit {
     let postUrl: string;
     postUrl = this.url + "tReservoirDetail";
 
-    let data: ReservoirDetail;
+    let data: ReservoirDetail | undefined = undefined;
     const httpOptions = {withCredentials: true, headers: this.headers}
 
     const result = await this.http.get<CustomResponse>(postUrl, httpOptions).toPromise();
-    data = result.data;
+    if (result) {
+      data = result.data;
+    }
 
     return data;
   }
@@ -154,7 +156,7 @@ export class ReservoirDetailFormComponent implements OnInit {
       result = await this.http.put<CustomResponse>(postUrl, httpParams, httpOptions).toPromise();
     }
 
-    if (result.code == 200) {
+    if (result && result.code == 200) {
       console.log("success");
 
       notify({

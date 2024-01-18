@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {Marker} from "../../shared/services/map-info.service";
+import {APIKey, Marker} from "../../shared/services/map-info.service";
 import {HttpClient} from "@angular/common/http";
 import {AuthService, IUser} from "../../shared/services";
 import {ReservoirInfoService} from "../../shared/services/reservoir-info.service";
@@ -38,6 +38,8 @@ export class EmergencyPlanHomeComponent implements OnInit {
   private reservoir: number | undefined;
   private allReservoir: ReservoirInfo[];
   colCountByScreen: any;
+  apiKey: APIKey = {};
+  mapCenter: string | Array<number | { lat?: number; lng?: number }>;
 
   constructor(private router: Router,
               private http: HttpClient, private authService: AuthService,
@@ -98,6 +100,8 @@ export class EmergencyPlanHomeComponent implements OnInit {
       md: 3,
       lg: 4
     };
+    this.apiKey.bing = 'Ar2BLHLdsMZO0O4YZPUGj5foW3GEcVvPHjerE2SoO53nYNzTWb6_G4ejh9MUmYv5';
+    this.mapCenter = "32.06648431970515,118.79258100648917";
   }
 
   ngOnInit() {
@@ -114,6 +118,7 @@ export class EmergencyPlanHomeComponent implements OnInit {
   //     }];
   //   return markers;
   // }
+
 
   getMenuItems() {
     let items: MenuItem[] = [{
