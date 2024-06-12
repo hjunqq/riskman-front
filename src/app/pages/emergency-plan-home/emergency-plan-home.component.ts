@@ -121,23 +121,28 @@ export class EmergencyPlanHomeComponent implements OnInit {
 
 
   getMenuItems() {
-    let items: MenuItem[] = [{
+    let items: MenuItem[] = [
+      {
       id: "1",
-      name: "基本信息",
+      name: "首页",
       path: "/pages/basic-info-page"
     }, {
       id: "2",
-      name: "监测与预警",
+      name: "预警级别",
       path: "/pages/monitoring-and-warning"
     }, {
       id: "3",
-      name: "应急管理",
+      name: "洪水淹没",
       path: "/pages/emergency-management-page"
     }, {
       id: "4",
-      name: "突发事件",
+      name: "避险转移",
       path: "/pages/critical-incident-analysis"
-    }]
+    },{
+      id: "5",
+      name: "应急管理",
+      path: "/pages/emergency-plan-home"
+      }]
     return items
   }
 

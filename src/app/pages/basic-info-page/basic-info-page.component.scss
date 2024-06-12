@@ -1,0 +1,38 @@
+/* basic-info-page.component.scss */
+
+$content-block-padding: 20px;
+$background-color: #f9f9f9;
+$box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+$transition: 0.3s;
+$border-radius: 5px;
+$margin-bottom: 20px;
+$padding: 20px;
+$title-font-size: 20px;
+$title-font-weight: bold;
+$title-margin-bottom: 20px;  /* Increase the bottom margin of the title */
+$img-width: 100%;
+$img-height: auto;
+$img-max-height: 80vh;  /* Add a max-height to the image */
+$img-margin: 20px auto;  /* Add automatic margins to the image */
+$data-grid-width: 100%;
+
+
+.widget-container {
+  margin-bottom: $margin-bottom;
+  background-color: $background-color;
+  padding: $padding;
+  border-radius: $border-radius;
+
+  .title {
+    font-size: $title-font-size;
+    font-weight: $title-font-weight;
+    margin-bottom: $title-margin-bottom;
+  }
+
+  img {
+    width: $img-width;
+    height: $img-height;
+    max-height: $img-max-height;  /* Apply the max-height to the image */
+    margin: $img-margin;  /* Apply the margins to the image */
+  }
+}

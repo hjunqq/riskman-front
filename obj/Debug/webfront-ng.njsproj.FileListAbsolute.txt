@@ -1,3 +1,0 @@
-G:\riskmanagement\webfront-ng\obj\Debug\webfront-ng.njsproj.AssemblyReference.cache
-G:\riskmanagement\webfront-ng\obj\Debug\webfront-ng.njsproj.CoreCompileInputs.cache
-G:\riskmanagement\webfront-ng\bin\Microsoft.NodejsTools.WebRole.dll

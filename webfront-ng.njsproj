@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{c138ec88-986f-490b-8a36-d1f9ff85422b}</ProjectGuid>
+        <ProjectHome>.</ProjectHome>
+        <ProjectView>ShowAllFiles</ProjectView>
+        <StartupFile />
+        <WorkingDirectory>.</WorkingDirectory>
+        <OutputPath>.</OutputPath>
+        <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+        <EnableTypeScript>true</EnableTypeScript>
+        <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
+        <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+    <ItemGroup>
+        <Content Include="angular.json" />
+        <Content Include="devextreme.json" />
+        <Content Include="package-lock.json" />
+        <Content Include="package.json" />
+        <Content Include="proxy-local.conf.json" />
+        <Content Include="proxy-prod.conf.json" />
+        <Content Include="proxy.conf.json" />
+        <Content Include="tsconfig.app.json" />
+        <None Include="tsconfig.json" />
+        <Content Include="tsconfig.spec.json" />
+        <Content Include="README.md" />
+        <Content Include="src\index.html" />
+        <Content Include="src\favicon.ico" />
+        <None Include="src\main.ts" />
+        <None Include="src\polyfills.ts" />
+        <None Include="src\test.ts" />
+        <None Include="src\typings.d.ts" />
+        <Content Include="dist\webfront-ng\index.html" />
+        <Content Include="dist\webfront-ng\styles.css" />
+        <Content Include="dist\webfront-ng\favicon.ico" />
+        <Content Include="dist\webfront-ng\assets\figures\emergency-management.png" />
+        <Content Include="dist\webfront-ng\assets\figures\report-table.png" />
+        <None Include="e2e\src\app.e2e-spec.ts" />
+        <None Include="e2e\src\app.po.ts" />
+        <Content Include="src\app\app.component.html" />
+        <None Include="src\app\app-navigation.ts" />
+        <None Include="src\app\app-routing.module.ts" />
+        <None Include="src\app\app.component.ts" />
+        <None Include="src\app\app.module.ts" />
+        <None Include="src\app\not-authorized-container.ts" />
+        <None Include="src\app\unauthenticated-content.ts" />
+        <None Include="src\environments\environment.prod.ts" />
+        <None Include="src\environments\environment.ts" />
+        <Content Include="src\themes\metadata.additional.json" />
+        <Content Include="src\themes\metadata.base.json" />
+        <None Include="src\app\layouts\index.ts" />
+        <Content Include="src\app\layouts\side-nav-inner-toolbar\side-nav-inner-toolbar.component.html" />
+        <None Include="src\app\layouts\side-nav-inner-toolbar\side-nav-inner-toolbar.component.ts" />
+        <Content Include="src\app\layouts\side-nav-outer-toolbar\side-nav-outer-toolbar.component.html" />
+        <None Include="src\app\layouts\side-nav-outer-toolbar\side-nav-outer-toolbar.component.ts" />
+        <Content Include="src\app\layouts\single-card\single-card.component.html" />
+        <None Include="src\app\layouts\single-card\single-card.component.ts" />
+        <Content Include="src\app\pages\basic-info-page\basic-info-page.component.html" />
+        <None Include="src\app\pages\basic-info-page\basic-info-page.component.spec.ts" />
+        <None Include="src\app\pages\basic-info-page\basic-info-page.component.ts" />
+        <Content Include="src\app\pages\critical-incident-analysis\critical-incident-analysis.component.html" />
+        <None Include="src\app\pages\critical-incident-analysis\critical-incident-analysis.component.spec.ts" />
+        <None Include="src\app\pages\critical-incident-analysis\critical-incident-analysis.component.ts" />
+        <Content Include="src\app\pages\emergency-management-page\emergency-management-page.component.html" />
+        <None Include="src\app\pages\emergency-management-page\emergency-management-page.component.spec.ts" />
+        <None Include="src\app\pages\emergency-management-page\emergency-management-page.component.ts" />
+        <Content Include="src\app\pages\emergency-organization-home\emergency-organization-home.component.html" />
+        <None Include="src\app\pages\emergency-organization-home\emergency-organization-home.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization-home\emergency-organization-home.component.ts" />
+        <Content Include="src\app\pages\emergency-organization-page\emergency-organization.component.html" />
+        <None Include="src\app\pages\emergency-organization-page\emergency-organization.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization-page\emergency-organization.component.ts" />
+        <Content Include="src\app\pages\emergency-plan-home\emergency-plan-home.component.html" />
+        <None Include="src\app\pages\emergency-plan-home\emergency-plan-home.component.spec.ts" />
+        <None Include="src\app\pages\emergency-plan-home\emergency-plan-home.component.ts" />
+        <Content Include="src\app\pages\home\home.component.html" />
+        <None Include="src\app\pages\home\home.component.ts" />
+        <Content Include="src\app\pages\monitoring-and-warning\monitoring-and-warning.component.html" />
+        <None Include="src\app\pages\monitoring-and-warning\monitoring-and-warning.component.spec.ts" />
+        <None Include="src\app\pages\monitoring-and-warning\monitoring-and-warning.component.ts" />
+        <Content Include="src\app\pages\person-info-page\person-info-page.component.html" />
+        <None Include="src\app\pages\person-info-page\person-info-page.component.spec.ts" />
+        <None Include="src\app\pages\person-info-page\person-info-page.component.ts" />
+        <Content Include="src\app\pages\profile\profile.component.html" />
+        <None Include="src\app\pages\profile\profile.component.ts" />
+        <Content Include="src\app\pages\tasks\tasks.component.html" />
+        <None Include="src\app\pages\tasks\tasks.component.ts" />
+        <Content Include="src\app\pages\basic-info\engineering-chart\engineering-chart.component.html" />
+        <None Include="src\app\pages\basic-info\engineering-chart\engineering-chart.component.spec.ts" />
+        <None Include="src\app\pages\basic-info\engineering-chart\engineering-chart.component.ts" />
+        <Content Include="src\app\pages\basic-info\overview\overview.component.html" />
+        <None Include="src\app\pages\basic-info\overview\overview.component.spec.ts" />
+        <None Include="src\app\pages\basic-info\overview\overview.component.ts" />
+        <Content Include="src\app\pages\basic-info\project-overview\project-overview.component.html" />
+        <None Include="src\app\pages\basic-info\project-overview\project-overview.component.spec.ts" />
+        <None Include="src\app\pages\basic-info\project-overview\project-overview.component.ts" />
+        <Content Include="src\app\pages\basic-info\project-properties\project-properties.component.html" />
+        <None Include="src\app\pages\basic-info\project-properties\project-properties.component.spec.ts" />
+        <None Include="src\app\pages\basic-info\project-properties\project-properties.component.ts" />
+        <Content Include="src\app\pages\emergency-organization\command-agency\command-agency.component.html" />
+        <None Include="src\app\pages\emergency-organization\command-agency\command-agency.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization\command-agency\command-agency.component.ts" />
+        <Content Include="src\app\pages\emergency-organization\contacts\contacts.component.html" />
+        <None Include="src\app\pages\emergency-organization\contacts\contacts.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization\contacts\contacts.component.ts" />
+        <Content Include="src\app\pages\emergency-organization\emergency-diagram\emergency-diagram.component.html" />
+        <None Include="src\app\pages\emergency-organization\emergency-diagram\emergency-diagram.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization\emergency-diagram\emergency-diagram.component.ts" />
+        <Content Include="src\app\pages\emergency-organization\experts\experts.component.html" />
+        <None Include="src\app\pages\emergency-organization\experts\experts.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization\experts\experts.component.ts" />
+        <Content Include="src\app\pages\emergency-organization\grade\grade.component.html" />
+        <None Include="src\app\pages\emergency-organization\grade\grade.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization\grade\grade.component.ts" />
+        <Content Include="src\app\pages\emergency-organization\guarantee-agency\guarantee-agency.component.html" />
+        <None Include="src\app\pages\emergency-organization\guarantee-agency\guarantee-agency.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization\guarantee-agency\guarantee-agency.component.ts" />
+        <Content Include="src\app\pages\emergency-organization\headquarters\headquarters.component.html" />
+        <None Include="src\app\pages\emergency-organization\headquarters\headquarters.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization\headquarters\headquarters.component.ts" />
+        <Content Include="src\app\pages\emergency-organization\info-report\info-report.component.html" />
+        <None Include="src\app\pages\emergency-organization\info-report\info-report.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization\info-report\info-report.component.ts" />
+        <Content Include="src\app\pages\emergency-organization\office\office.component.html" />
+        <None Include="src\app\pages\emergency-organization\office\office.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization\office\office.component.ts" />
+        <Content Include="src\app\pages\emergency-organization\process\process.component.html" />
+        <None Include="src\app\pages\emergency-organization\process\process.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization\process\process.component.ts" />
+        <Content Include="src\app\pages\emergency-organization\rescue\rescue.component.html" />
+        <None Include="src\app\pages\emergency-organization\rescue\rescue.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization\rescue\rescue.component.ts" />
+        <Content Include="src\app\pages\emergency-organization\supplies\supplies.component.html" />
+        <None Include="src\app\pages\emergency-organization\supplies\supplies.component.spec.ts" />
+        <None Include="src\app\pages\emergency-organization\supplies\supplies.component.ts" />
+        <Content Include="src\app\pages\emergency-plan\principal-and-basis\principal-and-basis.component.html" />
+        <None Include="src\app\pages\emergency-plan\principal-and-basis\principal-and-basis.component.spec.ts" />
+        <None Include="src\app\pages\emergency-plan\principal-and-basis\principal-and-basis.component.ts" />
+        <Content Include="src\app\pages\emergency-plan\reservoir-info\reservoir-info.component.html" />
+        <None Include="src\app\pages\emergency-plan\reservoir-info\reservoir-info.component.spec.ts" />
+        <None Include="src\app\pages\emergency-plan\reservoir-info\reservoir-info.component.ts" />
+        <Content Include="src\app\pages\emergency-plan\super-standard-grading\super-standard-grading.component.html" />
+        <None Include="src\app\pages\emergency-plan\super-standard-grading\super-standard-grading.component.spec.ts" />
+        <None Include="src\app\pages\emergency-plan\super-standard-grading\super-standard-grading.component.ts" />
+        <Content Include="src\app\pages\exceeding-standard-flood\overtop-dam-break\overtop-dam-break.component.html" />
+        <None Include="src\app\pages\exceeding-standard-flood\overtop-dam-break\overtop-dam-break.component.spec.ts" />
+        <None Include="src\app\pages\exceeding-standard-flood\overtop-dam-break\overtop-dam-break.component.ts" />
+        <Content Include="src\app\pages\exceeding-standard-flood\safety-appraisal-status\safety-appraisal-status.component.html" />
+        <None Include="src\app\pages\exceeding-standard-flood\safety-appraisal-status\safety-appraisal-status.component.spec.ts" />
+        <None Include="src\app\pages\exceeding-standard-flood\safety-appraisal-status\safety-appraisal-status.component.ts" />
+        <Content Include="src\app\pages\forms\atlas-form\atlas-form.component.html" />
+        <None Include="src\app\pages\forms\atlas-form\atlas-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\atlas-form\atlas-form.component.ts" />
+        <Content Include="src\app\pages\forms\authority-form\authority-form.component.html" />
+        <None Include="src\app\pages\forms\authority-form\authority-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\authority-form\authority-form.component.ts" />
+        <Content Include="src\app\pages\forms\downstream-village-form\downstream-village-form.component.html" />
+        <None Include="src\app\pages\forms\downstream-village-form\downstream-village-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\downstream-village-form\downstream-village-form.component.ts" />
+        <Content Include="src\app\pages\forms\duty-form\duty-form.component.html" />
+        <None Include="src\app\pages\forms\duty-form\duty-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\duty-form\duty-form.component.ts" />
+        <Content Include="src\app\pages\forms\emergency-manager-form\emergency-manager-form.component.html" />
+        <None Include="src\app\pages\forms\emergency-manager-form\emergency-manager-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\emergency-manager-form\emergency-manager-form.component.ts" />
+        <Content Include="src\app\pages\forms\emergency-org-form\emergency-org-form.component.html" />
+        <None Include="src\app\pages\forms\emergency-org-form\emergency-org-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\emergency-org-form\emergency-org-form.component.ts" />
+        <Content Include="src\app\pages\forms\emergency-plan-form\emergency-plan-form.component.html" />
+        <None Include="src\app\pages\forms\emergency-plan-form\emergency-plan-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\emergency-plan-form\emergency-plan-form.component.ts" />
+        <Content Include="src\app\pages\forms\evacuation-info-form\evacuation-info-form.component.html" />
+        <None Include="src\app\pages\forms\evacuation-info-form\evacuation-info-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\evacuation-info-form\evacuation-info-form.component.ts" />
+        <Content Include="src\app\pages\forms\flood-resp-person\flood-resp-person.component.html" />
+        <None Include="src\app\pages\forms\flood-resp-person\flood-resp-person.component.spec.ts" />
+        <None Include="src\app\pages\forms\flood-resp-person\flood-resp-person.component.ts" />
+        <Content Include="src\app\pages\forms\person-info-form\person-info-form.component.html" />
+        <None Include="src\app\pages\forms\person-info-form\person-info-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\person-info-form\person-info-form.component.ts" />
+        <Content Include="src\app\pages\forms\project-props-form\project-props-form.component.html" />
+        <None Include="src\app\pages\forms\project-props-form\project-props-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\project-props-form\project-props-form.component.ts" />
+        <Content Include="src\app\pages\forms\reservoir-detail-form\reservoir-detail-form.component.html" />
+        <None Include="src\app\pages\forms\reservoir-detail-form\reservoir-detail-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\reservoir-detail-form\reservoir-detail-form.component.ts" />
+        <Content Include="src\app\pages\forms\reservoir-info-form\reservoir-info-form.component.html" />
+        <None Include="src\app\pages\forms\reservoir-info-form\reservoir-info-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\reservoir-info-form\reservoir-info-form.component.ts" />
+        <Content Include="src\app\pages\forms\settlement-form\settlement-form.component.html" />
+        <None Include="src\app\pages\forms\settlement-form\settlement-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\settlement-form\settlement-form.component.ts" />
+        <Content Include="src\app\pages\forms\supplies-storage-form\supplies-storage-form.component.html" />
+        <None Include="src\app\pages\forms\supplies-storage-form\supplies-storage-form.component.spec.ts" />
+        <None Include="src\app\pages\forms\supplies-storage-form\supplies-storage-form.component.ts" />
+        <Content Include="src\app\pages\person-info\emergency-person\emergency-person.component.html" />
+        <None Include="src\app\pages\person-info\emergency-person\emergency-person.component.spec.ts" />
+        <None Include="src\app\pages\person-info\emergency-person\emergency-person.component.ts" />
+        <Content Include="src\app\pages\person-info\reservoir-manager\reservoir-manager.component.html" />
+        <None Include="src\app\pages\person-info\reservoir-manager\reservoir-manager.component.spec.ts" />
+        <None Include="src\app\pages\person-info\reservoir-manager\reservoir-manager.component.ts" />
+        <None Include="src\app\shared\components\index.ts" />
+        <None Include="src\app\shared\models\custom-response.ts" />
+        <None Include="src\app\shared\models\downstream-village.ts" />
+        <None Include="src\app\shared\models\emergency-manager.ts" />
+        <None Include="src\app\shared\models\emergency-organization.ts" />
+        <None Include="src\app\shared\models\emergency-plan.ts" />
+        <None Include="src\app\shared\models\evacuation-info.ts" />
+        <None Include="src\app\shared\models\experts.ts" />
+        <None Include="src\app\shared\models\file-path.ts" />
+        <None Include="src\app\shared\models\flood-info.ts" />
+        <None Include="src\app\shared\models\flood-resp-person.ts" />
+        <None Include="src\app\shared\models\flood-responsible-person.ts" />
+        <None Include="src\app\shared\models\headquarters.ts" />
+        <None Include="src\app\shared\models\IAtlas.ts" />
+        <None Include="src\app\shared\models\IAuthority.ts" />
+        <None Include="src\app\shared\models\IDuty.ts" />
+        <None Include="src\app\shared\models\person-info.ts" />
+        <None Include="src\app\shared\models\project-props.ts" />
+        <None Include="src\app\shared\models\reservoir-detail.ts" />
+        <None Include="src\app\shared\models\reservoir-info.ts" />
+        <None Include="src\app\shared\models\settlement.ts" />
+        <None Include="src\app\shared\models\supplies-storage.ts" />
+        <None Include="src\app\shared\models\tree-view.item.ts" />
+        <None Include="src\app\shared\models\water-sheet.ts" />
+        <None Include="src\app\shared\models\work-sheet.ts" />
+        <None Include="src\app\shared\services\app-cookie.service.ts" />
+        <None Include="src\app\shared\services\app-info.service.ts" />
+        <None Include="src\app\shared\services\auth.service.ts" />
+        <None Include="src\app\shared\services\emergency-manager.service.ts" />
+        <None Include="src\app\shared\services\emergency-org.service.ts" />
+        <None Include="src\app\shared\services\flood-person.service.ts" />
+        <None Include="src\app\shared\services\index.ts" />
+        <None Include="src\app\shared\services\jwt-token.service.ts" />
+        <None Include="src\app\shared\services\local-storage.service.ts" />
+        <None Include="src\app\shared\services\map-info.service.ts" />
+        <None Include="src\app\shared\services\person-info.service.ts" />
+        <None Include="src\app\shared\services\reservoir-info.service.ts" />
+        <None Include="src\app\shared\services\screen.service.ts" />
+        <Content Include="src\app\shared\components\change-password-form\change-password-form.component.html" />
+        <None Include="src\app\shared\components\change-password-form\change-password-form.component.ts" />
+        <Content Include="src\app\shared\components\create-account-form\create-account-form.component.html" />
+        <None Include="src\app\shared\components\create-account-form\create-account-form.component.ts" />
+        <None Include="src\app\shared\components\footer\footer.component.ts" />
+        <Content Include="src\app\shared\components\header\header.component.html" />
+        <None Include="src\app\shared\components\header\header.component.ts" />
+        <Content Include="src\app\shared\components\login-form\login-form.component.html" />
+        <None Include="src\app\shared\components\login-form\login-form.component.ts" />
+        <Content Include="src\app\shared\components\reset-password-form\reset-password-form.component.html" />
+        <None Include="src\app\shared\components\reset-password-form\reset-password-form.component.ts" />
+        <Content Include="src\app\shared\components\side-navigation-menu\side-navigation-menu.component.html" />
+        <None Include="src\app\shared\components\side-navigation-menu\side-navigation-menu.component.ts" />
+        <Content Include="src\app\shared\components\user-panel\user-panel.component.html" />
+        <None Include="src\app\shared\components\user-panel\user-panel.component.ts" />
+        <Content Include="src\assets\figures\emergency-management.png" />
+        <Content Include="src\assets\figures\report-table.png" />
+        <Content Include="src\themes\generated\theme.additional.css" />
+        <Content Include="src\themes\generated\theme.base.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="dist" />
+        <Folder Include="dist\webfront-ng" />
+        <Folder Include="dist\webfront-ng\assets" />
+        <Folder Include="dist\webfront-ng\assets\figures" />
+        <Folder Include="e2e" />
+        <Folder Include="e2e\src" />
+        <Folder Include="src" />
+        <Folder Include="src\app" />
+        <Folder Include="src\app\layouts" />
+        <Folder Include="src\app\layouts\side-nav-inner-toolbar" />
+        <Folder Include="src\app\layouts\side-nav-outer-toolbar" />
+        <Folder Include="src\app\layouts\single-card" />
+        <Folder Include="src\app\pages" />
+        <Folder Include="src\app\pages\basic-info" />
+        <Folder Include="src\app\pages\basic-info\engineering-chart" />
+        <Folder Include="src\app\pages\basic-info\overview" />
+        <Folder Include="src\app\pages\basic-info\project-overview" />
+        <Folder Include="src\app\pages\basic-info\project-properties" />
+        <Folder Include="src\app\pages\basic-info-page" />
+        <Folder Include="src\app\pages\critical-incident-analysis" />
+        <Folder Include="src\app\pages\emergency-management-page" />
+        <Folder Include="src\app\pages\emergency-organization" />
+        <Folder Include="src\app\pages\emergency-organization\command-agency" />
+        <Folder Include="src\app\pages\emergency-organization\contacts" />
+        <Folder Include="src\app\pages\emergency-organization\emergency-diagram" />
+        <Folder Include="src\app\pages\emergency-organization\experts" />
+        <Folder Include="src\app\pages\emergency-organization\grade" />
+        <Folder Include="src\app\pages\emergency-organization\guarantee-agency" />
+        <Folder Include="src\app\pages\emergency-organization\headquarters" />
+        <Folder Include="src\app\pages\emergency-organization\info-report" />
+        <Folder Include="src\app\pages\emergency-organization\office" />
+        <Folder Include="src\app\pages\emergency-organization\process" />
+        <Folder Include="src\app\pages\emergency-organization\rescue" />
+        <Folder Include="src\app\pages\emergency-organization\supplies" />
+        <Folder Include="src\app\pages\emergency-organization-home" />
+        <Folder Include="src\app\pages\emergency-organization-page" />
+        <Folder Include="src\app\pages\emergency-plan" />
+        <Folder Include="src\app\pages\emergency-plan\principal-and-basis" />
+        <Folder Include="src\app\pages\emergency-plan\reservoir-info" />
+        <Folder Include="src\app\pages\emergency-plan\super-standard-grading" />
+        <Folder Include="src\app\pages\emergency-plan-home" />
+        <Folder Include="src\app\pages\exceeding-standard-flood" />
+        <Folder Include="src\app\pages\exceeding-standard-flood\overtop-dam-break" />
+        <Folder Include="src\app\pages\exceeding-standard-flood\safety-appraisal-status" />
+        <Folder Include="src\app\pages\forms" />
+        <Folder Include="src\app\pages\forms\atlas-form" />
+        <Folder Include="src\app\pages\forms\authority-form" />
+        <Folder Include="src\app\pages\forms\downstream-village-form" />
+        <Folder Include="src\app\pages\forms\duty-form" />
+        <Folder Include="src\app\pages\forms\emergency-manager-form" />
+        <Folder Include="src\app\pages\forms\emergency-org-form" />
+        <Folder Include="src\app\pages\forms\emergency-plan-form" />
+        <Folder Include="src\app\pages\forms\evacuation-info-form" />
+        <Folder Include="src\app\pages\forms\flood-resp-person" />
+        <Folder Include="src\app\pages\forms\person-info-form" />
+        <Folder Include="src\app\pages\forms\project-props-form" />
+        <Folder Include="src\app\pages\forms\reservoir-detail-form" />
+        <Folder Include="src\app\pages\forms\reservoir-info-form" />
+        <Folder Include="src\app\pages\forms\settlement-form" />
+        <Folder Include="src\app\pages\forms\supplies-storage-form" />
+        <Folder Include="src\app\pages\home" />
+        <Folder Include="src\app\pages\monitoring-and-warning" />
+        <Folder Include="src\app\pages\person-info" />
+        <Folder Include="src\app\pages\person-info\emergency-person" />
+        <Folder Include="src\app\pages\person-info\reservoir-manager" />
+        <Folder Include="src\app\pages\person-info-page" />
+        <Folder Include="src\app\pages\profile" />
+        <Folder Include="src\app\pages\tasks" />
+        <Folder Include="src\app\shared" />
+        <Folder Include="src\app\shared\components" />
+        <Folder Include="src\app\shared\components\change-password-form" />
+        <Folder Include="src\app\shared\components\create-account-form" />
+        <Folder Include="src\app\shared\components\footer" />
+        <Folder Include="src\app\shared\components\header" />
+        <Folder Include="src\app\shared\components\login-form" />
+        <Folder Include="src\app\shared\components\reset-password-form" />
+        <Folder Include="src\app\shared\components\side-navigation-menu" />
+        <Folder Include="src\app\shared\components\user-panel" />
+        <Folder Include="src\app\shared\models" />
+        <Folder Include="src\app\shared\services" />
+        <Folder Include="src\assets" />
+        <Folder Include="src\assets\figures" />
+        <Folder Include="src\environments" />
+        <Folder Include="src\themes" />
+        <Folder Include="src\themes\generated" />
+        <Folder Include="webfront-ng" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+    <ProjectExtensions>
+        <VisualStudio>
+          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+            <WebProjectProperties>
+              <UseIIS>False</UseIIS>
+              <AutoAssignPort>True</AutoAssignPort>
+              <DevelopmentServerPort>0</DevelopmentServerPort>
+              <DevelopmentServerVPath>/</DevelopmentServerVPath>
+              <IISUrl>http://localhost:48022/</IISUrl>
+              <NTLMAuthentication>False</NTLMAuthentication>
+              <UseCustomServer>True</UseCustomServer>
+              <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+              <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+            </WebProjectProperties>
+          </FlavorProperties>
+          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+            <WebProjectProperties>
+              <StartPageUrl>
+              </StartPageUrl>
+              <StartAction>CurrentPage</StartAction>
+              <AspNetDebugging>True</AspNetDebugging>
+              <SilverlightDebugging>False</SilverlightDebugging>
+              <NativeDebugging>False</NativeDebugging>
+              <SQLDebugging>False</SQLDebugging>
+              <ExternalProgram>
+              </ExternalProgram>
+              <StartExternalURL>
+              </StartExternalURL>
+              <StartCmdLineArguments>
+              </StartCmdLineArguments>
+              <StartWorkingDirectory>
+              </StartWorkingDirectory>
+              <EnableENC>False</EnableENC>
+              <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+            </WebProjectProperties>
+          </FlavorProperties>
+        </VisualStudio>
+    </ProjectExtensions>
+</Project>

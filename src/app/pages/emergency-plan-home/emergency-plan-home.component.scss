@@ -1,0 +1,8 @@
+/* emergency-plan-home.component.scss */
+
+img {
+    width: 100%;  /* This will make the image take the full width of its container */
+    height: auto;  /* This will keep the image's aspect ratio */
+    max-width: 100%;  /* This will prevent the image from being larger than its container */
+    max-height: 100%;  /* This will prevent the image from being taller than its container */
+  }

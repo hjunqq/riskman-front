@@ -78,7 +78,7 @@
   background-color: #fff;
   color: rgba(0,0,0,.87);
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
@@ -92,52 +92,52 @@
 .dx-theme-material-typography .dx-swatch-additional h1,
 .dx-theme-material-typography.dx-swatch-additional h1 {
   font-weight: 300;
-  font-size: 64px;
+  font-size: 96px;
   letter-spacing: -1.5px;
 }
 .dx-theme-material-typography .dx-swatch-additional h2,
 .dx-theme-material-typography.dx-swatch-additional h2 {
   font-weight: 300;
-  font-size: 42px;
+  font-size: 60px;
   letter-spacing: -.5px;
 }
 .dx-theme-material-typography .dx-swatch-additional h3,
 .dx-theme-material-typography.dx-swatch-additional h3 {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 48px;
 }
 .dx-theme-material-typography .dx-swatch-additional h4,
 .dx-theme-material-typography.dx-swatch-additional h4 {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 34px;
   letter-spacing: .25px;
 }
 .dx-theme-material-typography .dx-swatch-additional h5,
 .dx-theme-material-typography.dx-swatch-additional h5 {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 24px;
 }
 .dx-theme-material-typography .dx-swatch-additional h6,
 .dx-theme-material-typography.dx-swatch-additional h6 {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 20px;
   letter-spacing: .15px;
 }
 .dx-theme-material-typography .dx-swatch-additional .dx-font-xl,
 .dx-theme-material-typography.dx-swatch-additional .dx-font-xl {
-  font-size: 24px;
+  font-size: 34px;
 }
 .dx-theme-material-typography .dx-swatch-additional .dx-font-l,
 .dx-theme-material-typography.dx-swatch-additional .dx-font-l {
-  font-size: 20px;
+  font-size: 28px;
 }
 .dx-theme-material-typography .dx-swatch-additional .dx-font-m,
 .dx-theme-material-typography.dx-swatch-additional .dx-font-m {
-  font-size: 16px;
+  font-size: 20px;
 }
 .dx-theme-material-typography .dx-swatch-additional .dx-font-s,
 .dx-theme-material-typography.dx-swatch-additional .dx-font-s {
-  font-size: 14px;
+  font-size: 18px;
 }
 .dx-theme-material-typography .dx-swatch-additional .dx-font-xs,
 .dx-theme-material-typography .dx-swatch-additional small,
@@ -1338,7 +1338,7 @@
   print-color-adjust: exact;
   color: rgba(0,0,0,.87);
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
@@ -1384,7 +1384,7 @@
 .dx-swatch-additional .dx-card {
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #fff;
   margin: 2px 2px 3px;
 }
@@ -1402,7 +1402,7 @@
   position: relative;
   color: rgba(0,0,0,.87);
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
   padding: 0;
@@ -1460,19 +1460,19 @@
 }
 .dx-swatch-additional .dx-field-value.dx-attention {
   color: #f44336;
-  padding: 21px 8px 20px 24px;
+  padding: 21px 10px 20px 32px;
   position: relative;
 }
 .dx-swatch-additional .dx-field-value.dx-attention::before {
   pointer-events: none;
   position: absolute;
   top: 50%;
-  margin-top: -8px;
-  width: 16px;
-  height: 16px;
+  margin-top: -11px;
+  width: 22px;
+  height: 22px;
   text-align: center;
-  line-height: 17px;
-  font-size: 13px;
+  line-height: 23px;
+  font-size: 14px;
   font-weight: 500;
   background-color: #f44336;
   color: #fff;
@@ -1486,10 +1486,10 @@
 }
 .dx-swatch-additional .dx-field-label {
   color: rgba(0,0,0,.6);
-  font-size: 12px;
+  font-size: 14px;
   cursor: default;
   align-self: center;
-  padding-right: 12px;
+  padding-right: 15px;
 }
 .dx-swatch-additional .dx-field-value.dx-widget,
 .dx-swatch-additional .dx-field-value:not(.dx-widget) > .dx-widget {
@@ -1502,26 +1502,26 @@
 }
 .dx-swatch-additional .dx-field-value.dx-checkbox,
 .dx-swatch-additional .dx-field-value:not(.dx-widget) > .dx-checkbox {
-  margin: 8px 0;
+  margin: 15px 0;
 }
 .dx-swatch-additional .dx-field-value.dx-switch,
 .dx-swatch-additional .dx-field-value:not(.dx-widget) > .dx-switch {
-  margin: 7px 0;
+  margin: 14px 0;
 }
 .dx-swatch-additional .dx-field-value.dx-slider,
 .dx-swatch-additional .dx-field-value:not(.dx-widget) > .dx-slider {
-  margin: 2px 0;
+  margin: 10px 0;
 }
 .dx-swatch-additional .dx-field-value.dx-radiogroup,
 .dx-swatch-additional .dx-field-value:not(.dx-widget) > .dx-radiogroup {
-  margin: 3px 0;
+  margin: 11px 0;
 }
 .dx-swatch-additional .dx-field-value-static {
   white-space: normal;
-  padding: 21px 8px 20px;
+  padding: 21px 10px 20px;
 }
 .dx-swatch-additional .dx-fieldset {
-  margin: 20px 16px;
+  margin: 30px 20px;
   padding: 0;
 }
 .dx-swatch-additional .dx-rtl .dx-fieldset .dx-field-value:not(.dx-widget) > .dx-button,
@@ -1533,17 +1533,17 @@
   float: left;
 }
 .dx-swatch-additional .dx-fieldset-header {
-  margin: 0 0 16px;
-  font-size: 14px;
+  margin: 0 0 20px;
+  font-size: 18px;
 }
 .dx-swatch-additional .dx-field {
-  margin: 0 0 20px;
+  margin: 0 0 30px;
 }
 .dx-swatch-additional .dx-field:last-of-type {
   margin: 0;
 }
 .dx-swatch-additional .dx-theme-marker {
-  font-family: "dx.material.blue-light-compact";
+  font-family: "dx.material.blue-light";
 }
 .dx-swatch-additional .dx-theme-accent-as-text-color {
   color: #03a9f4!important;
@@ -2011,9 +2011,9 @@
   justify-content: center;
   vertical-align: middle;
   background-size: contain;
-  width: 16px;
-  height: 16px;
-  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
   -webkit-margin-end: 0;
   margin-inline-end: 0;
   -webkit-margin-start: 0;
@@ -2066,72 +2066,72 @@
   letter-spacing: .04em;
 }
 .dx-swatch-additional .dx-button {
-  min-width: 28px;
-  height: 28px;
+  min-width: 36px;
+  height: 36px;
   position: relative;
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #fff;
   color: rgba(0,0,0,.87);
 }
 .dx-swatch-additional .dx-button .dx-button-content {
-  padding-block: 5px;
-  -webkit-padding-start: 5px;
-  padding-inline-start: 5px;
-  -webkit-padding-end: 5px;
-  padding-inline-end: 5px;
+  padding-block: 8px;
+  -webkit-padding-start: 8px;
+  padding-inline-start: 8px;
+  -webkit-padding-end: 8px;
+  padding-inline-end: 8px;
   position: relative;
 }
 .dx-swatch-additional .dx-button-has-icon {
-  min-width: 28px;
+  min-width: 36px;
 }
 .dx-swatch-additional .dx-button-has-icon .dx-button-content {
-  padding-block: 5px;
-  -webkit-padding-start: 5px;
-  padding-inline-start: 5px;
-  -webkit-padding-end: 5px;
-  padding-inline-end: 5px;
+  padding-block: 8px;
+  -webkit-padding-start: 8px;
+  padding-inline-start: 8px;
+  -webkit-padding-end: 8px;
+  padding-inline-end: 8px;
 }
 .dx-swatch-additional .dx-button-has-icon .dx-icon {
-  width: 16px;
-  height: 16px;
-  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
   -webkit-margin-end: 0;
   margin-inline-end: 0;
   -webkit-margin-start: 0;
   margin-inline-start: 0;
 }
 .dx-swatch-additional .dx-button-has-text {
-  min-width: 48px;
+  min-width: 64px;
 }
 .dx-swatch-additional .dx-button-has-text .dx-button-content {
-  padding-block: 5px;
-  -webkit-padding-start: 12px;
-  padding-inline-start: 12px;
-  -webkit-padding-end: 12px;
-  padding-inline-end: 12px;
+  padding-block: 6px;
+  -webkit-padding-start: 16px;
+  padding-inline-start: 16px;
+  -webkit-padding-end: 16px;
+  padding-inline-end: 16px;
 }
 .dx-swatch-additional .dx-button-has-text .dx-icon {
-  width: 16px;
-  height: 16px;
-  font-size: 16px;
-  -webkit-margin-end: 8px;
-  margin-inline-end: 8px;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  -webkit-margin-end: 9px;
+  margin-inline-end: 9px;
   -webkit-margin-start: 0;
   margin-inline-start: 0;
 }
 .dx-swatch-additional .dx-button-has-icon.dx-button-has-text .dx-button-content {
-  padding-block: 5px;
-  -webkit-padding-start: 8px;
-  padding-inline-start: 8px;
-  -webkit-padding-end: 12px;
-  padding-inline-end: 12px;
+  padding-block: 6px;
+  -webkit-padding-start: 12px;
+  padding-inline-start: 12px;
+  -webkit-padding-end: 16px;
+  padding-inline-end: 16px;
 }
 .dx-swatch-additional .dx-button-has-icon.dx-button-has-text .dx-icon {
-  width: 16px;
-  height: 16px;
-  font-size: 16px;
-  -webkit-margin-end: 4px;
-  margin-inline-end: 4px;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  -webkit-margin-end: 8px;
+  margin-inline-end: 8px;
   -webkit-margin-start: 0;
   margin-inline-start: 0;
 }
@@ -2175,7 +2175,7 @@
   border-color: rgba(0,0,0,.1);
 }
 .dx-swatch-additional .dx-button.dx-button-default {
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #03a9f4;
   color: #fff;
 }
@@ -2214,7 +2214,7 @@
   border-color: rgba(0,0,0,.1);
 }
 .dx-swatch-additional .dx-button.dx-button-danger {
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #f44336;
   color: #fff;
 }
@@ -2253,7 +2253,7 @@
   border-color: rgba(0,0,0,.1);
 }
 .dx-swatch-additional .dx-button.dx-button-success {
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #8bc34a;
   color: #fff;
 }
@@ -2571,19 +2571,19 @@
   transform: scale(1);
 }
 .dx-swatch-additional .dx-checkbox-icon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border: 2px solid rgba(0,0,0,.54);
   border-radius: 2px;
 }
 .dx-swatch-additional .dx-checkbox-icon::after {
   content: "";
-  width: 2.14em;
-  height: 2.14em;
+  width: 2.5em;
+  height: 2.5em;
   top: 50%;
   left: 50%;
-  margin-top: -1.07em;
-  margin-left: -1.07em;
+  margin-top: -1.25em;
+  margin-left: -1.25em;
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -2598,7 +2598,7 @@
   color: #fff;
   background-color: #03a9f4;
   border: none;
-  font: 14px/1em DXIcons;
+  font: 16px/1em DXIcons;
   text-align: center;
 }
 .dx-swatch-additional .dx-checkbox-checked .dx-checkbox-icon::before {
@@ -2622,7 +2622,7 @@
   background-color: #03a9f4;
   color: #fff;
   border: none;
-  font: 18px/1em DXIcons;
+  font: 20px/1em DXIcons;
   text-align: center;
 }
 .dx-swatch-additional .dx-checkbox-indeterminate .dx-checkbox-icon::before {
@@ -2658,7 +2658,7 @@
   z-index: 1000;
   color: rgba(0,0,0,.87);
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
@@ -2697,19 +2697,19 @@
   color: #fff;
   background-color: #f44336;
   border-radius: 4px;
-  padding: 4px 6px;
-  line-height: 12px;
+  padding: 4px 8px;
+  line-height: 16px;
   font-size: 12px;
 }
 .dx-swatch-additional .dx-editor-filled .dx-invalid-message-bottom .dx-invalid-message > .dx-overlay-content,
 .dx-swatch-additional .dx-editor-filled .dx-invalid-message-top .dx-invalid-message > .dx-overlay-content,
 .dx-swatch-additional .dx-invalid-message-bottom .dx-invalid-message > .dx-overlay-content .dx-editor-outlined,
 .dx-swatch-additional .dx-invalid-message-top .dx-invalid-message > .dx-overlay-content .dx-editor-outlined {
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .dx-swatch-additional .dx-validationsummary > .dx-validationsummary-item:not(:last-child) {
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 .dx-swatch-additional .dx-form-validation-summary {
   margin-top: 20px;
@@ -2744,7 +2744,7 @@
   cursor: text;
   pointer-events: none;
   color: rgba(0,0,0,.6);
-  font-size: 12px;
+  font-size: 16px;
   line-height: normal;
 }
 .dx-swatch-additional .dx-placeholder::before {
@@ -2795,7 +2795,7 @@
   margin: 0;
   background-color: transparent;
   color: rgba(0,0,0,.87);
-  font-size: 12px;
+  font-size: 16px;
 }
 .dx-swatch-additional .dx-texteditor-input:-webkit-autofill + .dx-placeholder {
   display: none!important;
@@ -2843,8 +2843,8 @@
   opacity: 1;
 }
 .dx-swatch-additional .dx-texteditor {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   position: relative;
 }
 .dx-swatch-additional .dx-texteditor::before {
@@ -2869,7 +2869,7 @@
 }
 .dx-swatch-additional .dx-texteditor.dx-state-focused .dx-texteditor-label {
   color: #03a9f4;
-  font-size: 10px;
+  font-size: 12px;
 }
 .dx-swatch-additional .dx-texteditor.dx-state-focused.dx-invalid .dx-texteditor-label {
   color: #f44336;
@@ -2892,47 +2892,47 @@
 }
 .dx-swatch-additional .dx-texteditor.dx-invalid.dx-editor-underlined .dx-texteditor-input,
 .dx-swatch-additional .dx-texteditor.dx-valid.dx-editor-underlined .dx-texteditor-input {
-  -webkit-padding-end: 30px;
-  padding-inline-end: 30px;
+  -webkit-padding-end: 46px;
+  padding-inline-end: 46px;
 }
 .dx-swatch-additional .dx-texteditor.dx-invalid.dx-editor-filled .dx-texteditor-input,
 .dx-swatch-additional .dx-texteditor.dx-invalid.dx-editor-outlined .dx-texteditor-input,
 .dx-swatch-additional .dx-texteditor.dx-valid.dx-editor-filled .dx-texteditor-input,
 .dx-swatch-additional .dx-texteditor.dx-valid.dx-editor-outlined .dx-texteditor-input {
-  -webkit-padding-end: 42px;
-  padding-inline-end: 42px;
+  -webkit-padding-end: 62px;
+  padding-inline-end: 62px;
 }
 .dx-swatch-additional .dx-texteditor.dx-invalid.dx-editor-filled .dx-texteditor-input-container::after,
 .dx-swatch-additional .dx-texteditor.dx-invalid.dx-editor-outlined .dx-texteditor-input-container::after,
 .dx-swatch-additional .dx-texteditor.dx-valid.dx-editor-filled .dx-texteditor-input-container::after,
 .dx-swatch-additional .dx-texteditor.dx-valid.dx-editor-outlined .dx-texteditor-input-container::after {
-  inset-inline-end: 8px;
+  inset-inline-end: 12px;
 }
 .dx-swatch-additional .dx-texteditor.dx-invalid .dx-texteditor-input-container::after,
 .dx-swatch-additional .dx-texteditor.dx-valid .dx-texteditor-input-container::after {
-  inset-inline-end: 3.5px;
+  inset-inline-end: 6px;
 }
 .dx-swatch-additional .dx-texteditor.dx-validation-pending.dx-editor-underlined .dx-texteditor-input {
-  -webkit-padding-end: 30px;
-  padding-inline-end: 30px;
+  -webkit-padding-end: 46px;
+  padding-inline-end: 46px;
 }
 .dx-swatch-additional .dx-texteditor.dx-validation-pending.dx-editor-filled .dx-texteditor-input,
 .dx-swatch-additional .dx-texteditor.dx-validation-pending.dx-editor-outlined .dx-texteditor-input {
-  -webkit-padding-end: 42px;
-  padding-inline-end: 42px;
+  -webkit-padding-end: 62px;
+  padding-inline-end: 62px;
 }
 .dx-swatch-additional .dx-texteditor.dx-validation-pending.dx-editor-filled .dx-texteditor-input-container .dx-pending-indicator,
 .dx-swatch-additional .dx-texteditor.dx-validation-pending.dx-editor-outlined .dx-texteditor-input-container .dx-pending-indicator {
-  inset-inline-end: 8px;
+  inset-inline-end: 12px;
 }
 .dx-swatch-additional .dx-texteditor.dx-validation-pending .dx-texteditor-input-container .dx-pending-indicator {
-  inset-inline-end: 3.5px;
+  inset-inline-end: 6px;
 }
 .dx-swatch-additional .dx-texteditor.dx-editor-filled .dx-placeholder::before,
 .dx-swatch-additional .dx-texteditor.dx-editor-filled .dx-texteditor-input,
 .dx-swatch-additional .dx-texteditor.dx-editor-outlined .dx-placeholder::before,
 .dx-swatch-additional .dx-texteditor.dx-editor-outlined .dx-texteditor-input {
-  padding: 9px 12px;
+  padding: 15px 16px 14px;
 }
 .dx-swatch-additional .dx-texteditor.dx-editor-filled {
   background-color: rgba(0,0,0,.04);
@@ -2967,7 +2967,7 @@
 }
 .dx-swatch-additional .dx-texteditor.dx-editor-underlined .dx-placeholder::before,
 .dx-swatch-additional .dx-texteditor.dx-editor-underlined .dx-texteditor-input {
-  padding: 9px 0;
+  padding: 15px 0 14px;
 }
 .dx-swatch-additional .dx-texteditor.dx-editor-underlined.dx-state-disabled::after,
 .dx-swatch-additional .dx-texteditor.dx-editor-underlined.dx-state-readonly.dx-state-hover::after,
@@ -2980,7 +2980,7 @@
 }
 .dx-swatch-additional .dx-texteditor.dx-editor-outlined {
   background-color: transparent;
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: inset 0 0 0 1px rgba(0,0,0,.42);
 }
 .dx-swatch-additional .dx-texteditor.dx-editor-outlined::before {
@@ -3007,8 +3007,8 @@
   box-shadow: inset 0 0 0 1px rgba(244,67,54,.4);
 }
 .dx-swatch-additional .dx-show-clear-button .dx-clear-button-area {
-  width: 16px;
-  min-width: 16px;
+  width: 22px;
+  min-width: 22px;
   right: 0;
 }
 .dx-swatch-additional .dx-show-clear-button .dx-icon-clear {
@@ -3017,62 +3017,62 @@
   border-radius: 50%;
   position: absolute;
   top: 50%;
-  margin-top: -8px;
-  width: 16px;
-  height: 16px;
+  margin-top: -11px;
+  width: 22px;
+  height: 22px;
   background-position: 0 0;
-  background-size: 16px 16px;
+  background-size: 22px 22px;
   padding: 0;
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
-  line-height: 10px;
+  line-height: 12px;
 }
 .dx-swatch-additional .dx-show-clear-button .dx-icon-clear::before {
   position: absolute;
   display: block;
-  width: 10px;
+  width: 12px;
   top: 50%;
-  margin-top: -5px;
+  margin-top: -6px;
   left: 50%;
-  margin-left: -5px;
+  margin-left: -6px;
 }
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-invalid.dx-editor-underlined .dx-texteditor-input,
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-valid.dx-editor-underlined .dx-texteditor-input {
-  -webkit-padding-end: 30px;
-  padding-inline-end: 30px;
+  -webkit-padding-end: 46px;
+  padding-inline-end: 46px;
 }
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-invalid.dx-editor-filled .dx-texteditor-input,
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-invalid.dx-editor-outlined .dx-texteditor-input,
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-valid.dx-editor-filled .dx-texteditor-input,
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-valid.dx-editor-outlined .dx-texteditor-input {
-  -webkit-padding-end: 42px;
-  padding-inline-end: 42px;
+  -webkit-padding-end: 62px;
+  padding-inline-end: 62px;
 }
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-invalid.dx-editor-filled .dx-texteditor-input-container::after,
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-invalid.dx-editor-outlined .dx-texteditor-input-container::after,
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-valid.dx-editor-filled .dx-texteditor-input-container::after,
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-valid.dx-editor-outlined .dx-texteditor-input-container::after {
-  inset-inline-end: 8px;
+  inset-inline-end: 12px;
 }
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-invalid .dx-texteditor-input-container::after,
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-valid .dx-texteditor-input-container::after {
-  inset-inline-end: 3.5px;
+  inset-inline-end: 6px;
 }
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-validation-pending.dx-editor-underlined .dx-texteditor-input {
-  -webkit-padding-end: 30px;
-  padding-inline-end: 30px;
+  -webkit-padding-end: 46px;
+  padding-inline-end: 46px;
 }
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-validation-pending.dx-editor-filled .dx-texteditor-input,
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-validation-pending.dx-editor-outlined .dx-texteditor-input {
-  -webkit-padding-end: 42px;
-  padding-inline-end: 42px;
+  -webkit-padding-end: 62px;
+  padding-inline-end: 62px;
 }
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-validation-pending.dx-editor-filled .dx-texteditor-input-container .dx-pending-indicator,
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-validation-pending.dx-editor-outlined .dx-texteditor-input-container .dx-pending-indicator {
-  inset-inline-end: 8px;
+  inset-inline-end: 12px;
 }
 .dx-swatch-additional .dx-show-clear-button:not(.dx-texteditor-empty).dx-validation-pending .dx-texteditor-input-container .dx-pending-indicator {
-  inset-inline-end: 3.5px;
+  inset-inline-end: 6px;
 }
 .dx-swatch-additional .dx-invalid.dx-texteditor.dx-state-hover::after {
   border-bottom-color: rgba(244,67,54,.4);
@@ -3085,12 +3085,12 @@
   pointer-events: none;
   position: absolute;
   top: 50%;
-  margin-top: -8px;
-  width: 16px;
-  height: 16px;
+  margin-top: -11px;
+  width: 22px;
+  height: 22px;
   text-align: center;
-  line-height: 17px;
-  font-size: 13px;
+  line-height: 23px;
+  font-size: 14px;
   font-weight: 500;
   background-color: #f44336;
   color: #fff;
@@ -3099,7 +3099,7 @@
 }
 .dx-swatch-additional .dx-texteditor-label {
   position: absolute;
-  font-size: 10px;
+  font-size: 12px;
   color: rgba(0,0,0,.6);
   white-space: nowrap;
   -webkit-user-select: none;
@@ -3141,16 +3141,16 @@
   margin-left: -2px;
   margin-right: -2px;
   border-radius: 1px;
-  -webkit-clip-path: inset(-10px 1px -1px 1px);
-  clip-path: inset(-10px 1px -1px 1px);
+  -webkit-clip-path: inset(-12px 1px -1px 1px);
+  clip-path: inset(-12px 1px -1px 1px);
 }
 .dx-swatch-additional .dx-editor-outlined .dx-label span {
   position: relative;
-  font-size: 10px;
+  font-size: 12px;
   top: 0;
   margin-top: 0;
-  transform: translate(0,-5.5px);
-  height: 12px;
+  transform: translate(0,-6.5px);
+  height: 14px;
   line-height: normal;
 }
 .dx-swatch-additional .dx-editor-outlined .dx-label-before {
@@ -3161,15 +3161,15 @@
   border-top-color: rgba(0,0,0,.42);
   border-bottom-color: rgba(0,0,0,.42);
   border-inline-start-color: rgba(0,0,0,0.42);
-  border-start-start-radius: 2px;
-  border-end-start-radius: 2px;
-  min-width: 12px;
+  border-start-start-radius: 4px;
+  border-end-start-radius: 4px;
+  min-width: 16px;
   -webkit-clip-path: inset(-1px 1px -1px -1px);
   clip-path: inset(-1px 1px -1px -1px);
 }
 .dx-swatch-additional .dx-editor-outlined .dx-label-after {
   flex-grow: 1;
-  min-width: 12px;
+  min-width: 16px;
   border-block-width: 1px;
   border-inline-end-width: 1px;
   border-inline-start-width: 0;
@@ -3177,8 +3177,8 @@
   border-top-color: rgba(0,0,0,.42);
   border-bottom-color: rgba(0,0,0,.42);
   border-inline-end-color: rgba(0,0,0,0.42);
-  border-start-end-radius: 2px;
-  border-end-end-radius: 2px;
+  border-start-end-radius: 4px;
+  border-end-end-radius: 4px;
   -webkit-clip-path: inset(-1px -1px -1px 1px);
   clip-path: inset(-1px -1px -1px 1px);
 }
@@ -3208,7 +3208,7 @@
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label,
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-label {
   outline: 0;
-  margin-top: 5.5px;
+  margin-top: 6.5px;
 }
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label.dx-texteditor:not(.dx-daterangebox),
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-label.dx-texteditor:not(.dx-daterangebox) {
@@ -3294,7 +3294,7 @@
   border-inline-start-width: 0;
 }
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-label-outside {
-  margin-top: 18px;
+  margin-top: 24px;
 }
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-label-outside .dx-texteditor-label {
   -webkit-user-select: auto;
@@ -3323,11 +3323,11 @@
   width: 100%;
   cursor: default;
   pointer-events: auto;
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 0;
-  top: -18px;
-  height: 1.3333333333em;
-  line-height: 1.3333333333em;
+  top: -24px;
+  height: 1.4285714286em;
+  line-height: 1.4285714286em;
 }
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label .dx-placeholder {
   display: none;
@@ -3343,17 +3343,17 @@
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label.dx-texteditor-empty .dx-label span {
   transition: font-size .2s cubic-bezier(0, 0, .2, 1),transform .2s cubic-bezier(0, 0, .2, 1),top .2s cubic-bezier(0, 0, .2, 1);
   transform: translate(0,0);
-  font-size: 12px;
+  font-size: 16px;
   top: 50%;
-  margin-top: -7.5px;
-  height: 15px;
+  margin-top: -9.5px;
+  height: 19px;
   line-height: normal;
 }
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label.dx-texteditor-empty .dx-label::before {
   background-color: transparent;
 }
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-textarea .dx-label span {
-  top: 9px;
+  top: 15px;
   margin-top: 0;
 }
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-dropdowneditor-active .dx-label,
@@ -3362,11 +3362,11 @@
 }
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-dropdowneditor-active .dx-label span,
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-state-focused .dx-label span {
-  transform: translate(0,-5.5px);
-  font-size: 10px;
+  transform: translate(0,-6.5px);
+  font-size: 12px;
   margin-top: 0;
   top: 0;
-  height: 12px;
+  height: 14px;
   line-height: normal;
 }
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-dropdowneditor-active .dx-label::before,
@@ -3388,22 +3388,22 @@
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-state-readonly.dx-state-focused .dx-label span {
   transition: font-size .2s cubic-bezier(0, 0, .2, 1),transform .2s cubic-bezier(0, 0, .2, 1),top .2s cubic-bezier(0, 0, .2, 1);
   transform: translate(0,0);
-  font-size: 12px;
+  font-size: 16px;
   top: 50%;
-  margin-top: -7.5px;
-  height: 15px;
+  margin-top: -9.5px;
+  height: 19px;
   line-height: normal;
 }
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-state-readonly.dx-state-focused .dx-label::before {
   background-color: transparent;
 }
 .dx-swatch-additional .dx-editor-outlined.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-state-readonly.dx-state-focused.dx-textarea .dx-label span {
-  top: 9px;
+  top: 15px;
   margin-top: 0;
 }
 .dx-swatch-additional .dx-editor-filled .dx-texteditor-label .dx-label-after,
 .dx-swatch-additional .dx-editor-filled .dx-texteditor-label .dx-label-before {
-  min-width: 12px;
+  min-width: 16px;
 }
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-floating-label .dx-placeholder::before,
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-floating-label .dx-texteditor-input,
@@ -3411,29 +3411,29 @@
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-label:not(.dx-texteditor-label-outside) .dx-placeholder::before,
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-label:not(.dx-texteditor-label-outside) .dx-texteditor-input,
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-label:not(.dx-texteditor-label-outside).dx-lookup .dx-lookup-field {
-  padding-top: 15px;
-  padding-bottom: 3px;
+  padding-top: 21px;
+  padding-bottom: 8px;
 }
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-floating-label .dx-texteditor-label,
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-label .dx-texteditor-label {
-  font-size: 10px;
-  height: 10px;
-  line-height: 10px;
-  top: 0;
+  font-size: 12px;
+  height: 12px;
+  line-height: 12px;
+  top: 4px;
   margin-top: 0;
 }
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-label-outside {
-  margin-top: 18px;
+  margin-top: 24px;
 }
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-label-outside .dx-texteditor-label {
   -webkit-user-select: auto;
   -moz-user-select: auto;
   user-select: auto;
-  font-size: 12px;
-  height: 16px;
-  line-height: 16px;
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
   margin-top: 0;
-  top: -18px;
+  top: -24px;
 }
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-label-outside .dx-label {
   cursor: default;
@@ -3451,15 +3451,15 @@
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-floating-label.dx-texteditor-empty .dx-texteditor-label,
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-state-readonly .dx-texteditor-label {
   transition: font-size .2s cubic-bezier(0, 0, .2, 1),transform .2s cubic-bezier(0, 0, .2, 1),top .2s cubic-bezier(0, 0, .2, 1);
-  font-size: 12px;
-  height: 12px;
-  line-height: 13px;
+  font-size: 16px;
+  height: 16px;
+  line-height: 17px;
   top: 50%;
-  margin-top: -6px;
+  margin-top: -8px;
 }
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-state-readonly.dx-textarea .dx-texteditor-label,
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-textarea .dx-texteditor-label {
-  top: 15px;
+  top: 21px;
   margin-top: 0;
 }
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-floating-label.dx-dropdowneditor-active .dx-placeholder,
@@ -3468,15 +3468,15 @@
 }
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-floating-label.dx-dropdowneditor-active .dx-texteditor-label,
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-floating-label.dx-state-focused .dx-texteditor-label {
-  height: 10px;
-  line-height: 10px;
-  font-size: 10px;
-  top: 0;
+  height: 12px;
+  line-height: 12px;
+  font-size: 12px;
+  top: 4px;
   margin-top: 0;
 }
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-floating-label.dx-dropdowneditor-active.dx-textarea .dx-texteditor-label,
 .dx-swatch-additional .dx-editor-filled.dx-texteditor-with-floating-label.dx-state-focused.dx-textarea .dx-texteditor-label {
-  top: 0;
+  top: 4px;
   margin-top: 0;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label .dx-placeholder::before,
@@ -3485,28 +3485,28 @@
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-label:not(.dx-texteditor-label-outside) .dx-placeholder::before,
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-label:not(.dx-texteditor-label-outside) .dx-texteditor-input,
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-label:not(.dx-texteditor-label-outside).dx-lookup .dx-lookup-field {
-  padding-top: 14px;
-  padding-bottom: 4px;
+  padding-top: 21px;
+  padding-bottom: 8px;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label .dx-texteditor-label,
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-label .dx-texteditor-label {
   transform: translate(0,0);
-  height: 10px;
-  line-height: 10px;
-  top: 0;
+  height: 12px;
+  line-height: 12px;
+  top: 4px;
   margin-top: 0;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-label-outside {
-  margin-top: 18px;
+  margin-top: 24px;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-label-outside .dx-texteditor-label {
   -webkit-user-select: auto;
   -moz-user-select: auto;
   user-select: auto;
-  font-size: 12px;
-  height: 16px;
-  line-height: 16px;
-  top: -18px;
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  top: -24px;
   margin-top: 0;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-label-outside .dx-label {
@@ -3526,15 +3526,15 @@
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-state-readonly .dx-texteditor-label {
   transition: font-size .2s cubic-bezier(0, 0, .2, 1),transform .2s cubic-bezier(0, 0, .2, 1),top .2s cubic-bezier(0, 0, .2, 1);
   transform: translate(0,0);
-  font-size: 12px;
-  height: 12px;
-  line-height: 13px;
+  font-size: 16px;
+  height: 16px;
+  line-height: 17px;
   top: 50%;
-  margin-top: -6px;
+  margin-top: -8px;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-state-readonly.dx-textarea .dx-texteditor-label,
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label.dx-texteditor-empty.dx-textarea .dx-texteditor-label {
-  top: 14px;
+  top: 21px;
   margin-top: 0;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label.dx-dropdowneditor-active .dx-placeholder,
@@ -3544,27 +3544,27 @@
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label.dx-dropdowneditor-active .dx-texteditor-label,
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label.dx-state-focused .dx-texteditor-label {
   transform: translate(0,0);
-  font-size: 10px;
-  height: 10px;
-  line-height: 10px;
-  top: 0;
+  font-size: 12px;
+  height: 12px;
+  line-height: 12px;
+  top: 4px;
   margin-top: 0;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label.dx-dropdowneditor-active.dx-textarea .dx-texteditor-label,
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label.dx-state-focused.dx-textarea .dx-texteditor-label {
-  top: 0;
+  top: 4px;
   margin-top: 0;
 }
 .dx-swatch-additional .dx-valid.dx-texteditor .dx-texteditor-input-container::after {
   pointer-events: none;
   position: absolute;
   top: 50%;
-  margin-top: -8px;
-  width: 16px;
-  height: 16px;
+  margin-top: -11px;
+  width: 22px;
+  height: 22px;
   text-align: center;
-  line-height: 17px;
-  font-size: 19px;
+  line-height: 23px;
+  font-size: 20px;
   font-weight: 700;
   font-family: DXIcons,sans-serif;
   color: #8bc34a;
@@ -3577,9 +3577,9 @@
   pointer-events: none;
   position: absolute;
   top: 50%;
-  margin-top: -8px;
-  width: 16px;
-  height: 16px;
+  margin-top: -11px;
+  width: 22px;
+  height: 22px;
 }
 .dx-swatch-additional .dx-texteditor .dx-texteditor-buttons-container > .dx-button,
 .dx-swatch-additional .dx-texteditor .dx-texteditor-buttons-container > .dx-clear-button-area {
@@ -3611,15 +3611,15 @@
 .dx-swatch-additional .dx-texteditor .dx-texteditor-buttons-container:last-child>.dx-clear-button-area,
 .dx-swatch-additional .dx-texteditor .dx-texteditor-buttons-container:last-child>.dx-dropdowneditor-button:last-child,
 .dx-swatch-additional .dx-texteditor .dx-texteditor-buttons-container:last-child>.dx-numberbox-spin-container:last-child {
-  -webkit-margin-end: 4px;
-  margin-inline-end: 4px;
+  -webkit-margin-end: 8px;
+  margin-inline-end: 8px;
 }
 .dx-swatch-additional .dx-texteditor .dx-texteditor-buttons-container:last-child > div:empty:last-child {
   display: none;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text,
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-label.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text {
-  height: 22px;
+  height: 28px;
   margin-top: 1px;
   margin-bottom: 3px;
   -webkit-margin-end: 5px;
@@ -3631,7 +3631,7 @@
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-label.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text .dx-button-content {
   display: flex;
   justify-content: center;
-  padding-top: 4px;
+  padding-top: 5px;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text .dx-button-content .dx-icon,
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-label.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text .dx-button-content .dx-icon {
@@ -3644,7 +3644,7 @@
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text:not(.dx-button-has-text),
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-label.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text:not(.dx-button-has-text) {
-  min-width: 22px;
+  min-width: 28px;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-floating-label.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text:not(.dx-button-has-text) .dx-button-content,
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-label.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text:not(.dx-button-has-text) .dx-button-content {
@@ -3661,7 +3661,7 @@
   margin-inline-end: 0;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text {
-  height: 22px;
+  height: 28px;
   margin-top: 1px;
   margin-bottom: 3px;
   -webkit-margin-end: 5px;
@@ -3672,7 +3672,7 @@
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text .dx-button-content {
   display: flex;
   justify-content: center;
-  padding-top: 4px;
+  padding-top: 5px;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text .dx-button-content .dx-icon {
   align-self: center;
@@ -3682,7 +3682,7 @@
   margin-top: 3px;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text:not(.dx-button-has-text) {
-  min-width: 22px;
+  min-width: 28px;
 }
 .dx-swatch-additional .dx-editor-underlined.dx-texteditor-with-before-buttons .dx-texteditor-buttons-container > .dx-button.dx-button-mode-text:not(.dx-button-has-text) .dx-button-content {
   padding: 2px;
@@ -3706,49 +3706,49 @@
 .dx-swatch-additional .dx-searchbox.dx-editor-underlined .dx-icon-search {
   position: absolute;
   top: 50%;
-  margin-top: -11px;
-  width: 22px;
-  height: 22px;
-  background-position: 3px 3px;
-  background-size: 16px 16px;
-  padding: 3px;
-  font-size: 16px;
+  margin-top: -15px;
+  width: 30px;
+  height: 30px;
+  background-position: 4px 4px;
+  background-size: 22px 22px;
+  padding: 4px;
+  font-size: 22px;
   text-align: center;
-  line-height: 16px;
+  line-height: 22px;
   -webkit-padding-start: 0;
   padding-inline-start: 0;
-  -webkit-padding-end: 6px;
-  padding-inline-end: 6px;
+  -webkit-padding-end: 8px;
+  padding-inline-end: 8px;
 }
 .dx-swatch-additional .dx-searchbox.dx-editor-underlined .dx-placeholder::before,
 .dx-swatch-additional .dx-searchbox.dx-editor-underlined .dx-texteditor-input {
-  -webkit-padding-start: 22px;
-  padding-inline-start: 22px;
+  -webkit-padding-start: 30px;
+  padding-inline-start: 30px;
 }
 .dx-swatch-additional .dx-searchbox.dx-editor-filled .dx-icon-search,
 .dx-swatch-additional .dx-searchbox.dx-editor-outlined .dx-icon-search {
   position: absolute;
   top: 50%;
-  margin-top: -17px;
-  width: 34px;
-  height: 34px;
-  background-position: 9px 9px;
-  background-size: 16px 16px;
-  padding: 9px;
-  font-size: 16px;
+  margin-top: -23px;
+  width: 46px;
+  height: 46px;
+  background-position: 12px 12px;
+  background-size: 22px 22px;
+  padding: 12px;
+  font-size: 22px;
   text-align: center;
-  line-height: 16px;
-  -webkit-padding-start: 12px;
-  padding-inline-start: 12px;
-  -webkit-padding-end: 6px;
-  padding-inline-end: 6px;
+  line-height: 22px;
+  -webkit-padding-start: 16px;
+  padding-inline-start: 16px;
+  -webkit-padding-end: 8px;
+  padding-inline-end: 8px;
 }
 .dx-swatch-additional .dx-searchbox.dx-editor-filled .dx-placeholder::before,
 .dx-swatch-additional .dx-searchbox.dx-editor-filled .dx-texteditor-input,
 .dx-swatch-additional .dx-searchbox.dx-editor-outlined .dx-placeholder::before,
 .dx-swatch-additional .dx-searchbox.dx-editor-outlined .dx-texteditor-input {
-  -webkit-padding-start: 34px;
-  padding-inline-start: 34px;
+  -webkit-padding-start: 46px;
+  padding-inline-start: 46px;
 }
 .dx-swatch-additional .dx-searchbar {
   padding-bottom: 5px;
@@ -3977,14 +3977,14 @@
 .dx-swatch-additional .dx-treeview-item .dx-treeview-item-content .dx-icon {
   -webkit-margin-end: 8px;
   margin-inline-end: 8px;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   background-position: 0 0;
-  background-size: 18px 18px;
+  background-size: 24px 24px;
   padding: 0;
-  font-size: 18px;
+  font-size: 24px;
   text-align: center;
-  line-height: 18px;
+  line-height: 24px;
   vertical-align: bottom;
 }
 .dx-swatch-additional .dx-treeview-item .dx-treeview-item-content .dx-button-has-icon .dx-icon {
@@ -4017,18 +4017,18 @@
 .dx-swatch-additional .dx-treeview-custom-collapse-icon,
 .dx-swatch-additional .dx-treeview-custom-expand-icon {
   cursor: pointer;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   background-position: 0 0;
-  background-size: 18px 18px;
+  background-size: 24px 24px;
   padding: 0;
-  font-size: 18px;
+  font-size: 24px;
   text-align: center;
-  line-height: 18px;
+  line-height: 24px;
 }
 .dx-swatch-additional .dx-treeview-item {
   gap: 12px;
-  padding: 9px 16px;
+  padding: 12px 16px;
   margin: 0;
 }
 .dx-swatch-additional .dx-treeview-item.dx-state-hover {
@@ -4047,23 +4047,23 @@
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-drag: none;
-  -webkit-padding-start: 15px;
-  padding-inline-start: 15px;
+  -webkit-padding-start: 18px;
+  padding-inline-start: 18px;
 }
 .dx-swatch-additional .dx-treeview-toggle-item-visibility {
-  font: 18px/1 DXIcons;
+  font: 24px/1 DXIcons;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   color: rgba(0,0,0,.54);
 }
 .dx-swatch-additional .dx-treeview-toggle-item-visibility::before {
   content: "\f010";
 }
 .dx-swatch-additional .dx-treeview-toggle-item-visibility.dx-treeview-toggle-item-visibility-opened {
-  font: 18px/1 DXIcons;
+  font: 24px/1 DXIcons;
 }
 .dx-swatch-additional .dx-treeview-toggle-item-visibility.dx-treeview-toggle-item-visibility-opened::before {
   content: "\f016";
@@ -4071,15 +4071,15 @@
 .dx-swatch-additional .dx-treeview-expander-icon-stub {
   display: flex;
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 }
 .dx-swatch-additional .dx-treeview-item-with-checkbox .dx-checkbox .dx-checkbox-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 18px;
-  width: 18px;
+  height: 24px;
+  width: 24px;
 }
 .dx-swatch-additional .dx-treeview-item-with-checkbox .dx-treeview-item {
   color: rgba(0,0,0,.87);
@@ -4094,14 +4094,14 @@
   border-radius: 0;
 }
 .dx-swatch-additional .dx-treeview-search {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 .dx-swatch-additional .dx-treeview-with-search > .dx-scrollable {
-  height: calc(100% - 36px);
+  height: calc(100% - 56px);
 }
 .dx-swatch-additional .dx-treeview-select-all-item {
   border-bottom: 1px solid #e0e0e0;
-  padding: 10px 47px;
+  padding: 15px 55px;
 }
 .dx-swatch-additional .dx-treeview-select-all-item .dx-checkbox-container {
   display: flex;
@@ -4112,8 +4112,8 @@
   padding-inline-start: 12px;
 }
 .dx-swatch-additional .dx-treeview-node-loadindicator {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 }
 .dx-swatch-additional .dx-treeview-border-visible {
   border: 1px solid #e0e0e0;
